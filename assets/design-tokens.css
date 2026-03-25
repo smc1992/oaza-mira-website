@@ -1,0 +1,31 @@
+/* 
+  Oaza Mira Design Tokens 
+  Extracted from oaza-mira.app
+*/
+
+:root {
+  /* Colors */
+  --color-primary: #6c8b48;
+  --color-primary-dark: #3c7000;
+  --color-primary-muted: #638a5c;
+  --color-primary-light: #c9f09c;
+  --color-background-light: #f2fce6;
+
+  --color-black: #000000;
+  --color-gray-dark: #222222;
+  --color-gray: #333333;
+  --color-gray-light: #dddddd;
+  --color-gray-muted: #758696;
+  --color-white: #ffffff;
+
+  --color-accent-blue: #4a3aff;
+  --color-accent-blue-light: #3898ec;
+
+  /* Typography */
+  --font-family-primary: 'Montserrat', sans-serif;
+  --font-family-secondary: 'PT Serif', serif;
+
+  /* Assets */
+  --logo-main: url('./logo-main.png');
+  --logo-nav: url('./logo-nav.avif');
+}

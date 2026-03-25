@@ -1,0 +1,187 @@
+/* Oaza Mira - Premium Design Standards Override */
+
+:root {
+  --color-emerald-500: #10B981;
+  --color-emerald-600: #059669;
+  --color-slate-50: #F8FAFC;
+  --color-slate-900: #0F172A;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  color: #333;
+  background-color: var(--color-slate-50) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-heading, .mission-heading, .feasure-heading, .heading {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h1.hero-heading {
+  background: linear-gradient(135deg, white, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+}
+
+/* Glassmorphism Navbar */
+.navbar-no-shadow-2 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link-2 {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  color: var(--color-slate-900) !important;
+  text-transform: none !important;
+}
+
+/* Primary CTA Buttons (Emerald Gradient) */
+.portal-login-btn, .btn-wrapp {
+  background: linear-gradient(135deg, var(--color-emerald-500), var(--color-emerald-600)) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3) !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+}
+
+.portal-login-btn:hover, .btn-wrapp:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 20px -3px rgba(16, 185, 129, 0.4) !important;
+}
+
+.text-inner div {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+}
+
+/* Language Switchers */
+.lang-switchers .lang-btn {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.2s ease;
+}
+
+.lang-switchers .lang-btn.active {
+  background: var(--color-emerald-600) !important;
+  border-color: var(--color-emerald-600) !important;
+}
+
+/* Care Plan Feature Cards */
+.feasure-cards .card, .content_card {
+  background-color: white !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feasure-cards .card:hover, .content_card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hero Section / Tactical Headers */
+.nav-hero-section, .hero-section {
+  background: linear-gradient(135deg, var(--color-slate-900), #1e293b) !important;
+  color: white !important;
+}
+
+.para-main-hero {
+  color: #cbd5e1 !important;
+  font-family: var(--font-body) !important;
+}
+
+p, .content_des-text {
+  font-family: var(--font-body) !important;
+  line-height: 1.6 !important;
+}
+
+/* Highly Responsive Navigation Engine */
+@media screen and (min-width: 992px) {
+  .nav-menu-wrapper-2 {
+    display: flex !important;
+    align-items: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
+
+.nav-menu-2 {
+  display: flex !important;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+.nav-menu-2 .list-items {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.nav-menu-2 .nav-link-2 {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #0F172A !important;
+  font-weight: 600 !important;
+  padding: 10px 15px !important;
+  text-decoration: none !important;
+}
+
+.nav-menu-2 .nav-link-2:hover {
+  color: var(--color-emerald-600) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-menu-2 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+    gap: 0;
+  }
+  .nav-menu-wrapper-2 {
+    display: none !important; /* Hide by default */
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px);
+    width: 100vw !important;
+    padding: 20px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+  .nav-menu-wrapper-2.mobile-nav-open {
+    display: block !important;
+  }
+  .nav-menu-2 .list-items {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .nav-menu-2 .nav-link-2 {
+    display: block !important;
+    padding: 15px 5px !important;
+    width: 100%;
+  }
+  .login-wrap.intab {
+    margin-left: 0 !important;
+    margin-top: 15px !important;
+    justify-content: center !important;
+  }
+}
