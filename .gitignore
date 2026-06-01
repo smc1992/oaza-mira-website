@@ -1,0 +1,12 @@
+# Log files
+*.log
+firebase-debug.log
+
+# macOS
+.DS_Store
+._*
+
+# OS/IDE junk
+.vscode/
+.idea/
+.trae/

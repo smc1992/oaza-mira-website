@@ -1,7 +1,7 @@
 # Privacy Policy
 
 ### 1. Controller
-- AEON Association for Education and Organization of Nexus between Generations Geneva, Switzerland
+- OAZA MIRA LLC, 3834 Powerline Road, Fort Lauderdale, FL 33309, Florida, United States
 - 📧 E-mail: contact @ oaza-mira.app
 
 ### 2. Data we collect
