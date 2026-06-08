@@ -30,9 +30,10 @@ export default async function AboutPage({
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.aboutHero || "/About_Hero2.webp"}
+            src={(dict as any)["images.aboutHero"] || pageImagesData.aboutHero || "/About_Hero2.webp"}
             alt="Floral arrangement"
             className="w-full h-full object-cover"
+            data-dict-key="images.aboutHero"
           />
           {/* Deep Green / Gold Luxury Overlay (Standardized 50/25 ratio) */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
@@ -87,10 +88,11 @@ export default async function AboutPage({
 
               <div className="lg:w-[45%] relative w-full h-[400px] lg:h-auto self-stretch">
                  <Image
-                   src={pageImagesData.aboutCareHands || "/about_care_hands.png"}
+                   src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
                    alt="Care imagery"
                    fill
                    className="object-cover rounded-t-[3rem] lg:rounded-l-none lg:rounded-r-[4rem] shadow-inner"
+                   data-dict-key="images.aboutCareHands"
                  />
               </div>
             </div>
@@ -103,9 +105,10 @@ export default async function AboutPage({
         {/* Cinematic Background Image & Luxury Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.aboutWhatWeDo || "/about_what_we_do.webp"} 
+            src={(dict as any)["images.aboutWhatWeDo"] || pageImagesData.aboutWhatWeDo || "/about_what_we_do.webp"} 
             alt="Oaza Mira Cemetery Garden" 
             className="w-full h-full object-cover" 
+            data-dict-key="images.aboutWhatWeDo"
           />
           {/* Deep Green / Gold Luxury Overlay (50% intensity for emotional resonance) */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
@@ -172,9 +175,10 @@ export default async function AboutPage({
               {/* Cinematic Background Image & Luxury Overlays */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src={pageImagesData.aboutWhatWeDontDo || "/about_what_we_dont_do.webp"} 
+                  src={(dict as any)["images.aboutWhatWeDontDo"] || pageImagesData.aboutWhatWeDontDo || "/about_what_we_dont_do.webp"} 
                   alt="Dignified Cemetery Park" 
                   className="w-full h-full object-cover" 
+                  data-dict-key="images.aboutWhatWeDontDo"
                 />
                 {/* Deep Green / Gold Luxury Overlay (Standardized for emotional resonance) */}
                 <div className="absolute inset-0 bg-[#50641B]/60 mix-blend-multiply"></div>
@@ -221,9 +225,10 @@ export default async function AboutPage({
                   {/* Cinematic Background Image & Luxury Overlays */}
                   <div className="absolute inset-0 z-0">
                     <img 
-                      src={pageImagesData.aboutSeeHowBg || "/about_see_how_bg.webp"} 
+                      src={(dict as any)["images.aboutSeeHowBg"] || pageImagesData.aboutSeeHowBg || "/about_see_how_bg.webp"} 
                       alt="Care for grave" 
                       className="w-full h-full object-cover" 
+                      data-dict-key="images.aboutSeeHowBg"
                     />
                     {/* Contrast-enhancing Overlays for the light text layout */}
                     <div className="absolute inset-0 bg-[#333]/40"></div>

@@ -26,9 +26,10 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.familiesHero || "/hero_families.webp"} 
+            src={(dict as any)["images.familiesHero"] || pageImagesData.familiesHero || "/hero_families.webp"} 
             alt="Oaza Mira Families" 
             className="w-full h-full object-cover"
+            data-dict-key="images.familiesHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
@@ -106,9 +107,10 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
             <div className="rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden text-white group shadow-xl bg-[#50641B]">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src={pageImagesData.familiesInvite || "/families_invite_bg.jpg"} 
+                  src={(dict as any)["images.familiesInvite"] || pageImagesData.familiesInvite || "/families_invite_bg.jpg"} 
                   alt="Invite family" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  data-dict-key="images.familiesInvite"
                 />
                 <div className="absolute inset-0 bg-[#50641B]/60 mix-blend-multiply transition-opacity group-hover:opacity-70"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#50641B] via-transparent to-transparent opacity-80"></div>
@@ -132,9 +134,10 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
             <div className="rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-lg hover:shadow-xl border border-[#E9C36B]/30 bg-white">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src={pageImagesData.familiesCaretaker || "/families_caretaker_bg.jpg"} 
+                  src={(dict as any)["images.familiesCaretaker"] || pageImagesData.familiesCaretaker || "/families_caretaker_bg.jpg"} 
                   alt="Already have a caretaker" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  data-dict-key="images.familiesCaretaker"
                 />
                 <div className="absolute inset-0 bg-white/85 transition-opacity group-hover:opacity-80"></div>
               </div>

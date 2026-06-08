@@ -26,9 +26,10 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.businessHero || "/hero_business.webp"} 
+            src={(dict as any)["images.businessHero"] || pageImagesData.businessHero || "/hero_business.webp"} 
             alt="Oaza Mira Business" 
             className="w-full h-full object-cover"
+            data-dict-key="images.businessHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/70 mix-blend-multiply"></div>

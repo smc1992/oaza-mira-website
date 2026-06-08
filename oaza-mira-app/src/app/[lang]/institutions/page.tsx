@@ -26,9 +26,10 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.institutionsHero || "/hero_institutions.webp"} 
+            src={(dict as any)["images.institutionsHero"] || pageImagesData.institutionsHero || "/hero_institutions.webp"} 
             alt="Oaza Mira Institutions" 
             className="w-full h-full object-cover"
+            data-dict-key="images.institutionsHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>

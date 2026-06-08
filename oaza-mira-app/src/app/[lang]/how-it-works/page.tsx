@@ -127,9 +127,10 @@ export default async function HowItWorksPage({
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.howItWorksHero || "/How_it_Works_Hero2.webp"}
+            src={(dict as any)["images.howItWorksHero"] || pageImagesData.howItWorksHero || "/How_it_Works_Hero2.webp"}
             alt="Peaceful cemetery garden"
             className="w-full h-full object-cover"
+            data-dict-key="images.howItWorksHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
@@ -208,10 +209,11 @@ export default async function HowItWorksPage({
         {/* Lighter, warmer image background with soft green overlays */}
         <div className="absolute inset-0 z-0 bg-[#3A4A13]">
           <Image 
-            src={pageImagesData.howItWorksCtaBg || "/cta-bg.png"}
+            src={(dict as any)["images.howItWorksCtaBg"] || pageImagesData.howItWorksCtaBg || "/cta-bg.png"}
             alt="Oaza Mira special approach"
             fill
             className="object-cover opacity-80"
+            data-dict-key="images.howItWorksCtaBg"
           />
           {/* Lighter multiply for the warm green brand feel without completely darkening the image */}
           <div className="absolute inset-0 mix-blend-multiply bg-[#50641B]/60"></div>
@@ -304,7 +306,12 @@ export default async function HowItWorksPage({
       <section className="py-24 lg:py-32 relative overflow-hidden bg-black">
         {/* Dark cinematic photographic background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-cover bg-center opacity-80" style={{ backgroundImage: `url('${pageImagesData.readyToBeginHero || "/How_it_Works_Ready_to_Begin.webp"}')` }}></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-80" 
+            style={{ backgroundImage: `url('${(dict as any)["images.readyToBeginHero"] || pageImagesData.readyToBeginHero || "/How_it_Works_Ready_to_Begin.webp"}')` }}
+            data-dict-key="images.readyToBeginHero"
+            data-editor-type="image"
+          ></div>
           {/* Deep green multiply for brand color integration without washing out */}
           <div className="absolute inset-0 mix-blend-multiply bg-[#1a2308]/60"></div>
           {/* Top-to-bottom dark gradient for maximum contrast and readability */}

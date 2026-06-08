@@ -16,11 +16,12 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
         {/* Cinematic Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/App_Teaser_BG.webp"
+            src={(dict as any)["images.teaserBg"] || "/App_Teaser_BG.webp"}
             alt="Peaceful cemetery garden background"
             fill
             className="object-cover opacity-90"
             priority
+            data-dict-key="images.teaserBg"
           />
           {/* Deep Green brand overlay to maintain consistency and text readability */}
           <div className="absolute inset-0 bg-[#50641B]/60 mix-blend-multiply"></div>
@@ -57,11 +58,12 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
               className="relative w-full h-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-none"
             >
               <Image
-                src="/mockup-oaza-mira.png"
+                src={(dict as any)["images.teaserMockup"] || "/mockup-oaza-mira.png"}
                 alt="Oaza Mira App Interface"
                 fill
                 className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-all duration-700"
                 priority
+                data-dict-key="images.teaserMockup"
               />
             </motion.div>
             

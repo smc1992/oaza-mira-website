@@ -33,9 +33,10 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.providersHero || "/hero_caretakers.webp"} 
+            src={(dict as any)["images.providersHero"] || pageImagesData.providersHero || "/hero_caretakers.webp"} 
             alt="Oaza Mira Providers" 
             className="w-full h-full object-cover"
+            data-dict-key="images.providersHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
