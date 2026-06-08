@@ -18,14 +18,45 @@ export default function VisualEditor({ lang }: { lang: string }) {
 
   const originalTexts = useRef<{ [key: string]: string }>({});
 
+  const [currentPage, setCurrentPage] = useState("");
+  const [currentLang, setCurrentLang] = useState(lang);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const pathname = window.location.pathname;
+      const parts = pathname.split("/").filter(Boolean);
+      const matchedLang = ["de", "en", "hr"].includes(parts[0]) ? parts[0] : "de";
+      const matchedPage = parts.slice(1).join("/") || "";
+      setCurrentLang(matchedLang);
+      setCurrentPage(matchedPage);
+    }
+  }, []);
+
+  const handleNavigate = (newPage: string, newLang: string) => {
+    if (Object.keys(changes).length > 0) {
+      const confirmNav = window.confirm(
+        "Sie haben ungespeicherte Änderungen. Möchten Sie diese wirklich verwerfen und die Seite wechseln?"
+      );
+      if (!confirmNav) return;
+    }
+    setCurrentPage(newPage);
+    setCurrentLang(newLang);
+    window.location.href = `/${newLang}/${newPage ? newPage : ""}?edit=true`;
+  };
+
   // 1. Initial Auth Check and URL detection
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const hasEditParam = searchParams.get("edit") === "true";
+    const hasSessionEdit = sessionStorage.getItem("oaza_mira_edit_mode") === "true";
 
-    if (!hasEditParam) {
+    if (!hasEditParam && !hasSessionEdit) {
       setCheckingAuth(false);
       return;
+    }
+
+    if (hasEditParam) {
+      sessionStorage.setItem("oaza_mira_edit_mode", "true");
     }
 
     setEnabled(true);
@@ -36,6 +67,8 @@ export default function VisualEditor({ lang }: { lang: string }) {
       .then((data) => {
         if (data.authenticated) {
           setAuthenticated(true);
+        } else {
+          sessionStorage.removeItem("oaza_mira_edit_mode");
         }
       })
       .catch((err) => console.error("Session check failed:", err))
@@ -229,6 +262,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "logout" }),
       });
+      sessionStorage.removeItem("oaza_mira_edit_mode");
       // Remove edit query and reload
       const url = new URL(window.location.href);
       url.searchParams.delete("edit");
@@ -338,6 +372,40 @@ export default function VisualEditor({ lang }: { lang: string }) {
               }
             </p>
           </div>
+        </div>
+
+        {/* Page & Language Selector */}
+        <div className="flex items-center gap-2 bg-slate-950/40 p-1.5 rounded-xl border border-slate-800">
+          {/* Page Selector */}
+          <select
+            value={currentPage}
+            onChange={(e) => handleNavigate(e.target.value, currentLang)}
+            className="bg-slate-800/90 border border-slate-700/50 text-white rounded-lg text-[11px] py-1.5 px-3 focus:outline-none focus:border-[#E9C36B] font-semibold cursor-pointer max-w-[150px] sm:max-w-none outline-none"
+          >
+            <option value="">🏠 Home (Startseite)</option>
+            <option value="how-it-works">🛠️ Wie es funktioniert</option>
+            <option value="families">👨‍👩‍👧‍👦 Für Familien</option>
+            <option value="business">💼 Für Unternehmen</option>
+            <option value="providers">💪 Für Dienstleister</option>
+            <option value="institutions">🏢 Für Institutionen</option>
+            <option value="about">ℹ️ Über uns</option>
+            <option value="contact">📞 Kontakt</option>
+            <option value="imprint">📄 Impressum</option>
+            <option value="cookie-policy">🍪 Cookie-Richtlinie</option>
+            <option value="privacy-policy">🔒 Datenschutz</option>
+            <option value="terms">⚖️ AGB</option>
+          </select>
+
+          {/* Language Selector */}
+          <select
+            value={currentLang}
+            onChange={(e) => handleNavigate(currentPage, e.target.value)}
+            className="bg-slate-800/90 border border-slate-700/50 text-white rounded-lg text-[11px] py-1.5 px-3 focus:outline-none focus:border-[#E9C36B] font-bold cursor-pointer outline-none"
+          >
+            <option value="de">🇩🇪 DE</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="hr">🇭🇷 HR</option>
+          </select>
         </div>
 
         {/* Action Controls */}
