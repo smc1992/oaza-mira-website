@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --color-gold: #E09D00;
+  --color-gold-light: #E9C36B;
+  --color-green-primary: #50641B;
+  --color-green-light: #B6C485;
+  --color-beige: #B8AE9F;
+  --color-white: #FFFFFF;
+  --font-heading: var(--font-maven-pro), sans-serif;
+  --font-body: var(--font-maven-pro), sans-serif;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  color: #333;
+  background-color: #FDFCF9 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+}
+
+/* Enforce Button Text Contrast overriding legacy Webflow CSS */
+a[class*="bg-emerald"],
+a[class*="bg-slate-9"],
+a[class*="bg-slate-8"],
+button[class*="bg-emerald"],
+button[class*="bg-slate-9"] {
+  color: #ffffff !important;
+}
+
+a.bg-white,
+button.bg-white {
+  color: var(--color-green-primary) !important;
+}
+
+a.text-emerald-700,
+a.text-emerald-600 {
+  color: var(--color-green-primary) !important;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 120s linear infinite;
+}

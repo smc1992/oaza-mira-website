@@ -1,0 +1,271 @@
+/* Oaza Mira - Premium Design Standards Override */
+/* Corporate Identity: Gold & Green Palette with Maven Pro Typography */
+
+:root {
+  --color-gold: #E09D00;
+  --color-gold-light: #E9C36B;
+  --color-green-primary: #50641B;
+  --color-green-light: #B6C485;
+  --color-beige: #B8AE9F;
+  --color-white: #FFFFFF;
+  --font-heading: 'Maven Pro', sans-serif;
+  --font-body: 'Maven Pro', sans-serif;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  color: #333;
+  background-color: var(--color-white) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .hero-heading, .mission-heading, .feasure-heading, .heading {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h1.hero-heading {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+}
+
+/* Glassmorphism Navbar */
+.navbar-no-shadow-2 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(80, 100, 27, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(80, 100, 27, 0.05);
+}
+
+.nav-link-2 {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  color: var(--color-green-primary) !important;
+  text-transform: none !important;
+}
+
+.nav-link-2:hover {
+  color: var(--color-gold) !important;
+}
+
+/* Primary CTA Buttons (Gold Gradient) */
+.portal-login-btn, .btn-wrapp, .cta-primary {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light)) !important;
+  color: var(--color-green-primary) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(224, 157, 0, 0.3) !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+}
+
+.portal-login-btn:hover, .btn-wrapp:hover, .cta-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 20px -3px rgba(224, 157, 0, 0.4) !important;
+}
+
+/* Secondary CTA Buttons (Green) */
+.cta-secondary {
+  background: linear-gradient(135deg, var(--color-green-primary), var(--color-green-light)) !important;
+  color: var(--color-white) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(80, 100, 27, 0.3) !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+}
+
+.cta-secondary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 20px -3px rgba(80, 100, 27, 0.4) !important;
+}
+
+.text-inner div {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+}
+
+/* Language Switchers */
+.lang-switchers .lang-btn {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--color-beige) !important;
+  transition: all 0.2s ease;
+}
+
+.lang-switchers .lang-btn.active {
+  background: var(--color-green-primary) !important;
+  border-color: var(--color-green-primary) !important;
+  color: var(--color-white) !important;
+}
+
+/* Care Plan Feature Cards */
+.feasure-cards .card, .content_card, .feature-card {
+  background-color: var(--color-white) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(80, 100, 27, 0.1) !important;
+  box-shadow: 0 10px 15px -3px rgba(80, 100, 27, 0.05) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feasure-cards .card:hover, .content_card:hover, .feature-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(80, 100, 27, 0.1) !important;
+}
+
+/* Hero Section - Dark Green Background */
+.nav-hero-section, .hero-section {
+  background: linear-gradient(135deg, var(--color-green-primary), #3d4d15) !important;
+  color: var(--color-white) !important;
+}
+
+.hero-section h1, .nav-hero-section h1 {
+  background: linear-gradient(135deg, var(--color-white), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Backgrounds */
+.section-light {
+  background-color: var(--color-white) !important;
+}
+
+.section-cream, .section-beige {
+  background-color: #FAF8F5 !important;
+}
+
+.section-green-light {
+  background-color: var(--color-green-light) !important;
+  background-opacity: 0.2 !important;
+}
+
+/* Accent Colors */
+.text-gold {
+  color: var(--color-gold) !important;
+}
+
+.text-gold-light {
+  color: var(--color-gold-light) !important;
+}
+
+.text-green-primary {
+  color: var(--color-green-primary) !important;
+}
+
+.text-green-light {
+  color: var(--color-green-light) !important;
+}
+
+.bg-gold {
+  background-color: var(--color-gold) !important;
+}
+
+.bg-gold-light {
+  background-color: var(--color-gold-light) !important;
+}
+
+.bg-green-primary {
+  background-color: var(--color-green-primary) !important;
+}
+
+.bg-green-light {
+  background-color: var(--color-green-light) !important;
+}
+
+.bg-beige {
+  background-color: var(--color-beige) !important;
+}
+
+/* Border Colors */
+.border-gold {
+  border-color: var(--color-gold) !important;
+}
+
+.border-green-primary {
+  border-color: var(--color-green-primary) !important;
+}
+
+.border-green-light {
+  border-color: var(--color-green-light) !important;
+}
+
+.border-beige {
+  border-color: var(--color-beige) !important;
+}
+
+/* Button overrides for Tailwind classes */
+.bg-emerald-500, .bg-emerald-600 {
+  background-color: var(--color-gold) !important;
+}
+
+.bg-emerald-700, .bg-emerald-800 {
+  background-color: var(--color-green-primary) !important;
+}
+
+.text-emerald-500, .text-emerald-600, .text-emerald-700 {
+  color: var(--color-green-primary) !important;
+}
+
+.hover\:bg-emerald-500:hover, .hover\:bg-emerald-600:hover {
+  background-color: var(--color-gold-light) !important;
+}
+
+.hover\:text-emerald-500:hover, .hover\:text-emerald-600:hover {
+  color: var(--color-gold) !important;
+}
+
+/* Focus states */
+.focus\:ring-emerald-500:focus, .focus\:ring-emerald-300:focus {
+  --tw-ring-color: var(--color-gold) !important;
+}
+
+/* Badge Styles */
+.badge {
+  background-color: var(--color-gold-light) !important;
+  color: var(--color-green-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Link Styles */
+a {
+  color: var(--color-green-primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-beige);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Steps/Process indicators */
+.step-number {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  color: var(--color-green-primary);
+}
+
+/* Footer */
+footer, .footer {
+  background-color: var(--color-green-primary) !important;
+  color: var(--color-white) !important;
+}
+
+footer a, .footer a {
+  color: var(--color-gold-light) !important;
+}
+
+footer a:hover, .footer a:hover {
+  color: var(--color-gold) !important;
+}

@@ -1,0 +1,18 @@
+{
+  "homeHero": "/Home_hero2.webp",
+  "registerHero": "/Hero_Register.webp",
+  "aboutHero": "/About_Hero2.webp",
+  "howItWorksHero": "/How_it_Works_Hero2.webp",
+  "readyToBeginHero": "/How_it_Works_Ready_to_Begin.webp",
+  "familiesHero": "/hero_families.webp",
+  "familiesInvite": "/families_invite_bg.jpg",
+  "familiesCaretaker": "/families_caretaker_bg.jpg",
+  "providersHero": "/hero_caretakers.webp",
+  "businessHero": "/hero_business.webp",
+  "institutionsHero": "/hero_institutions.webp",
+  "aboutCareHands": "/about_care_hands.png",
+  "aboutWhatWeDo": "/about_what_we_do.webp",
+  "aboutWhatWeDontDo": "/about_what_we_dont_do.webp",
+  "aboutSeeHowBg": "/about_see_how_bg.webp",
+  "howItWorksCtaBg": "/cta-bg.png"
+}
