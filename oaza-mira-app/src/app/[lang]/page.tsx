@@ -25,9 +25,10 @@ export default async function HomePage({
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={pageImagesData.homeHero || "/Home_hero2.webp"}
+            src={(dict as any)["images.homeHero"] || pageImagesData.homeHero || "/Home_hero2.webp"}
             alt="Oaza Mira Cemetery Background"
             className="w-full h-full object-cover"
+            data-dict-key="images.homeHero"
           />
           {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
           <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
@@ -105,9 +106,10 @@ export default async function HomePage({
                   {/* Emotional Background Image */}
                   <div className="absolute inset-0 z-0">
                     <img 
-                      src={pageImagesData.registerHero || "/Hero_Register.webp"} 
+                      src={(dict as any)["images.registerHero"] || pageImagesData.registerHero || "/Hero_Register.webp"} 
                       alt="Oaza Mira Care" 
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                      data-dict-key="images.registerHero"
                     />
                     {/* Deep Green / Black Overlay for readability */}
                     <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>

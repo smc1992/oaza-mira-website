@@ -88,42 +88,75 @@ export default function VisualEditor({ lang }: { lang: string }) {
         const key = htmlEl.getAttribute("data-dict-key");
         if (!key) return;
 
-        // Store original text
-        const currentText = htmlEl.innerText.trim();
-        originalTexts.current[key] = currentText;
+        const isImgTag = htmlEl.tagName === "IMG";
+        const isImage = isImgTag || htmlEl.getAttribute("data-editor-type") === "image";
 
-        // Apply editing attributes and classes
-        htmlEl.contentEditable = "true";
-        htmlEl.classList.add("editor-editable-element");
-        
-        // Inline styles for high-fidelity editor feedback (doesn't break original layouts)
-        htmlEl.style.position = "relative";
-        
-        // Listeners for focus and input
-        htmlEl.addEventListener("focus", () => {
-          htmlEl.style.outline = "2px solid #E9C36B";
-          htmlEl.style.borderRadius = "4px";
-          htmlEl.style.backgroundColor = "rgba(233, 195, 107, 0.05)";
-        });
+        // Store original value (src for images, innerText for text)
+        const currentVal = isImgTag 
+          ? (htmlEl as HTMLImageElement).getAttribute("src") || "" 
+          : (htmlEl.getAttribute("data-editor-type") === "image" 
+              ? htmlEl.style.backgroundImage.replace(/^url\(["']?|["']?\)$/g, "") 
+              : htmlEl.innerText.trim());
+              
+        originalTexts.current[key] = currentVal;
 
-        htmlEl.addEventListener("blur", () => {
-          htmlEl.style.outline = "";
-          htmlEl.style.borderRadius = "";
-          htmlEl.style.backgroundColor = "";
+        if (isImage) {
+          htmlEl.classList.add("editor-editable-image");
+          htmlEl.style.cursor = "pointer";
           
-          const newText = htmlEl.innerText.trim();
-          if (newText !== originalTexts.current[key]) {
-            setChanges((prev) => ({ ...prev, [key]: newText }));
-          } else {
-            setChanges((prev) => {
-              const updated = { ...prev };
-              delete updated[key];
-              return updated;
-            });
-          }
-        });
-        
-        // Intercept enter keys in inputs to prevent breaking layout structure if needed (optional)
+          const handleImageClick = (e: MouseEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const currentSrc = isImgTag 
+              ? (htmlEl as HTMLImageElement).getAttribute("src") || "" 
+              : htmlEl.style.backgroundImage.replace(/^url\(["']?|["']?\)$/g, "");
+              
+            const newUrl = prompt(`Enter new image URL/path for key "${key}":`, currentSrc);
+            if (newUrl !== null && newUrl.trim() !== "") {
+              const cleanedUrl = newUrl.trim();
+              if (isImgTag) {
+                (htmlEl as HTMLImageElement).src = cleanedUrl;
+              } else {
+                htmlEl.style.backgroundImage = `url('${cleanedUrl}')`;
+              }
+              setChanges((prev) => ({ ...prev, [key]: cleanedUrl }));
+            }
+          };
+          
+          htmlEl.addEventListener("click", handleImageClick);
+        } else {
+          // Apply editing attributes and classes
+          htmlEl.contentEditable = "true";
+          htmlEl.classList.add("editor-editable-element");
+          
+          // Inline styles for high-fidelity editor feedback (doesn't break original layouts)
+          htmlEl.style.position = "relative";
+          
+          // Listeners for focus and input
+          htmlEl.addEventListener("focus", () => {
+            htmlEl.style.outline = "2px solid #E9C36B";
+            htmlEl.style.borderRadius = "4px";
+            htmlEl.style.backgroundColor = "rgba(233, 195, 107, 0.05)";
+          });
+
+          htmlEl.addEventListener("blur", () => {
+            htmlEl.style.outline = "";
+            htmlEl.style.borderRadius = "";
+            htmlEl.style.backgroundColor = "";
+            
+            const newText = htmlEl.innerText.trim();
+            if (newText !== originalTexts.current[key]) {
+              setChanges((prev) => ({ ...prev, [key]: newText }));
+            } else {
+              setChanges((prev) => {
+                const updated = { ...prev };
+                delete updated[key];
+                return updated;
+              });
+            }
+          });
+        }
       });
 
       // Inject custom hover stylesheet dynamically
@@ -132,13 +165,26 @@ export default function VisualEditor({ lang }: { lang: string }) {
         const style = document.createElement("style");
         style.id = styleId;
         style.innerHTML = `
+          .editor-editable-element {
+            position: relative;
+          }
           .editor-editable-element:hover {
             outline: 1px dashed #E9C36B !important;
             cursor: pointer;
             border-radius: 4px;
             background-color: rgba(233, 195, 107, 0.03) !important;
           }
-          .editor-editable-element::after {
+          .editor-editable-image {
+            position: relative;
+            transition: all 0.2s ease;
+          }
+          .editor-editable-image:hover {
+            outline: 3px dashed #E09D00 !important;
+            outline-offset: -3px;
+            box-shadow: 0 0 15px rgba(224, 157, 0, 0.4) !important;
+            cursor: pointer;
+          }
+          .editor-editable-element::after, .editor-editable-image::after {
             content: attr(data-dict-key);
             position: absolute;
             top: -16px;
@@ -154,7 +200,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
             z-index: 50;
             font-family: monospace;
           }
-          .editor-editable-element:hover::after {
+          .editor-editable-element:hover::after, .editor-editable-image:hover::after {
             opacity: 0.7;
           }
         `;
@@ -169,9 +215,10 @@ export default function VisualEditor({ lang }: { lang: string }) {
       editableElements.forEach((el) => {
         const htmlEl = el as HTMLElement;
         htmlEl.contentEditable = "false";
-        htmlEl.classList.remove("editor-editable-element");
+        htmlEl.classList.remove("editor-editable-element", "editor-editable-image");
         htmlEl.style.outline = "";
         htmlEl.style.backgroundColor = "";
+        htmlEl.style.cursor = "";
       });
       const style = document.getElementById("visual-editor-hover-styles");
       if (style) style.remove();
@@ -248,7 +295,13 @@ export default function VisualEditor({ lang }: { lang: string }) {
       const htmlEl = el as HTMLElement;
       const key = htmlEl.getAttribute("data-dict-key");
       if (key && originalTexts.current[key] !== undefined) {
-        htmlEl.innerText = originalTexts.current[key];
+        if (htmlEl.tagName === "IMG") {
+          (htmlEl as HTMLImageElement).src = originalTexts.current[key];
+        } else if (htmlEl.getAttribute("data-editor-type") === "image") {
+          htmlEl.style.backgroundImage = `url('${originalTexts.current[key]}')`;
+        } else {
+          htmlEl.innerText = originalTexts.current[key];
+        }
       }
     });
     setChanges({});
