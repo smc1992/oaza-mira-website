@@ -35,7 +35,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
   const handleNavigate = (newPage: string, newLang: string) => {
     if (Object.keys(changes).length > 0) {
       const confirmNav = window.confirm(
-        "Sie haben ungespeicherte Änderungen. Möchten Sie diese wirklich verwerfen und die Seite wechseln?"
+        "You have unsaved changes. Are you sure you want to discard them and switch pages?"
       );
       if (!confirmNav) return;
     }
@@ -300,14 +300,14 @@ export default function VisualEditor({ lang }: { lang: string }) {
             </div>
             <h2 className="text-2xl font-bold text-white tracking-tight">Oaza Mira Visual Editor</h2>
             <p className="text-emerald-100/70 text-sm mt-2">
-              Geben Sie das Passwort ein, um den visuellen Bearbeitungsmodus freizuschalten.
+              Enter the password to unlock the visual editing mode.
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-[#E9C36B] mb-2">
-                Passwort
+                Password
               </label>
               <input
                 type="password"
@@ -334,7 +334,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
                 <Loader2 className="animate-spin h-5 w-5" />
               ) : (
                 <>
-                  <Lock size={18} /> Freischalten
+                  <Lock size={18} /> Unlock
                 </>
               )}
             </button>
@@ -367,8 +367,8 @@ export default function VisualEditor({ lang }: { lang: string }) {
             </div>
             <p className="text-xs text-slate-400 mt-0.5">
               {changeCount === 0 
-                ? "Klicke auf Textelemente auf der Seite, um sie direkt zu bearbeiten."
-                : `${changeCount} ungespeicherte Änderung(en)`
+                ? "Click on text elements on the page to edit them inline."
+                : `${changeCount} unsaved change(s)`
               }
             </p>
           </div>
@@ -382,18 +382,18 @@ export default function VisualEditor({ lang }: { lang: string }) {
             onChange={(e) => handleNavigate(e.target.value, currentLang)}
             className="bg-slate-800/90 border border-slate-700/50 text-white rounded-lg text-[11px] py-1.5 px-3 focus:outline-none focus:border-[#E9C36B] font-semibold cursor-pointer max-w-[150px] sm:max-w-none outline-none"
           >
-            <option value="">🏠 Home (Startseite)</option>
-            <option value="how-it-works">🛠️ Wie es funktioniert</option>
-            <option value="families">👨‍👩‍👧‍👦 Für Familien</option>
-            <option value="business">💼 Für Unternehmen</option>
-            <option value="providers">💪 Für Dienstleister</option>
-            <option value="institutions">🏢 Für Institutionen</option>
-            <option value="about">ℹ️ Über uns</option>
-            <option value="contact">📞 Kontakt</option>
-            <option value="imprint">📄 Impressum</option>
-            <option value="cookie-policy">🍪 Cookie-Richtlinie</option>
-            <option value="privacy-policy">🔒 Datenschutz</option>
-            <option value="terms">⚖️ AGB</option>
+            <option value="">🏠 Home</option>
+            <option value="how-it-works">🛠️ How It Works</option>
+            <option value="families">👨‍👩‍👧‍👦 For Families</option>
+            <option value="business">💼 For Companies</option>
+            <option value="providers">💪 For Caretakers</option>
+            <option value="institutions">🏢 For Institutions</option>
+            <option value="about">ℹ️ About Us</option>
+            <option value="contact">📞 Contact</option>
+            <option value="imprint">📄 Imprint</option>
+            <option value="cookie-policy">🍪 Cookie Policy</option>
+            <option value="privacy-policy">🔒 Privacy Policy</option>
+            <option value="terms">⚖️ Terms</option>
           </select>
 
           {/* Language Selector */}
@@ -417,7 +417,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
                 onClick={handleDiscardChanges}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/50 text-xs font-bold transition-all"
               >
-                <RotateCcw size={14} /> Verwerfen
+                <RotateCcw size={14} /> Discard
               </button>
 
               {/* Save Changes Button */}
@@ -437,7 +437,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
                 ) : (
                   <Save size={14} />
                 )}
-                {saveStatus === "success" ? "Gespeichert!" : "Speichern"}
+                {saveStatus === "success" ? "Saved!" : "Save"}
               </button>
             </>
           )}
@@ -445,7 +445,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
           {/* Spacer if no changes, to align nicely */}
           {changeCount === 0 && (
             <span className="text-xs text-emerald-500/80 flex items-center gap-1.5 font-semibold bg-emerald-500/5 border border-emerald-500/10 rounded-xl px-3 py-2 mr-2">
-              <Check size={12} /> Live-Bearbeitungsmodus aktiv
+              <Check size={12} /> Visual Edit Mode Active
             </span>
           )}
 
@@ -455,10 +455,10 @@ export default function VisualEditor({ lang }: { lang: string }) {
           {/* Abmelden / Exit Button */}
           <button
             onClick={handleLogout}
-            title="Editor beenden"
+            title="Exit Editor"
             className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 text-xs font-bold transition-all border border-rose-500/10"
           >
-            <LogOut size={14} /> Beenden
+            <LogOut size={14} /> Exit
           </button>
         </div>
       </div>
