@@ -74,14 +74,14 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
             <AnimatedSection>
               <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/20 border border-white/20 text-[#E9C36B] font-bold mb-10 text-xs md:text-sm uppercase tracking-[0.3em] backdrop-blur-md shadow-lg group hover:bg-[#E09D00]/20 transition-all transform-gpu translate-z-0">
                 <Smartphone size={18} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
-                <span>{dict["teaser.badge"]}</span>
+                <span data-dict-key="teaser.badge">{dict["teaser.badge"]}</span>
               </div>
 
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem] font-black text-white mb-10 tracking-tightest leading-[0.95] drop-shadow-2xl text-balance">
+              <h2 data-dict-key="teaser.title" className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem] font-black text-white mb-10 tracking-tightest leading-[0.95] drop-shadow-2xl text-balance">
                 {dict["teaser.title"]}
               </h2>
               
-              <p className="text-lg md:text-xl text-white/90 mb-12 md:mb-16 leading-relaxed max-w-xl font-medium drop-shadow-sm">
+              <p data-dict-key="teaser.desc" className="text-lg md:text-xl text-white/90 mb-12 md:mb-16 leading-relaxed max-w-xl font-medium drop-shadow-sm">
                 {dict["teaser.desc"]}
               </p>
             </AnimatedSection>
@@ -94,8 +94,8 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
                     <CheckCircle2 size={28} strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h4 className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature1.title"]}</h4>
-                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature1.desc"]}</p>
+                    <h4 data-dict-key="teaser.feature1.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature1.title"]}</h4>
+                    <p data-dict-key="teaser.feature1.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature1.desc"]}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -107,8 +107,8 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
                     <Camera size={28} strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h4 className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature2.title"]}</h4>
-                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature2.desc"]}</p>
+                    <h4 data-dict-key="teaser.feature2.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature2.title"]}</h4>
+                    <p data-dict-key="teaser.feature2.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature2.desc"]}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -120,8 +120,8 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
                     <ShieldCheck size={28} strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h4 className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature3.title"]}</h4>
-                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature3.desc"]}</p>
+                    <h4 data-dict-key="teaser.feature3.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature3.title"]}</h4>
+                    <p data-dict-key="teaser.feature3.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature3.desc"]}</p>
                   </div>
                 </div>
               </AnimatedSection>

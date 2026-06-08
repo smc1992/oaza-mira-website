@@ -10,3 +10,6 @@ firebase-debug.log
 .vscode/
 .idea/
 .trae/
+
+# Local Netlify folder
+.netlify
