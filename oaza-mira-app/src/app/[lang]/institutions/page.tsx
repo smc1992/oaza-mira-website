@@ -46,21 +46,21 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
               <Landmark size={16} className="text-[#E9C36B]" strokeWidth={2.5} />
-              <span>{dict["nav.institutions"] || "Institutions & Municipalities"}</span>
+              <span data-dict-key="nav.institutions">{dict["nav.institutions"] || "Institutions & Municipalities"}</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["institutions.hero.title1"]} <br/>
-              <span className="text-white">{dict["institutions.hero.title2"]}</span>
+              <span data-dict-key="institutions.hero.title1">{dict["institutions.hero.title1"]}</span> <br/>
+              <span data-dict-key="institutions.hero.title2" className="text-white">{dict["institutions.hero.title2"]}</span>
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p data-dict-key="institutions.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["institutions.hero.desc"]}
             </p>
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
               <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                {dict["institutions.hero.cta"]} <ArrowRight className="ml-2 w-5 h-5" />
+                <span data-dict-key="institutions.hero.cta">{dict["institutions.hero.cta"]}</span> <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 md:pt-24 mb-32 z-10 relative">
         <AnimatedSection delay={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#333] mb-6">{dict["institutions.steps.title"]}</h2>
+            <h2 data-dict-key="institutions.steps.title" className="text-4xl md:text-5xl font-bold text-[#333] mb-6">{dict["institutions.steps.title"]}</h2>
             <div className="h-1.5 w-24 bg-[#E09D00] mx-auto rounded-full"></div>
           </div>
           
@@ -82,8 +82,8 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
                 <Handshake size={32} />
               </div>
               <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 01</div>
-              <h3 className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step1.title"]}</h3>
-              <p className="text-[#8E8675] leading-relaxed">
+              <h3 data-dict-key="institutions.step1.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step1.title"]}</h3>
+              <p data-dict-key="institutions.step1.desc" className="text-[#8E8675] leading-relaxed">
                 {dict["institutions.step1.desc"]}
               </p>
             </div>
@@ -94,8 +94,8 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
                 <FolderKanban size={32} />
               </div>
               <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 02</div>
-              <h3 className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step2.title"]}</h3>
-              <p className="text-[#8E8675] leading-relaxed">
+              <h3 data-dict-key="institutions.step2.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step2.title"]}</h3>
+              <p data-dict-key="institutions.step2.desc" className="text-[#8E8675] leading-relaxed">
                 {dict["institutions.step2.desc"]}
               </p>
             </div>
@@ -106,8 +106,8 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
                 <ShieldCheck size={32} />
               </div>
               <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 03</div>
-              <h3 className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step3.title"]}</h3>
-              <p className="text-[#8E8675] leading-relaxed">
+              <h3 data-dict-key="institutions.step3.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step3.title"]}</h3>
+              <p data-dict-key="institutions.step3.desc" className="text-[#8E8675] leading-relaxed">
                 {dict["institutions.step3.desc"]}
               </p>
             </div>
@@ -126,10 +126,10 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
               <div className="bg-white/10 w-20 h-20 rounded-[2rem] flex items-center justify-center text-white mx-auto mb-8 backdrop-blur-md border border-white/20">
                 <Landmark size={40} />
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-10">{dict["institutions.register.cta"]}</h2>
+              <h2 data-dict-key="institutions.register.cta" className="text-3xl md:text-5xl font-bold mb-10">{dict["institutions.register.cta"]}</h2>
               <div className="flex justify-center">
                 <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                  {dict["btn.register"] || "Register"} <ArrowRight className="ml-2 w-6 h-6" />
+                  <span data-dict-key="btn.register">{dict["btn.register"] || "Register"}</span> <ArrowRight className="ml-2 w-6 h-6" />
                 </Link>
               </div>
             </div>

@@ -46,21 +46,21 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
               <Building2 size={16} className="text-[#E9C36B]" strokeWidth={2.5} />
-              <span>{dict["nav.companies"] || "Corporate Services"}</span>
+              <span data-dict-key="nav.companies">{dict["nav.companies"] || "Corporate Services"}</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["business.hero.title1"]} <br/>
-              <span className="text-white">{dict["business.hero.title2"]}</span>
+              <span data-dict-key="business.hero.title1">{dict["business.hero.title1"]}</span> <br/>
+              <span data-dict-key="business.hero.title2" className="text-white">{dict["business.hero.title2"]}</span>
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p data-dict-key="business.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["business.hero.desc"]}
             </p>
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
               <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                {dict["business.hero.cta"]} <ArrowRight className="ml-2 w-5 h-5" />
+                <span data-dict-key="business.hero.cta">{dict["business.hero.cta"]}</span> <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -80,8 +80,8 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm relative z-10">
                 <HeartHandshake size={32} />
               </div>
-              <h2 className="text-3xl font-bold text-[#333] mb-6 relative z-10">{dict["business.pillar1.title"]}</h2>
-              <p className="text-[#B8AE9F] text-lg leading-relaxed relative z-10">
+              <h2 data-dict-key="business.pillar1.title" className="text-3xl font-bold text-[#333] mb-6 relative z-10">{dict["business.pillar1.title"]}</h2>
+              <p data-dict-key="business.pillar1.desc" className="text-[#B8AE9F] text-lg leading-relaxed relative z-10">
                 {dict["business.pillar1.desc"]}
               </p>
             </div>
@@ -98,8 +98,8 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               <div className="bg-white/10 border border-white/20 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 backdrop-blur-sm relative z-10">
                 <Globe2 size={32} />
               </div>
-              <h2 className="text-3xl font-bold mb-6 relative z-10">{dict["business.pillar2.title"]}</h2>
-              <p className="text-white/80 text-lg leading-relaxed relative z-10">
+              <h2 data-dict-key="business.pillar2.title" className="text-3xl font-bold mb-6 relative z-10">{dict["business.pillar2.title"]}</h2>
+              <p data-dict-key="business.pillar2.desc" className="text-white/80 text-lg leading-relaxed relative z-10">
                 {dict["business.pillar2.desc"]}
               </p>
             </div>
@@ -118,12 +118,12 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               <div className="bg-[#E9C36B]/30 w-20 h-20 rounded-[2rem] flex items-center justify-center text-[#E09D00] mx-auto mb-8 border border-[#E09D00]/30">
                 <BriefcaseBusiness size={40} />
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#333] mb-6 tracking-tight">{dict["business.cta.title"]}</h2>
-              <p className="text-[#B8AE9F] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+              <h2 data-dict-key="business.cta.title" className="text-4xl md:text-5xl font-bold text-[#333] mb-6 tracking-tight">{dict["business.cta.title"]}</h2>
+              <p data-dict-key="business.cta.desc" className="text-[#B8AE9F] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
                 {dict["business.cta.desc"]}
               </p>
               <Link href={`/${lang}/how-it-works`} className="portal-login-btn inline-flex items-center justify-center px-10 py-5 font-bold text-lg">
-                {dict["nav.howItWorks"] || "See how it works"} <ArrowRight className="ml-3 w-5 h-5" />
+                <span data-dict-key="nav.howItWorks">{dict["nav.howItWorks"] || "See how it works"}</span> <ArrowRight className="ml-3 w-5 h-5" />
               </Link>
             </div>
           </div>

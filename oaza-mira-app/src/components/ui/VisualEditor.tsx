@@ -394,6 +394,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
             <option value="cookie-policy">🍪 Cookie Policy</option>
             <option value="privacy-policy">🔒 Privacy Policy</option>
             <option value="terms">⚖️ Terms</option>
+            <option value="refund-policy">💸 Refund Policy</option>
           </select>
 
           {/* Language Selector */}

@@ -147,14 +147,14 @@ export default async function HowItWorksPage({
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
-              <Play size={16} strokeWidth={2.5} /> {dict["howitworks.eyebrow"] || "How It Works"}
+              <Play size={16} strokeWidth={2.5} /> <span data-dict-key="howitworks.eyebrow">{dict["howitworks.eyebrow"] || "How It Works"}</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
+            <h1 data-dict-key="howitworks.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               {dict["howitworks.title"] || "Simple Care. Lasting Peace of Mind."}
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p data-dict-key="howitworks.subtitle" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["howitworks.subtitle"] || "Getting started is simple. Follow a few clear steps to ensure ongoing, reliable care."}
             </p>
           </div>
@@ -167,10 +167,10 @@ export default async function HowItWorksPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection delay={0.2}>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#333]">
+              <h2 data-dict-key="howitworks.steps.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#333]">
                 {dict["howitworks.steps.title"] || "How It Works"}
               </h2>
-              <p className="mt-6 text-xl text-[#8E8675] max-w-2xl mx-auto font-medium">
+              <p data-dict-key="howitworks.steps.subtitle" className="mt-6 text-xl text-[#8E8675] max-w-2xl mx-auto font-medium">
                 {dict["howitworks.steps.subtitle"] || "Getting started is simple. Follow a few clear steps to ensure ongoing, reliable care."}
               </p>
               <div className="w-24 h-1 bg-[#E09D00] mx-auto mt-6 rounded-full"></div>
@@ -192,8 +192,8 @@ export default async function HowItWorksPage({
                       <div className="bg-gradient-to-br from-[#E9C36B]/40 to-[#E09D00]/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-white">
                         <step.icon className="text-[#A26D00]" size={28} />
                       </div>
-                      <h3 className="text-xl font-bold text-[#333] mb-3">{step.title}</h3>
-                      <p className="text-[#7A7366] leading-relaxed font-medium">{step.description}</p>
+                      <h3 data-dict-key={`howitworks.step${index + 1}.title`} className="text-xl font-bold text-[#333] mb-3">{step.title}</h3>
+                      <p data-dict-key={`howitworks.step${index + 1}.desc`} className="text-[#7A7366] leading-relaxed font-medium">{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -224,10 +224,10 @@ export default async function HowItWorksPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection delay={0.2}>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
+              <h2 data-dict-key="howitworks.features.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
                 {dict["howitworks.features.title"] || "What Makes Oaza Mira Special"}
               </h2>
-              <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto drop-shadow-md">
+              <p data-dict-key="howitworks.features.subtitle" className="mt-6 text-xl text-white/80 max-w-2xl mx-auto drop-shadow-md">
                 {dict["howitworks.features.subtitle"] || "We've built a platform that prioritizes trust, transparency, and compassion."}
               </p>
               <div className="w-24 h-1 bg-[#E9C36B]/60 mx-auto mt-8 rounded-full"></div>
@@ -241,8 +241,8 @@ export default async function HowItWorksPage({
                 <div className="bg-gradient-to-br from-[#E9C36B]/20 to-[#E9C36B]/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-[#E9C36B]/30 shadow-[0_0_20px_rgba(233,195,107,0.15)] group-hover:scale-110 transition-transform duration-500">
                   <feature.icon className="text-[#E9C36B]" strokeWidth={1.5} size={30} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
-                <p className="text-white/80 text-sm md:text-base leading-relaxed">{feature.description}</p>
+                <h3 data-dict-key={`howitworks.feature${index + 1}.title`} className="text-xl font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
+                <p data-dict-key={`howitworks.feature${index + 1}.desc`} className="text-white/80 text-sm md:text-base leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -262,10 +262,10 @@ export default async function HowItWorksPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection delay={0.2}>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2a360e]">
+              <h2 data-dict-key="howitworks.testimonials.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2a360e]">
                 {dict["howitworks.testimonials.title"] || "Families Trust Oaza Mira"}
               </h2>
-              <p className="mt-6 text-xl text-[#50641B]/80 max-w-2xl mx-auto">
+              <p data-dict-key="howitworks.testimonials.subtitle" className="mt-6 text-xl text-[#50641B]/80 max-w-2xl mx-auto">
                 {dict["howitworks.testimonials.subtitle"] || "See what families around Europe have to say about their experience."}
               </p>
               <div className="w-24 h-1 bg-[#E9C36B] mx-auto mt-8 rounded-full"></div>
@@ -282,7 +282,7 @@ export default async function HowItWorksPage({
                         <Star key={i} className="text-[#E09D00] fill-[#E09D00]" size={18} />
                       ))}
                     </div>
-                    <p className="text-[#4A4A4A] leading-relaxed mb-8 italic text-lg">"{testimonial.text}"</p>
+                    <p data-dict-key={`howitworks.testimonial${index + 1}`} className="text-[#4A4A4A] leading-relaxed mb-8 italic text-lg">{testimonial.text}</p>
                   </div>
                   <div className="flex items-center gap-4 mt-auto">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#E9C36B]/20 to-transparent rounded-full flex items-center justify-center border border-[#E9C36B]/30 group-hover:scale-110 transition-transform duration-500">
@@ -315,10 +315,10 @@ export default async function HowItWorksPage({
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-8">
+            <h2 data-dict-key="howitworks.cta.title" className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-8">
               {dict["howitworks.cta.title"] || "Ready to Begin?"}
             </h2>
-            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto">
+            <p data-dict-key="howitworks.cta.subtitle" className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto">
               {dict["howitworks.cta.subtitle"] || "Join hundreds of families who trust Oaza Mira to care for their loved ones."}
             </p>
             <div className="flex justify-center">
@@ -326,7 +326,7 @@ export default async function HowItWorksPage({
                 href="#portal" 
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20"
               >
-                {dict["howitworks.cta.primary"] || "Download App & Register"}
+                <span data-dict-key="howitworks.cta.primary">{dict["howitworks.cta.primary"] || "Download App & Register"}</span>
                 <ArrowRight size={20} />
               </Link>
             </div>

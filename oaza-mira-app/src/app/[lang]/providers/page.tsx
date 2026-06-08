@@ -53,21 +53,21 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
               <Store size={16} strokeWidth={2.5} />
-              <span>{dict["nav.caretakers"] || "Caretakers"}</span>
+              <span data-dict-key="nav.caretakers">{dict["nav.caretakers"] || "Caretakers"}</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["providers.hero.title1"]} <br/>
-              <span className="text-white">{dict["providers.hero.title2"]}</span>
+              <span data-dict-key="providers.hero.title1">{dict["providers.hero.title1"]}</span> <br/>
+              <span data-dict-key="providers.hero.title2" className="text-white">{dict["providers.hero.title2"]}</span>
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p data-dict-key="providers.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["providers.hero.desc"]}
             </p>
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
               <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                {dict["providers.hero.cta"]} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                <span data-dict-key="providers.hero.cta">{dict["providers.hero.cta"]}</span> <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 md:pt-24 mb-32 relative z-10">
         <AnimatedSection delay={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#333]">{dict["providers.adv.title"]}</h2>
+            <h2 data-dict-key="providers.adv.title" className="text-3xl md:text-4xl font-bold text-[#333]">{dict["providers.adv.title"]}</h2>
             <div className="h-1 w-20 bg-[#E09D00] mx-auto mt-6 rounded-full"></div>
           </div>
           
@@ -88,8 +88,8 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
                 <div className="bg-[#E9C36B]/30 w-14 h-14 rounded-2xl flex items-center justify-center text-[#E09D00] mb-6 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm">
                   <adv.icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-[#333] mb-3">{adv.title}</h3>
-                <p className="text-[#8E8675] leading-relaxed">{adv.desc}</p>
+                <h3 data-dict-key={`providers.adv.${index + 1}.title`} className="text-xl font-bold text-[#333] mb-3">{adv.title}</h3>
+                <p data-dict-key={`providers.adv.${index + 1}.desc`} className="text-[#8E8675] leading-relaxed">{adv.desc}</p>
               </div>
             ))}
           </div>
@@ -107,17 +107,17 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
                 <HandHeart size={40} className="drop-shadow-sm" />
               </div>
               
-              <h2 className="text-3xl md:text-5xl font-bold text-[#333] mb-6 tracking-tight">
+              <h2 data-dict-key="providers.app.title" className="text-3xl md:text-5xl font-bold text-[#333] mb-6 tracking-tight">
                 {dict["providers.app.title"]}
               </h2>
               
-              <p className="text-[#8E8675] text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p data-dict-key="providers.app.desc" className="text-[#8E8675] text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
                 {dict["providers.app.desc"]}
               </p>
               
               <div className="flex justify-center">
                 <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20 group/btn">
-                  {dict["providers.app.cta"]} <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
+                  <span data-dict-key="providers.app.cta">{dict["providers.app.cta"]}</span> <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
                 </Link>
               </div>
             </div>

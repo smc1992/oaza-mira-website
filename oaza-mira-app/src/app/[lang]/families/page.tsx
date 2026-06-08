@@ -46,21 +46,21 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
               <Users size={16} strokeWidth={2.5} />
-              <span>{dict["nav.families"] || "For Families"}</span>
+              <span data-dict-key="nav.families">{dict["nav.families"] || "For Families"}</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["families.hero.title1"]} <br/>
-              <span className="text-white">{dict["families.hero.title2"]}</span>
+              <span data-dict-key="families.hero.title1">{dict["families.hero.title1"]}</span> <br/>
+              <span data-dict-key="families.hero.title2" className="text-white">{dict["families.hero.title2"]}</span>
             </h1>
             
-            <p className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p data-dict-key="families.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["families.hero.desc"]}
             </p>
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
               <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                {dict["families.hero.cta"] || "Register"}
+                <span data-dict-key="families.hero.cta">{dict["families.hero.cta"] || "Register"}</span>
               </Link>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 md:pt-24 mb-32 z-10 relative">
         <AnimatedSection delay={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#333]">{dict["families.how.title"]}</h2>
+            <h2 data-dict-key="families.how.title" className="text-3xl md:text-4xl font-bold text-[#333]">{dict["families.how.title"]}</h2>
             <div className="h-1 w-20 bg-[#E09D00] mx-auto mt-6 rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -89,8 +89,8 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-6 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm relative z-10">
                   <step.icon size={28} />
                 </div>
-                <h3 className="text-xl font-bold text-[#333] mb-3 relative z-10">{step.title}</h3>
-                <p className="text-[#8E8675] leading-relaxed relative z-10">{step.desc}</p>
+                <h3 data-dict-key={`families.how.${index + 1}.title`} className="text-xl font-bold text-[#333] mb-3 relative z-10">{step.title}</h3>
+                <p data-dict-key={`families.how.${index + 1}.desc`} className="text-[#8E8675] leading-relaxed relative z-10">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -118,12 +118,12 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 <div className="bg-white/10 border border-white/20 w-14 h-14 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 backdrop-blur-md">
                   <Users size={24} />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-md">{dict["families.invite.title"]}</h2>
-                <p className="text-white/90 text-lg leading-relaxed mb-auto pb-10 drop-shadow-sm font-medium">
+                <h2 data-dict-key="families.invite.title" className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-md">{dict["families.invite.title"]}</h2>
+                <p data-dict-key="families.invite.desc" className="text-white/90 text-lg leading-relaxed mb-auto pb-10 drop-shadow-sm font-medium">
                   {dict["families.invite.desc"]}
                 </p>
                 <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                  {dict["families.invite.cta"] || "Share with family"}
+                  <span data-dict-key="families.invite.cta">{dict["families.invite.cta"] || "Share with family"}</span>
                 </Link>
               </div>
             </div>
@@ -143,12 +143,12 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 <div className="bg-[#E9C36B]/40 w-14 h-14 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 shadow-sm backdrop-blur-sm">
                   <Mail size={24} />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#333] mb-6 drop-shadow-sm">{dict["families.know.title"]}</h2>
-                <p className="text-[#555] text-lg leading-relaxed mb-auto pb-10 font-medium">
+                <h2 data-dict-key="families.know.title" className="text-3xl md:text-4xl font-bold text-[#333] mb-6 drop-shadow-sm">{dict["families.know.title"]}</h2>
+                <p data-dict-key="families.know.desc" className="text-[#555] text-lg leading-relaxed mb-auto pb-10 font-medium">
                   {dict["families.know.desc"]}
                 </p>
                 <Link href="#portal" className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 group/btn shadow-lg border border-white/20">
-                  {dict["families.know.cta"] || "Invite Your Caretaker"} <ArrowRight size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                  <span data-dict-key="families.know.cta">{dict["families.know.cta"] || "Invite Your Caretaker"}</span> <ArrowRight size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
             </div>

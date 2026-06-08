@@ -26,12 +26,12 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24 mt-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E9C36B]/30 text-[#50641B] font-bold text-sm mb-6 shadow-sm border border-[#E09D00]/50 backdrop-blur-sm">
               <Mail size={16} />
-              <span>{dict["contact.badge"]}</span>
+              <span data-dict-key="contact.badge">{dict["contact.badge"]}</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#333] mb-6 drop-shadow-sm">
-              {dict["contact.title1"]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E09D00] to-[#50641B]">{dict["contact.title2"]}</span>
+              <span data-dict-key="contact.title1">{dict["contact.title1"]}</span> <span data-dict-key="contact.title2" className="text-transparent bg-clip-text bg-gradient-to-r from-[#E09D00] to-[#50641B]">{dict["contact.title2"]}</span>
             </h1>
-            <p className="text-xl text-[#8E8675] leading-relaxed font-semibold">
+            <p data-dict-key="contact.desc" className="text-xl text-[#8E8675] leading-relaxed font-semibold">
               {dict["contact.desc"]}
             </p>
           </div>
@@ -47,8 +47,8 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B6C485]/30 rounded-full blur-[80px] -ml-20 -mb-20"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-extrabold text-[#333] mb-2">{dict["contact.form.title"]}</h3>
-                  <p className="text-[#8E8675] mb-10 font-semibold">{dict["contact.form.desc"]}</p>
+                  <h3 data-dict-key="contact.form.title" className="text-3xl font-extrabold text-[#333] mb-2">{dict["contact.form.title"]}</h3>
+                  <p data-dict-key="contact.form.desc" className="text-[#8E8675] mb-10 font-semibold">{dict["contact.form.desc"]}</p>
                   
                   <div className="w-full min-h-[863px]">
                     <iframe
@@ -85,10 +85,10 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             
             <div className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between">
               <div className="max-w-xl text-center lg:text-left">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                <h2 data-dict-key="contact.newsletter.title" className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
                   {dict["contact.newsletter.title"]}
                 </h2>
-                <p className="text-lg text-white/80 leading-relaxed font-semibold">
+                <p data-dict-key="contact.newsletter.desc" className="text-lg text-white/80 leading-relaxed font-semibold">
                   {dict["contact.newsletter.desc"]}
                 </p>
               </div>
@@ -99,11 +99,11 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                     placeholder="name@email.com" 
                     className="flex-1 bg-white/10 border-2 border-white/20 rounded-2xl px-6 py-5 text-white placeholder-white/60 focus:outline-none focus:border-[#E09D00]/50 focus:bg-white/10 transition-all font-semibold"
                   />
-                  <button className="bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white hover:scale-105 px-8 py-5 font-extrabold rounded-2xl whitespace-nowrap shadow-lg transition-all border border-white/20">
+                  <button data-dict-key="contact.newsletter.btn" className="bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white hover:scale-105 px-8 py-5 font-extrabold rounded-2xl whitespace-nowrap shadow-lg transition-all border border-white/20">
                     {dict["contact.newsletter.btn"]}
                   </button>
                 </div>
-                <p className="text-sm font-medium text-white/60 mt-4 text-center lg:text-left">
+                <p data-dict-key="contact.newsletter.disclaimer" className="text-sm font-medium text-white/60 mt-4 text-center lg:text-left">
                   {dict["contact.newsletter.disclaimer"]}
                 </p>
               </div>
