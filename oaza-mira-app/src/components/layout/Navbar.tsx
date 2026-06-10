@@ -427,7 +427,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
               {/* Okay Button */}
               <button
                 onClick={() => setIsWebAppModalOpen(false)}
-                className="w-full py-3 px-6 rounded-full bg-[#E09D00] text-[#1a2308] hover:bg-[#E9C36B] font-black tracking-wide shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5"
+                className="w-full py-3 px-6 rounded-full bg-[#E09D00] !text-white hover:bg-[#E9C36B] font-black tracking-wide shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5"
               >
                 {dict["popup.close"] || "Okay"}
               </button>
