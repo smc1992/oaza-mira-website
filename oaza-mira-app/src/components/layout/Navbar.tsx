@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Users, Building2, Building, HeartHandshake } from "lucide-react";
+import { ChevronDown, Users, Building2, Building, HeartHandshake, Globe, X } from "lucide-react";
 import MagneticPull from "@/components/ui/MagneticPull";
 
 export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
@@ -12,6 +12,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isWebAppModalOpen, setIsWebAppModalOpen] = useState(false);
   const pathname = usePathname();
 
   const megaMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -55,6 +56,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
     setIsLangMenuOpen(false);
+    setIsWebAppModalOpen(false);
   };
 
   const switchLanguage = (newLang: string) => {
@@ -316,7 +318,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
             >
               <span className="text-base sm:text-lg leading-none drop-shadow-sm">{lang === 'de' ? '🇩🇪' : lang === 'hr' ? '🇭🇷' : '🇬🇧'}</span>
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase !text-slate-800">{lang === 'en' ? 'English' : lang === 'de' ? 'Deutsch' : 'Hrvatski'}</span>
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase !text-slate-800">{lang === 'en' ? 'EN' : lang === 'de' ? 'DE' : 'HR'}</span>
               <ChevronDown size={14} className={`!text-slate-600 transition-transform duration-300 ${isLangMenuOpen ? "rotate-180" : ""}`} />
             </button>
             
@@ -327,12 +329,12 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full right-0 mt-2 bg-white/95 backdrop-blur-xl border border-slate-200/60 p-1.5 rounded-2xl shadow-xl z-[120] min-w-[150px] sm:min-w-[180px] flex flex-col gap-1"
+                  className="absolute top-full right-0 mt-2 bg-white/95 backdrop-blur-xl border border-slate-200/60 p-1.5 rounded-2xl shadow-xl z-[120] min-w-[100px] flex flex-col gap-1"
                 >
                   {[
-                    { code: 'hr', flag: '🇭🇷', name: 'Hrvatski' },
-                    { code: 'en', flag: '🇬🇧', name: 'English' },
-                    { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
+                    { code: 'hr', flag: '🇭🇷', name: 'HR' },
+                    { code: 'en', flag: '🇬🇧', name: 'EN' },
+                    { code: 'de', flag: '🇩🇪', name: 'DE' },
                   ].map((l) => (
                     <Link 
                       key={l.code}
@@ -350,6 +352,15 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             </AnimatePresence>
           </div>
 
+          {/* WEB APPLICATION NOTICE BUTTON */}
+          <button 
+            className="flex items-center gap-1.5 sm:gap-2 bg-white/40 hover:bg-blue-50/20 backdrop-blur-sm border-2 border-[#0066cc] shadow-sm hover:shadow-md px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 cursor-pointer group active:scale-95"
+            onClick={() => setIsWebAppModalOpen(true)}
+          >
+            <Globe size={16} className="text-[#50641B] group-hover:rotate-12 transition-transform duration-500" />
+            <span className="text-xs sm:text-sm font-bold tracking-wide !text-slate-800">{dict["nav.webApp"] || "Web App"}</span>
+          </button>
+
           {/* MOBILE HAMBURGER ICON */}
           <div
             className="lg:hidden bg-slate-50 p-2.5 rounded-full border border-slate-200 shadow-sm hover:bg-slate-100 transition-colors flex-shrink-0"
@@ -364,6 +375,66 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
         </div>
 
       </div>
+
+      {/* WEB APPLICATION COMING SOON POPUP MODAL */}
+      <AnimatePresence>
+        {isWebAppModalOpen && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsWebAppModalOpen(false)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm pointer-events-auto"
+            />
+
+            {/* Modal Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
+              className="relative bg-white/95 backdrop-blur-md border border-slate-200/50 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl pointer-events-auto overflow-hidden text-center"
+            >
+              {/* Decorative Background Elements */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#E9C36B]/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#50641B]/10 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Close Button */}
+              <button
+                onClick={() => setIsWebAppModalOpen(false)}
+                className="absolute top-4 right-4 p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Icon Container */}
+              <div className="relative mx-auto w-16 h-16 bg-blue-50 border border-blue-100 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                <Globe className="text-[#0066cc] animate-pulse" size={32} />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-black text-slate-950 mb-3 tracking-tight">
+                {dict["popup.webAppTitle"] || "Web Application"}
+              </h3>
+
+              {/* Message */}
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed mb-6">
+                {dict["popup.webAppMessage"] || "Our Web Application will be available soon!"}
+              </p>
+
+              {/* Okay Button */}
+              <button
+                onClick={() => setIsWebAppModalOpen(false)}
+                className="w-full py-3 px-6 rounded-full bg-[#E09D00] text-[#1a2308] hover:bg-[#E9C36B] font-black tracking-wide shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5"
+              >
+                {dict["popup.close"] || "Okay"}
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
