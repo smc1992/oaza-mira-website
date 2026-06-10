@@ -127,12 +127,12 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
               : "!hidden lg:!flex"
           }`}
         >
-          <ul className="flex flex-col lg:flex-row lg:items-center justify-center gap-2 lg:gap-8 w-full">
+          <ul className="flex flex-col lg:flex-row lg:items-center justify-center gap-2 lg:gap-4 xl:gap-8 w-full">
             
             <li>
               <Link
                 href={`/${lang}/`}
-                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors"
+                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors whitespace-nowrap"
                 onClick={closeMenus}
               >
                 {dict["nav.home"] || "Home"}
@@ -142,7 +142,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             <li>
               <Link
                 href={`/${lang}/how-it-works`}
-                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors"
+                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors whitespace-nowrap"
                 onClick={closeMenus}
               >
                 {dict["nav.howItWorks"] || "How it Works"}
@@ -152,7 +152,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             <li>
               <Link
                 href={`/${lang}/about`}
-                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors"
+                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors whitespace-nowrap"
                 onClick={closeMenus}
               >
                 {dict["nav.about"] || "About"}
@@ -166,7 +166,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
               onMouseLeave={handleMegaMenuLeave}
             >
               <div
-                className="flex items-center gap-1 cursor-pointer py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors"
+                className="flex items-center gap-1 cursor-pointer py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors whitespace-nowrap"
                 onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
               >
                 {dict["nav.targetGroups"] || targetGroupsText}
@@ -269,7 +269,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             <li>
               <Link
                 href={`/${lang}/contact`}
-                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors"
+                className="block py-3 lg:py-0 text-[#50641B] hover:text-[#E09D00] font-semibold transition-colors whitespace-nowrap"
                 onClick={closeMenus}
               >
                 {dict["nav.contact"] || "Contact"}
@@ -277,7 +277,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             </li>
           </ul>
 
-          <div className="flex flex-col lg:flex-row items-center gap-3 lg:ml-6 mt-6 lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 border-slate-100 w-full lg:w-auto flex-shrink-0">
+          <div className="flex flex-col lg:flex-row items-center gap-3 lg:ml-3 xl:ml-6 mt-6 lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 border-slate-100 w-full lg:w-auto flex-shrink-0">
             {/* Log In Button: Gold background, Darkest Green text */}
             <MagneticPull strength={10} className="w-full lg:w-auto flex justify-center">
               <Link
@@ -305,7 +305,7 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
         {/* ========================================================= */}
         {/* RIGHT SIDE ACTIONS: LANGUAGE SWITCHER AND MOBILE HAMBURGER */}
         {/* ========================================================= */}
-        <div className="flex items-center gap-3 sm:gap-4 z-[110] flex-shrink-0 lg:ml-6 xl:ml-8">
+        <div className="flex items-center gap-3 sm:gap-4 z-[110] flex-shrink-0 lg:ml-3 xl:ml-8">
           
           {/* STUNNING DROPDOWN LANGUAGE SWITCHER */}
           <div 
