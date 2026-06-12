@@ -534,7 +534,26 @@
   "home.mediator.feature2.desc": "Vidite stvarno stanje — fotografije prije i poslije.",
   "home.mediator.feature3.title": "Sigurno i transparentno plaćanje",
   "home.mediator.feature3.desc": "Plaćate kroz aplikaciju, bez gotovine i nejasnoća.",
-  "home.mediator.cta": "Više o nama"
+  "home.mediator.cta": "Više o nama",
+  "home.roles.eyebrow": "ZA KOGA SMO",
+  "home.roles.title.part1": "Jedna platforma, ",
+  "home.roles.title.part2": "četiri uloge",
+  "home.roles.subtitle": "Bilo da tražite brigu ili je pružate — ovdje je vaše mjesto.",
+  "home.roles.role1.badge": "OBITELJI",
+  "home.roles.role1.title": "Za obitelji",
+  "home.roles.role1.desc": "Brinite o počivalištu najmilijih s bilo kojeg mjesta na svijetu — uz fotodokaz nakon svakog posjeta.",
+  "home.roles.role2.badge": "PARTNERI",
+  "home.roles.role2.title": "Cvjećari i njegovatelji",
+  "home.roles.role2.desc": "Primajte redovite narudžbe iz svog kraja, bez marketinga — i gradite ugled provjerenim radom.",
+  "home.roles.role3.badge": "TVRTKE",
+  "home.roles.role3.title": "Za tvrtke",
+  "home.roles.role3.desc": "Cvjećarnice i komunalni servisi — proširite doseg i upravljajte narudžbama na jednom mjestu.",
+  "home.roles.role4.badge": "USTANOVE",
+  "home.roles.role4.title": "Za ustanove",
+  "home.roles.role4.desc": "Groblja i uprave — digitalizirajte brigu o grobovima i ponudite uslugu obiteljima.",
+  "home.roles.cta": "Saznajte više",
+  "home.cta.title": "Pridružite se obiteljima koje vjeruju Oazi Mira.",
+  "home.cta.primary": "Započnite besplatno"
 }
 
 

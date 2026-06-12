@@ -542,6 +542,25 @@
   "home.mediator.feature2.desc": "See the actual results — before and after photos.",
   "home.mediator.feature3.title": "Secure & Transparent Payment",
   "home.mediator.feature3.desc": "Pay safely through the app, with zero cash and complete clarity.",
-  "home.mediator.cta": "More About Us"
+  "home.mediator.cta": "More About Us",
+  "home.roles.eyebrow": "WHO WE SERVE",
+  "home.roles.title.part1": "One platform, ",
+  "home.roles.title.part2": "four roles",
+  "home.roles.subtitle": "Whether you are looking for care or providing it — here is your place.",
+  "home.roles.role1.badge": "FAMILIES",
+  "home.roles.role1.title": "For Families",
+  "home.roles.role1.desc": "Care for the resting place of your loved ones from anywhere in the world — with photo proof after each visit.",
+  "home.roles.role2.badge": "PARTNERS",
+  "home.roles.role2.title": "Florists & Caretakers",
+  "home.roles.role2.desc": "Receive regular orders from your local area without marketing — and build your reputation with verified work.",
+  "home.roles.role3.badge": "BUSINESSES",
+  "home.roles.role3.title": "For Businesses",
+  "home.roles.role3.desc": "Florists and municipal services — expand your reach and manage orders all in one place.",
+  "home.roles.role4.badge": "INSTITUTIONS",
+  "home.roles.role4.title": "For Institutions",
+  "home.roles.role4.desc": "Cemeteries and administrations — digitalize grave care and offer the service to families.",
+  "home.roles.cta": "Learn more",
+  "home.cta.title": "Join hundreds of families who trust Oaza Mira.",
+  "home.cta.primary": "Start for free"
 }
 
