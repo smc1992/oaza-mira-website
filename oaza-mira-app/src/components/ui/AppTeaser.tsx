@@ -1,6 +1,6 @@
 "use client";
 
-import { Smartphone, CheckCircle2, ShieldCheck, Camera } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
@@ -42,11 +42,11 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -bottom-64 -right-64 w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-[#E09D00]/25 rounded-full blur-[120px] pointer-events-none"
         />
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center p-10 md:p-16 lg:p-24 relative z-10">
           
-          {/* Mockup Content */}
-          <AnimatedSection delay={0.2} className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[750px] flex items-center justify-center w-full order-first lg:order-last">
+          {/* Mockup Content (Left side on desktop, first on mobile) */}
+          <AnimatedSection delay={0.2} className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[700px] flex items-center justify-center w-full">
             <motion.div 
               initial={{ y: 0 }}
               animate={{ y: [-10, 10, -10] }}
@@ -71,66 +71,29 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-10 bg-black/30 blur-[40px] rounded-full scale-y-50 -z-10"></div>
           </AnimatedSection>
 
-          {/* Text Content */}
-          <div className="w-full lg:pr-6">
+          {/* Text Content (Right side on desktop, second on mobile) */}
+          <div className="w-full lg:pl-6">
             <AnimatedSection>
               <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/20 border border-white/20 text-[#E9C36B] font-bold mb-10 text-xs md:text-sm uppercase tracking-[0.3em] backdrop-blur-md shadow-lg group hover:bg-[#E09D00]/20 transition-all transform-gpu translate-z-0">
                 <Smartphone size={18} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
                 <span data-dict-key="teaser.badge">{dict["teaser.badge"]}</span>
               </div>
 
-              <h2 data-dict-key="teaser.title" className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[5rem] font-black text-white mb-10 tracking-tightest leading-[0.95] drop-shadow-2xl text-balance">
-                {dict["teaser.title"]}
+              {/* Title with split support for italicizing key parts */}
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-extrabold text-white mb-10 tracking-tight leading-[1.05] drop-shadow-2xl text-balance">
+                {dict["teaser.title.part1"] || "Close, "}
+                <span className="font-serif italic font-normal text-[#E9C36B]">
+                  {dict["teaser.title.part2"] || "no matter the distance."}
+                </span>
               </h2>
               
-              <p data-dict-key="teaser.desc" className="text-lg md:text-xl text-white/90 mb-12 md:mb-16 leading-relaxed max-w-xl font-medium drop-shadow-sm">
+              <p data-dict-key="teaser.desc" className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-xl font-medium drop-shadow-sm">
                 {dict["teaser.desc"]}
               </p>
             </AnimatedSection>
 
-            <div className="space-y-10 md:space-y-14 mb-16 md:mb-20">
-              {/* Feature 1 */}
-              <AnimatedSection delay={0.4}>
-                <div className="flex gap-6 md:gap-8 group">
-                  <div className="mt-1 flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-[1.5rem] bg-gradient-to-br from-[#E09D00] to-[#E9C36B] flex items-center justify-center text-[#1a2308] shadow-[0_10px_30px_rgba(224,157,0,0.4)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <CheckCircle2 size={28} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h4 data-dict-key="teaser.feature1.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature1.title"]}</h4>
-                    <p data-dict-key="teaser.feature1.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature1.desc"]}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-              
-              {/* Feature 2 */}
-              <AnimatedSection delay={0.5}>
-                <div className="flex gap-6 md:gap-8 group">
-                  <div className="mt-1 flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-[1.5rem] bg-gradient-to-br from-[#E09D00] to-[#E9C36B] flex items-center justify-center text-[#1a2308] shadow-[0_10px_30px_rgba(224,157,0,0.4)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <Camera size={28} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h4 data-dict-key="teaser.feature2.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature2.title"]}</h4>
-                    <p data-dict-key="teaser.feature2.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature2.desc"]}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Feature 3 */}
-              <AnimatedSection delay={0.6}>
-                <div className="flex gap-6 md:gap-8 group">
-                  <div className="mt-1 flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-[1.5rem] bg-gradient-to-br from-[#E09D00] to-[#E9C36B] flex items-center justify-center text-[#1a2308] shadow-[0_10px_30px_rgba(224,157,0,0.4)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <ShieldCheck size={28} strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h4 data-dict-key="teaser.feature3.title" className="text-white font-black text-xl md:text-2xl mb-3 tracking-tight group-hover:translate-x-1 transition-transform">{dict["teaser.feature3.title"]}</h4>
-                    <p data-dict-key="teaser.feature3.desc" className="text-white/80 text-base md:text-lg leading-relaxed font-semibold max-w-lg opacity-90">{dict["teaser.feature3.desc"]}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
             {/* Store Buttons */}
-            <AnimatedSection delay={0.7} className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8">
+            <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8">
               <button className="flex items-center justify-center gap-4 px-6 md:px-8 py-3.5 md:py-4 rounded-[1rem] md:rounded-[1.25rem] bg-black hover:bg-zinc-900 border border-white/20 text-white font-sans transition-all cursor-not-allowed group shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-white/5 active:scale-95 w-full sm:w-auto">
                 <svg className="w-8 h-8 md:w-10 md:h-10 fill-white transition-transform group-hover:scale-105" viewBox="0 0 384 512">
                   <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-31.4-97.3-132-97.3-132zm-58.4-154.3c31.4-38.9 29.1-80.5 29.1-80.5s-41.4 3-72.8 38.9c-26.9 31-26.9 66.4-26.9 66.4s36.4 7.2 70.6-24.8z"/>
@@ -155,7 +118,6 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
               </button>
             </AnimatedSection>
           </div>
-
 
         </div>
       </div>
