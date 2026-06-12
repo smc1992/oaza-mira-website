@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
 import Image from "next/image";
 import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
+import MagneticPull from "@/components/ui/MagneticPull";
 import { 
   Smartphone, 
   UserPlus, 
@@ -151,13 +152,28 @@ export default async function HowItWorksPage({
               <Play size={16} strokeWidth={2.5} /> <span data-dict-key="howitworks.eyebrow">{dict["howitworks.eyebrow"] || "How It Works"}</span>
             </div>
             
-            <h1 data-dict-key="howitworks.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["howitworks.title"] || "Simple Care. Lasting Peace of Mind."}
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
+              <span data-dict-key="howitworks.title.part1">{dict["howitworks.title.part1"] || "Simple Care. "}</span>
+              <span data-dict-key="howitworks.title.part2" className="font-serif italic font-normal text-[#E9C36B]">
+                {dict["howitworks.title.part2"] || "Lasting peace of mind."}
+              </span>
             </h1>
             
             <p data-dict-key="howitworks.subtitle" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["howitworks.subtitle"] || "Getting started is simple. Follow a few clear steps to ensure ongoing, reliable care."}
             </p>
+
+            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+              <MagneticPull strength={15}>
+                <Link 
+                  href="#portal" 
+                  className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20"
+                >
+                  <span data-dict-key="howitworks.hero.cta">{dict["howitworks.hero.cta"] || "Start for free"}</span>
+                  <ArrowRight size={20} />
+                </Link>
+              </MagneticPull>
+            </div>
           </div>
         </AnimatedSection>
       </section>
