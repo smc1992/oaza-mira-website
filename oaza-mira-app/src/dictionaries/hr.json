@@ -511,5 +511,29 @@
   "images.aboutSeeHowBg": "/about_see_how_bg.webp",
   "images.howItWorksCtaBg": "/cta-bg.png",
   "images.teaserBg": "/App_Teaser_BG.webp",
-  "images.teaserMockup": "/mockup-oaza-mira.png"
+  "images.teaserMockup": "/mockup-oaza-mira.png",
+  "home.steps.eyebrow": "JEDNOSTAVNO OBJAŠNJENO",
+  "home.steps.title.part1": "Kako Oaza Mira ",
+  "home.steps.title.part2": "funkcionira",
+  "home.steps.subtitle": "Tri koraka razdvajaju vas od mirne sigurnosti da je grob uređen.",
+  "home.steps.step1.title": "Vi naručite",
+  "home.steps.step1.desc": "Odaberete grob i uslugu — cvijeće, čišćenje ili svijeće — kroz aplikaciju.",
+  "home.steps.step2.title": "Lokalni partner brine",
+  "home.steps.step2.desc": "Provjereni cvjećar ili njegovatelj iz tog mjesta preuzima i obavlja posao.",
+  "home.steps.step3.title": "Vi dobivate dokaz",
+  "home.steps.step3.desc": "Fotografije prije i poslije stižu vam na telefon, gdje god se nalazili.",
+  "home.mediator.eyebrow": "ŠTO JE OAZA MIRA",
+  "home.mediator.title.part1": "Mi smo ",
+  "home.mediator.title.part2": "posrednik",
+  "home.mediator.title.part3": ", a ne izvođač.",
+  "home.mediator.desc": "Oaza Mira ne uređuje grobove sama. Povezujemo vas s provjerenim lokalnim cvjećarima i njegovateljima — onima koji već poznaju vaše groblje — i brinemo da svaki korak bude jasan, dogovoren i dokumentiran.",
+  "home.mediator.feature1.title": "Provjereni partneri",
+  "home.mediator.feature1.desc": "Svaki cvjećar i njegovatelj prolazi provjeru prije ulaska u mrežu.",
+  "home.mediator.feature2.title": "Fotodokaz nakon svakog posjeta",
+  "home.mediator.feature2.desc": "Vidite stvarno stanje — fotografije prije i poslije.",
+  "home.mediator.feature3.title": "Sigurno i transparentno plaćanje",
+  "home.mediator.feature3.desc": "Plaćate kroz aplikaciju, bez gotovine i nejasnoća.",
+  "home.mediator.cta": "Više o nama"
 }
+
+

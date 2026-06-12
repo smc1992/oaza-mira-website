@@ -94,8 +94,187 @@ export default async function HomePage({
       {/* INFINITE MARQUEE */}
       <InfiniteMarquee dict={dict} />
 
+      {/* 3. HOW OAZA MIRA WORKS SECTION */}
+      <section className="py-24 lg:py-32 bg-[#FDFCF9] relative overflow-hidden">
+        {/* Decorative backdrop accents to match the premium warmth of the website */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0 overflow-hidden">
+          <div className="absolute top-[20%] left-[-10%] w-[45%] h-[45%] bg-[#E9C36B]/5 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[20%] right-[-10%] w-[45%] h-[45%] bg-[#50641B]/4 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <AnimatedSection delay={0.1}>
+            <div className="text-center mb-20 lg:mb-24">
+              <span className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
+                {dict["home.steps.eyebrow"] || "JEDNOSTAVNO OBJAŠNJENO"}
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#333] tracking-tight mb-6">
+                {dict["home.steps.title.part1"] || "Kako Oaza Mira "}
+                <span className="font-serif italic font-normal text-[#E09D00]">
+                  {dict["home.steps.title.part2"] || "funkcionira"}
+                </span>
+              </h2>
+              <p className="text-[#7A7366] text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+                {dict["home.steps.subtitle"] || "Tri koraka razdvajaju vas od mirne sigurnosti da je grob uređen."}
+              </p>
+              <div className="w-20 h-1 bg-[#E09D00] mx-auto mt-8 rounded-full"></div>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            {/* Step 1 */}
+            <AnimatedSection delay={0.2} className="flex flex-col items-center text-center">
+              <div className="flex items-center justify-center w-full mb-6 text-center">
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+                <span className="font-serif text-[#E09D00] text-sm md:text-base font-bold tracking-[0.2em] px-4">
+                  01
+                </span>
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+              </div>
+              <h3 className="font-serif text-2xl lg:text-3xl font-semibold text-[#333] mb-4">
+                {dict["home.steps.step1.title"] || "Vi naručite"}
+              </h3>
+              <p className="text-[#7A7366] text-base lg:text-lg leading-relaxed max-w-sm font-medium">
+                {dict["home.steps.step1.desc"] || "Odaberete grob i uslugu — cvijeće, čišćenje ili svijeće — kroz aplikaciju."}
+              </p>
+            </AnimatedSection>
+
+            {/* Step 2 */}
+            <AnimatedSection delay={0.3} className="flex flex-col items-center text-center">
+              <div className="flex items-center justify-center w-full mb-6 text-center">
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+                <span className="font-serif text-[#E09D00] text-sm md:text-base font-bold tracking-[0.2em] px-4">
+                  02
+                </span>
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+              </div>
+              <h3 className="font-serif text-2xl lg:text-3xl font-semibold text-[#333] mb-4">
+                {dict["home.steps.step2.title"] || "Lokalni partner brine"}
+              </h3>
+              <p className="text-[#7A7366] text-base lg:text-lg leading-relaxed max-w-sm font-medium">
+                {dict["home.steps.step2.desc"] || "Provjereni cvjećar ili njegovatelj iz tog mjesta preuzima i obavlja posao."}
+              </p>
+            </AnimatedSection>
+
+            {/* Step 3 */}
+            <AnimatedSection delay={0.4} className="flex flex-col items-center text-center">
+              <div className="flex items-center justify-center w-full mb-6 text-center">
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+                <span className="font-serif text-[#E09D00] text-sm md:text-base font-bold tracking-[0.2em] px-4">
+                  03
+                </span>
+                <span className="h-px w-10 bg-[#E9C36B]/40 block"></span>
+              </div>
+              <h3 className="font-serif text-2xl lg:text-3xl font-semibold text-[#333] mb-4">
+                {dict["home.steps.step3.title"] || "Vi dobivate dokaz"}
+              </h3>
+              <p className="text-[#7A7366] text-base lg:text-lg leading-relaxed max-w-sm font-medium">
+                {dict["home.steps.step3.desc"] || "Fotografije prije i poslije stižu vam na telefon, gdje god se nalazili."}
+              </p>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* 3.5 MEDIATOR SECTION (Mi smo posrednik, ne izvođač) */}
+      <section className="relative w-full overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center py-20 lg:py-32">
+        {/* Full-width Background Image & cinematic overlays */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/about_what_we_do.webp"
+            alt="Oaza Mira Mediator Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Olive Multiply & gradient overlay */}
+          <div className="absolute inset-0 bg-[#50641B]/40 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/40 via-black/25 to-black/60"></div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-center lg:justify-end">
+          <AnimatedSection delay={0.2} className="w-full max-w-2xl">
+            <div className="bg-[#FDFCF9]/95 backdrop-blur-xl border border-white/40 shadow-[0_30px_60px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12 lg:p-14">
+              
+              <span className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
+                {dict["home.mediator.eyebrow"] || "WHAT IS OAZA MIRA"}
+              </span>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight mb-6 leading-tight">
+                {dict["home.mediator.title.part1"] || "We are an "}
+                <span className="font-serif italic font-normal text-[#E09D00]">
+                  {dict["home.mediator.title.part2"] || "intermediary"}
+                </span>
+                {dict["home.mediator.title.part3"] || ", not a contractor."}
+              </h2>
+              
+              <p className="text-[#7A7366] text-base md:text-lg mb-8 leading-relaxed font-medium">
+                {dict["home.mediator.desc"] || "Oaza Mira does not maintain graves directly. We connect you with verified local florists and caretakers — those who already know your cemetery — and ensure that every step is clear, agreed upon, and documented."}
+              </p>
+
+              <div className="space-y-6 mb-10">
+                {/* Feature 1 */}
+                <div className="flex gap-4 items-start">
+                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#50641B]/10 flex items-center justify-center text-[#50641B]">
+                    <CheckCircle2 size={20} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-[#333] font-bold text-lg leading-tight mb-1">
+                      {dict["home.mediator.feature1.title"] || "Verified Partners"}
+                    </h4>
+                    <p className="text-[#7A7366] text-sm md:text-base leading-relaxed font-medium">
+                      {dict["home.mediator.feature1.desc"] || "Every florist and caretaker goes through verification before joining the network."}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Feature 2 */}
+                <div className="flex gap-4 items-start">
+                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#50641B]/10 flex items-center justify-center text-[#50641B]">
+                    <CheckCircle2 size={20} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-[#333] font-bold text-lg leading-tight mb-1">
+                      {dict["home.mediator.feature2.title"] || "Photo Proof After Each Visit"}
+                    </h4>
+                    <p className="text-[#7A7366] text-sm md:text-base leading-relaxed font-medium">
+                      {dict["home.mediator.feature2.desc"] || "See the actual results — before and after photos."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 3 */}
+                <div className="flex gap-4 items-start">
+                  <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#50641B]/10 flex items-center justify-center text-[#50641B]">
+                    <CheckCircle2 size={20} strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-[#333] font-bold text-lg leading-tight mb-1">
+                      {dict["home.mediator.feature3.title"] || "Secure & Transparent Payment"}
+                    </h4>
+                    <p className="text-[#7A7366] text-sm md:text-base leading-relaxed font-medium">
+                      {dict["home.mediator.feature3.desc"] || "Pay safely through the app, with zero cash and complete clarity."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex">
+                <Link 
+                  href={`/${lang}/about`} 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#50641B] text-[#50641B] hover:bg-[#50641B] hover:text-white font-bold text-base transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  <span>{dict["home.mediator.cta"] || "More About Us"}</span>
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* 4. NEW APP TEASER PROMO */}
       <AppTeaser dict={dict} lang={lang} />
+
 
       {/* 5. HIGH-IMPACT EMOTIONAL CTA */}
       <section className="pb-32 relative overflow-hidden px-4">
