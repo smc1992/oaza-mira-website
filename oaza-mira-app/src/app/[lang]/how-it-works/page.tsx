@@ -152,9 +152,9 @@ export default async function HowItWorksPage({
               <Play size={16} strokeWidth={2.5} /> <span data-dict-key="howitworks.eyebrow">{dict["howitworks.eyebrow"] || "How It Works"}</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              <span data-dict-key="howitworks.title.part1">{dict["howitworks.title.part1"] || "Simple Care. "}</span>
-              <span data-dict-key="howitworks.title.part2" className="font-serif italic font-normal text-[#E9C36B]">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
+              <span className="block" data-dict-key="howitworks.title.part1">{dict["howitworks.title.part1"] || "Simple Care. "}</span>
+              <span data-dict-key="howitworks.title.part2" className="block font-serif italic font-normal text-[#E9C36B] mt-2">
                 {dict["howitworks.title.part2"] || "Lasting peace of mind."}
               </span>
             </h1>
