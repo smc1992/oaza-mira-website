@@ -184,36 +184,40 @@ export default async function HowItWorksPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection delay={0.2}>
             <div className="text-center mb-20">
-              <h2 data-dict-key="howitworks.steps.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#333]">
-                {dict["howitworks.steps.title"] || "How It Works"}
+              <span data-dict-key="howitworks.steps.eyebrow" className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
+                {dict["howitworks.steps.eyebrow"] || "KORAK PO KORAK"}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#333] mb-6">
+                <span data-dict-key="howitworks.steps.title.part1">{dict["howitworks.steps.title.part1"] || "Četiri jasna "}</span>
+                <span data-dict-key="howitworks.steps.title.part2" className="font-serif italic font-normal text-[#E09D00]">
+                  {dict["howitworks.steps.title.part2"] || "koraka"}
+                </span>
               </h2>
               <p data-dict-key="howitworks.steps.subtitle" className="mt-6 text-xl text-[#8E8675] max-w-2xl mx-auto font-medium">
-                {dict["howitworks.steps.subtitle"] || "Getting started is simple. Follow a few clear steps to ensure ongoing, reliable care."}
+                {dict["howitworks.steps.subtitle"] || "Početak je jednostavan. Slijedite nekoliko jasnih koraka do redovite, pouzdane brige."}
               </p>
               <div className="w-24 h-1 bg-[#E09D00] mx-auto mt-6 rounded-full"></div>
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <AnimatedSection key={index} delay={0.1 * (index + 1)}>
-                <div className="bg-[#FDFBF7]/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl shadow-[#50641B]/5 border border-[#E9C36B]/20 hover:border-[#E09D00]/40 hover:shadow-2xl hover:shadow-[#E09D00]/15 transition-all duration-500 h-full relative group overflow-hidden">
+              <AnimatedSection key={index} delay={0.1 * (index + 1)} className="relative">
+                <div className="bg-[#FDFBF7]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#E9C36B]/20 hover:border-[#E09D00]/40 hover:shadow-2xl hover:shadow-[#E09D00]/15 transition-all duration-500 h-full relative group overflow-hidden flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2">
                   {/* Subtle hover gradient inside the card */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E9C36B]/0 to-[#E9C36B]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
                   
-                  <div className="relative z-10 flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <span className="text-5xl font-extrabold text-[#E9C36B]/40 drop-shadow-sm">{step.number}</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="bg-gradient-to-br from-[#E9C36B]/40 to-[#E09D00]/20 w-14 h-14 rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-white">
-                        <step.icon className="text-[#A26D00]" size={28} />
-                      </div>
-                      <h3 data-dict-key={`howitworks.step${index + 1}.title`} className="text-xl font-bold text-[#333] mb-3">{step.title}</h3>
-                      <p data-dict-key={`howitworks.step${index + 1}.desc`} className="text-[#7A7366] leading-relaxed font-medium">{step.description}</p>
-                    </div>
+                  <div className="relative z-10 flex flex-col items-start text-left">
+                    <span className="font-serif text-5xl font-semibold italic text-[#E09D00] opacity-60 mb-6 leading-none block">{step.number}</span>
+                    <h3 data-dict-key={`howitworks.step${index + 1}.title`} className="text-xl font-bold text-[#333] mb-3">{step.title}</h3>
+                    <p data-dict-key={`howitworks.step${index + 1}.desc`} className="text-[#7A7366] text-sm md:text-base leading-relaxed font-medium">{step.description}</p>
                   </div>
                 </div>
+                {index < 3 && (
+                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 text-2xl text-[#E09D00]/40 font-bold select-none">
+                    →
+                  </div>
+                )}
               </AnimatedSection>
             ))}
           </div>
