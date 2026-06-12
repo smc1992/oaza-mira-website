@@ -23,6 +23,7 @@ import {
   Star
 } from "lucide-react";
 import pageImagesData from "@/content/images.json";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 export default async function HowItWorksPage({
   params,
@@ -62,31 +63,43 @@ export default async function HowItWorksPage({
   const features = [
     {
       icon: ShieldCheck,
+      image: (dict as any)["images.howItWorksFeature1"] || pageImagesData.howItWorksFeature1 || "/hero_caretakers.webp",
+      imageKey: "images.howItWorksFeature1",
       title: dict["howitworks.feature1.title"] || "Verified Providers",
       description: dict["howitworks.feature1.desc"] || "Every caretaker in our network is verified, ensuring trust and reliability.",
     },
     {
       icon: Flower2,
+      image: (dict as any)["images.howItWorksFeature2"] || pageImagesData.howItWorksFeature2 || "/about_hero_floral.png",
+      imageKey: "images.howItWorksFeature2",
       title: dict["howitworks.feature2.title"] || "Fresh Floral Arrangements",
       description: dict["howitworks.feature2.desc"] || "Seasonal flowers and decorations to keep the resting place beautiful year-round.",
     },
     {
       icon: Camera,
+      image: (dict as any)["images.howItWorksFeature3"] || pageImagesData.howItWorksFeature3 || "/about_what_we_do.webp",
+      imageKey: "images.howItWorksFeature3",
       title: dict["howitworks.feature3.title"] || "Photo Documentation",
       description: dict["howitworks.feature3.desc"] || "Visual proof after every visit – transparency you can trust.",
     },
     {
       icon: Bell,
+      image: (dict as any)["images.howItWorksFeature4"] || pageImagesData.howItWorksFeature4 || "/App_Teaser_BG.webp",
+      imageKey: "images.howItWorksFeature4",
       title: dict["howitworks.feature4.title"] || "Real-Time Notifications",
       description: dict["howitworks.feature4.desc"] || "Get instant updates when care is completed or if any action is needed.",
     },
     {
       icon: MessageCircle,
+      image: (dict as any)["images.howItWorksFeature5"] || pageImagesData.howItWorksFeature5 || "/families_invite_bg.jpg",
+      imageKey: "images.howItWorksFeature5",
       title: dict["howitworks.feature5.title"] || "Family Collaboration",
       description: dict["howitworks.feature5.desc"] || "Invite family members to view and contribute to the care together.",
     },
     {
       icon: Heart,
+      image: (dict as any)["images.howItWorksFeature6"] || pageImagesData.howItWorksFeature6 || "/about_care_hands.png",
+      imageKey: "images.howItWorksFeature6",
       title: dict["howitworks.feature6.title"] || "Compassionate Support",
       description: dict["howitworks.feature6.desc"] || "Our team is here to help whenever you need assistance.",
     },
@@ -224,7 +237,65 @@ export default async function HowItWorksPage({
         </div>
       </section>
 
-      {/* 3. FEATURES SECTION */}
+      {/* 3. VISIBILITY / SLIDER SECTION */}
+      <section className="py-24 lg:py-32 relative overflow-hidden bg-[#FDFCF9]">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#E9C36B]/8 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#50641B]/5 rounded-full blur-[100px] pointer-events-none"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            {/* Slider Column */}
+            <AnimatedSection delay={0.1}>
+              <div className="w-full">
+                <BeforeAfterSlider
+                  beforeImage="/grave_before.webp"
+                  afterImage="/grave_after.webp"
+                  beforeAlt={dict["howitworks.slider.before"] || "Prije"}
+                  afterAlt={dict["howitworks.slider.after"] || "Poslije"}
+                  beforeLabel={dict["howitworks.slider.before"] || "Prije"}
+                  afterLabel={dict["howitworks.slider.after"] || "Poslije"}
+                />
+              </div>
+            </AnimatedSection>
+
+            {/* Text Column */}
+            <AnimatedSection delay={0.2}>
+              <div className="flex flex-col items-start text-left lg:pl-6">
+                <span data-dict-key="howitworks.slider.eyebrow" className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
+                  {dict["howitworks.slider.eyebrow"] || "TRANSPARENTNOST"}
+                </span>
+                
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#333] mb-6 leading-tight">
+                  <span data-dict-key="howitworks.slider.title.part1">{dict["howitworks.slider.title.part1"] || "Vidite "}</span>
+                  <span data-dict-key="howitworks.slider.title.part2" className="font-serif italic font-normal text-[#E09D00]">
+                    {dict["howitworks.slider.title.part2"] || "svaki korak."}
+                  </span>
+                </h2>
+                
+                <p data-dict-key="howitworks.slider.desc" className="text-[#7A7366] text-lg md:text-xl font-medium leading-relaxed mb-8">
+                  {dict["howitworks.slider.desc"] || "Od trenutka kad naručite do fotografija nakon posjeta — sve je jasno vidljivo. Bez nejasnoća, bez čekanja u neizvjesnosti. Znate tko brine o grobu, kada i kako."}
+                </p>
+
+                <div className="flex">
+                  <Link 
+                    href={`/${lang}/families`} 
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-[#50641B] text-[#50641B] hover:bg-[#50641B] hover:text-white font-bold text-base transition-all duration-300 shadow-md hover:shadow-lg group"
+                  >
+                    <span data-dict-key="howitworks.slider.cta">{dict["howitworks.slider.cta"] || "Za obitelji"}</span>
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FEATURES SECTION */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         {/* Lighter, warmer image background with soft green overlays */}
         <div className="absolute inset-0 z-0 bg-[#3A4A13]">
@@ -258,20 +329,35 @@ export default async function HowItWorksPage({
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white/15 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-[#E9C36B]/60 hover:bg-white/20 transition-all duration-500 h-full group shadow-xl shadow-black/10 transform-gpu translate-z-0">
-                {/* Premium Icon Container */}
-                <div className="bg-gradient-to-br from-[#E9C36B]/20 to-[#E9C36B]/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-[#E9C36B]/30 shadow-[0_0_20px_rgba(233,195,107,0.15)] group-hover:scale-110 transition-transform duration-500">
-                  <feature.icon className="text-[#E9C36B]" strokeWidth={1.5} size={30} />
+              <div key={index} className="bg-white/10 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/15 hover:border-[#E9C36B]/60 hover:bg-white/15 transition-all duration-500 h-full group shadow-xl shadow-black/15 transform-gpu translate-z-0 flex flex-col justify-between">
+                <div>
+                  {/* Card Image Container */}
+                  <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-3xl mb-6 shadow-md border border-white/10 group-hover:border-[#E9C36B]/40 transition-all duration-500">
+                    <img 
+                      src={feature.image} 
+                      alt={feature.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      data-dict-key={feature.imageKey}
+                    />
+                    {/* Elegant Dark Vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-75"></div>
+                    
+                    {/* Floating badge for icon */}
+                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md w-12 h-12 rounded-2xl flex items-center justify-center border border-white/20 shadow-lg text-[#E9C36B] group-hover:scale-110 transition-transform duration-500">
+                      <feature.icon strokeWidth={1.5} size={24} />
+                    </div>
+                  </div>
+
+                  <h3 data-dict-key={`howitworks.feature${index + 1}.title`} className="text-xl font-bold text-white mb-3 tracking-wide group-hover:text-[#E9C36B] transition-colors duration-300">{feature.title}</h3>
+                  <p data-dict-key={`howitworks.feature${index + 1}.desc`} className="text-white/80 text-sm md:text-base leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 data-dict-key={`howitworks.feature${index + 1}.title`} className="text-xl font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
-                <p data-dict-key={`howitworks.feature${index + 1}.desc`} className="text-white/80 text-sm md:text-base leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. TESTIMONIALS SECTION */}
+      {/* 5. TESTIMONIALS SECTION */}
       <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-[#FDFBF7] via-[#F3EFE4] to-[#E9DFCA]">
         {/* Warm abstract glowing orbs instead of an image */}
         <div className="absolute inset-0 z-0">
@@ -323,42 +409,51 @@ export default async function HowItWorksPage({
       </section>
 
       {/* 5. CTA SECTION */}
-      <section className="py-24 lg:py-32 relative overflow-hidden bg-black">
-        {/* Dark cinematic photographic background */}
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-80" 
-            style={{ backgroundImage: `url('${(dict as any)["images.readyToBeginHero"] || pageImagesData.readyToBeginHero || "/How_it_Works_Ready_to_Begin.webp"}')` }}
-            data-dict-key="images.readyToBeginHero"
-            data-editor-type="image"
-          ></div>
-          {/* Deep green multiply for brand color integration without washing out */}
-          <div className="absolute inset-0 mix-blend-multiply bg-[#1a2308]/60"></div>
-          {/* Top-to-bottom dark gradient for maximum contrast and readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2a360e]/40 via-black/20 to-black/70"></div>
-          {/* Subtle noise texture */}
-          <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-[0.05] mix-blend-overlay pointer-events-none"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <AnimatedSection delay={0.1}>
-            <h2 data-dict-key="howitworks.cta.title" className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-8">
-              {dict["howitworks.cta.title"] || "Ready to Begin?"}
-            </h2>
-            <p data-dict-key="howitworks.cta.subtitle" className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto">
-              {dict["howitworks.cta.subtitle"] || "Join hundreds of families who trust Oaza Mira to care for their loved ones."}
-            </p>
-            <div className="flex justify-center">
-              <Link 
-                href="#portal" 
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#50641B] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20"
-              >
-                <span data-dict-key="howitworks.cta.primary">{dict["howitworks.cta.primary"] || "Download App & Register"}</span>
-                <ArrowRight size={20} />
-              </Link>
+      <section className="pb-32 relative overflow-hidden px-4">
+         <AnimatedSection delay={0.3}>
+            <div className="max-w-7xl mx-auto">
+               <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
+                  
+                  {/* Emotional Background Image */}
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src={(dict as any)["images.readyToBeginHero"] || pageImagesData.readyToBeginHero || "/How_it_Works_Ready_to_Begin.webp"} 
+                      alt="Oaza Mira Care" 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                      data-dict-key="images.readyToBeginHero"
+                    />
+                    {/* Deep Green / Black Overlay for readability */}
+                    <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#222]/80 via-[#222]/40 to-transparent"></div>
+                  </div>
+
+                  {/* Decorative mesh overlay */}
+                  <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+
+                  <h2 data-dict-key="howitworks.cta.title" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
+                     {dict["howitworks.cta.title"] || "Ready to Begin?"}
+                  </h2>
+                  <p data-dict-key="howitworks.cta.subtitle" className="text-xl md:text-2xl text-white/80 relative z-10 mb-12 max-w-2xl mx-auto drop-shadow-md font-medium">
+                     {dict["howitworks.cta.subtitle"] || "Join hundreds of families who trust Oaza Mira to care for their loved ones."}
+                  </p>
+                  
+                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                     <MagneticPull strength={15}>
+                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                           <span data-dict-key="howitworks.cta.primary">{dict["howitworks.cta.primary"] || "Download App & Register"}</span>
+                           <ArrowRight size={20} />
+                        </Link>
+                     </MagneticPull>
+                     <MagneticPull strength={15}>
+                        <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
+                           <span data-dict-key="btn.contact">{dict["btn.contact"] || "Contact us"}</span>
+                        </Link>
+                     </MagneticPull>
+                  </div>
+
+               </div>
             </div>
-          </AnimatedSection>
-        </div>
+         </AnimatedSection>
       </section>
 
     </div>

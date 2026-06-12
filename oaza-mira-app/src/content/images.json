@@ -9,10 +9,19 @@
   "familiesCaretaker": "/families_caretaker_bg.jpg",
   "providersHero": "/hero_caretakers.webp",
   "businessHero": "/hero_business.webp",
+  "businessSec1": "/business_sec1.avif",
+  "businessSec2": "/business_sec2.avif",
   "institutionsHero": "/hero_institutions.webp",
+  "institutionsSec1": "/business_sec2.avif",
   "aboutCareHands": "/about_care_hands.png",
   "aboutWhatWeDo": "/about_what_we_do.webp",
   "aboutWhatWeDontDo": "/about_what_we_dont_do.webp",
   "aboutSeeHowBg": "/about_see_how_bg.webp",
-  "howItWorksCtaBg": "/cta-bg.png"
+  "howItWorksCtaBg": "/cta-bg.png",
+  "howItWorksFeature1": "/hero_caretakers.webp",
+  "howItWorksFeature2": "/about_hero_floral.png",
+  "howItWorksFeature3": "/about_what_we_do.webp",
+  "howItWorksFeature4": "/App_Teaser_BG.webp",
+  "howItWorksFeature5": "/families_invite_bg.jpg",
+  "howItWorksFeature6": "/about_care_hands.png"
 }

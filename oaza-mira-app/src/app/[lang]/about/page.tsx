@@ -4,8 +4,9 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
 import Image from "next/image";
 import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
-import { Link2, ShieldCheck, Camera, Heart, ArrowRight, X } from "lucide-react";
+import { Link2, ShieldCheck, Camera, Heart, ArrowRight, X, Check } from "lucide-react";
 import pageImagesData from "@/content/images.json";
+import MagneticPull from "@/components/ui/MagneticPull";
 
 export default async function AboutPage({
   params,
@@ -61,42 +62,71 @@ export default async function AboutPage({
             <p data-dict-key="about.5i94sz" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               {dict["about.5i94sz"] || "Oaza Mira is a platform that connects families with trusted local grave care providers."}
             </p>
+
+            <div className="mt-12 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+               <MagneticPull strength={15}>
+                  <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                     <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
+                     <ArrowRight size={20} />
+                  </Link>
+               </MagneticPull>
+            </div>
           </div>
         </AnimatedSection>
       </section>
 
       {/* 2. PLATFORM EXPLANATION */}
-      <section className="py-24 relative z-10 -mt-10 lg:-mt-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-24 relative z-10 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col gap-24 lg:gap-32">
+          
+          {/* Sub-section 2.1: Image-Left, Text-Right */}
           <AnimatedSection delay={0.2}>
-            <div className="rounded-[3rem] lg:rounded-[4rem] bg-[#FDFBF7] relative overflow-hidden flex flex-col lg:flex-row items-center shadow-xl shadow-[#50641B]/5 border border-[#E9C36B]/20">
-
-              <div className="p-12 lg:p-24 lg:w-[55%] relative z-10">
-                 <h2 data-dict-key="about.impact" className="text-[#E09D00] font-bold tracking-widest uppercase text-sm mb-4">
-                    {dict["about.impact"] || "Our Role"}
-                 </h2>
-                 <h3 data-dict-key="about.bmciuz" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight leading-[1.1]">
-                    {dict["about.bmciuz"] || "A platform, not a service provider"}
-                 </h3>
-                 <p data-dict-key="about.fyalyk" className="mt-6 text-xl text-[#8E8675] leading-relaxed">
-                    {dict["about.fyalyk"] || "We connect families with verified local providers who perform the actual grave care services."}
-                 </p>
-                 <p data-dict-key="about.qje0vl" className="mt-6 text-xl text-[#50641B] leading-relaxed font-bold">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-square relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
+                 <Image
+                   src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
+                   alt="Care Hands"
+                   fill
+                   className="object-cover"
+                   data-dict-key="images.aboutCareHands"
+                 />
+              </div>
+              <div className="w-full lg:w-[55%] flex flex-col justify-center">
+                 <span data-dict-key="about.label" className="text-[#E09D00] font-bold tracking-widest uppercase text-sm mb-4">
+                    {dict["about.label"] || "About Oaza Mira"}
+                 </span>
+                 <p data-dict-key="about.qje0vl" className="text-xl md:text-2xl text-[#7A7366] leading-relaxed font-medium">
                     {dict["about.qje0vl"] || "Register a grave, choose your services, and receive verified photo proof once the work is complete."}
                  </p>
               </div>
+            </div>
+          </AnimatedSection>
 
-              <div className="lg:w-[45%] relative w-full h-[400px] lg:h-auto self-stretch">
+          {/* Sub-section 2.2: Text-Left, Image-Right */}
+          <AnimatedSection delay={0.3}>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="w-full lg:w-[55%] flex flex-col justify-center order-2 lg:order-1">
+                 <span data-dict-key="about.impact" className="text-[#50641B] font-bold tracking-widest uppercase text-sm mb-4">
+                    {dict["about.impact"] || "Our Role"}
+                 </span>
+                 <h3 data-dict-key="about.bmciuz" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight leading-[1.1] mb-6">
+                    {dict["about.bmciuz"] || "A platform, not a service provider"}
+                 </h3>
+                 <p data-dict-key="about.fyalyk" className="text-xl text-[#7A7366] leading-relaxed">
+                    {dict["about.fyalyk"] || "We connect families with verified local providers who perform the actual grave care services."}
+                 </p>
+              </div>
+              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-square relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25 order-1 lg:order-2">
                  <Image
-                   src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
-                   alt="Care imagery"
+                   src="/about_hero_floral.png"
+                   alt="Floral Arrangement"
                    fill
-                   className="object-cover rounded-t-[3rem] lg:rounded-l-none lg:rounded-r-[4rem] shadow-inner"
-                   data-dict-key="images.aboutCareHands"
+                   className="object-cover"
                  />
               </div>
             </div>
           </AnimatedSection>
+
         </div>
       </section>
 
@@ -167,91 +197,159 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* 4. WHAT WE DON'T DO */}
-      <section className="py-24 lg:py-32 relative z-10 overflow-hidden">
+      {/* 4. SINCERITY (DO/DON'T) */}
+      <section className="py-24 lg:py-32 relative z-10 overflow-hidden bg-[#FDFCF9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection delay={0.35}>
-            <div className="bg-[#50641B] rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-20 relative overflow-hidden shadow-2xl border border-white/10">
-              {/* Cinematic Background Image & Luxury Overlays */}
-              <div className="absolute inset-0 z-0">
-                <img 
-                  src={(dict as any)["images.aboutWhatWeDontDo"] || pageImagesData.aboutWhatWeDontDo || "/about_what_we_dont_do.webp"} 
-                  alt="Dignified Cemetery Park" 
-                  className="w-full h-full object-cover" 
-                  data-dict-key="images.aboutWhatWeDontDo"
-                />
-                {/* Deep Green / Gold Luxury Overlay (Standardized for emotional resonance) */}
-                <div className="absolute inset-0 bg-[#50641B]/60 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-[#333]/25"></div>
-                {/* Premium noise texture */}
-                <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
-              </div>
+          <AnimatedSection delay={0.2}>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span data-dict-key="about.sincerity.eyebrow" className="text-[#E09D00] font-bold tracking-widest uppercase text-sm mb-4 block">
+                {dict["about.sincerity.eyebrow"] || "Clear boundary"}
+              </span>
+              <h2 data-dict-key="about.sincerity.title" className="text-3xl md:text-5xl font-extrabold text-[#333] tracking-tight mb-6">
+                {dict["about.sincerity.title"] || "Honestly about who we are"}
+              </h2>
+              <p data-dict-key="about.sincerity.desc" className="text-xl text-[#7A7366] leading-relaxed">
+                {dict["about.sincerity.desc"] || "We believe honesty is the foundation of trust — so let's be clear."}
+              </p>
+            </div>
+          </AnimatedSection>
 
-              <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#E09D00]/30 rounded-full blur-3xl animate-pulse-slow"></div>
-              <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#B6C485]/20 rounded-full blur-3xl animate-pulse-slow-reverse"></div>
-
-              <div className="relative z-10 text-center max-w-4xl mx-auto">
-                <h2 data-dict-key="about.w395tm" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-12 drop-shadow-lg">{dict["about.w395tm"] || "What we don't do"}</h2>
-
-                <div className="space-y-10">
-                  <div className="flex items-start justify-center gap-6 group">
-                    <div className="w-10 h-10 rounded-full bg-[#E09D00] text-white border border-[#E09D00]/40 flex items-center justify-center flex-shrink-0 mt-1 shadow-lg">
-                      <X size={24} strokeWidth={3} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* DO CARD */}
+            <AnimatedSection delay={0.3}>
+              <div className="bg-[#FDFBF7] rounded-[2rem] overflow-hidden shadow-xl border border-[#50641B]/10 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
+                <div className="h-60 relative w-full">
+                  <Image
+                    src={(dict as any)["images.aboutWhatWeDo"] || pageImagesData.aboutWhatWeDo || "/about_what_we_do.webp"}
+                    alt="What we are"
+                    fill
+                    className="object-cover"
+                    data-dict-key="images.aboutWhatWeDo"
+                  />
+                  <div className="absolute inset-0 bg-[#50641B]/10 mix-blend-multiply"></div>
+                </div>
+                <div className="p-8 lg:p-10 flex-1 flex flex-col">
+                  <div className="flex items-center mb-6">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#50641B]/10 text-[#50641B]">
+                      <Check size={18} strokeWidth={3} />
                     </div>
-                    <p data-dict-key="about.neplkz" className="text-xl md:text-2xl text-white/90 leading-relaxed text-left font-medium">
-                      {dict["about.neplkz"] || "We do not perform grave care ourselves. We connect you with trusted local caretakers."}
-                    </p>
+                    <h3 data-dict-key="about.sincerity.do.title" className="text-2xl font-bold text-[#333] ml-3">
+                      {dict["about.sincerity.do.title"] || "What we are"}
+                    </h3>
                   </div>
-                  <div className="flex items-start justify-center gap-6 group">
-                    <div className="w-10 h-10 rounded-full bg-[#E09D00] text-white border border-[#E09D00]/40 flex items-center justify-center flex-shrink-0 mt-1 shadow-lg">
-                      <X size={24} strokeWidth={3} />
+                  <div className="space-y-4 flex-1">
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#50641B] font-bold text-xl flex-shrink-0 mt-[-2px]">+</span>
+                      <p data-dict-key="about.sincerity.do.item1" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.do.item1"] || "A platform that connects families with local partners."}
+                      </p>
                     </div>
-                    <p data-dict-key="about.uqz92y" className="text-xl md:text-2xl text-white/90 leading-relaxed text-left font-medium">
-                      {dict["about.uqz92y"] || "We do not employ service providers directly. All services are carried out by verified local partners."}
-                    </p>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#50641B] font-bold text-xl flex-shrink-0 mt-[-2px]">+</span>
+                      <p data-dict-key="about.sincerity.do.item2" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.do.item2"] || "A system that verifies and documents every service."}
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-[#50641B] font-bold text-xl flex-shrink-0 mt-[-2px]">+</span>
+                      <p data-dict-key="about.sincerity.do.item3" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.do.item3"] || "An intermediary with clear, transparent payment."}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+
+            {/* DON'T CARD */}
+            <AnimatedSection delay={0.4}>
+              <div className="bg-[#FDFBF7] rounded-[2rem] overflow-hidden shadow-xl border border-[#E9C36B]/20 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
+                <div className="h-60 relative w-full">
+                  <Image
+                    src={(dict as any)["images.aboutWhatWeDontDo"] || pageImagesData.aboutWhatWeDontDo || "/about_what_we_dont_do.webp"}
+                    alt="What we are not"
+                    fill
+                    className="object-cover"
+                    data-dict-key="images.aboutWhatWeDontDo"
+                  />
+                  <div className="absolute inset-0 bg-[#333]/10 mix-blend-multiply"></div>
+                </div>
+                <div className="p-8 lg:p-10 flex-1 flex flex-col">
+                  <div className="flex items-center mb-6">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500/10 text-red-600">
+                      <X size={18} strokeWidth={3} />
+                    </div>
+                    <h3 data-dict-key="about.sincerity.dont.title" className="text-2xl font-bold text-[#333] ml-3">
+                      {dict["about.sincerity.dont.title"] || "What we are not"}
+                    </h3>
+                  </div>
+                  <div className="space-y-4 flex-1">
+                    <div className="flex items-start gap-3">
+                      <span className="text-red-500 font-bold text-xl flex-shrink-0 mt-[-2px]">–</span>
+                      <p data-dict-key="about.sincerity.dont.item1" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.dont.item1"] || "We do not care for graves ourselves — verified local partners do that."}
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-red-500 font-bold text-xl flex-shrink-0 mt-[-2px]">–</span>
+                      <p data-dict-key="about.sincerity.dont.item2" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.dont.item2"] || "We do not employ caretakers directly — services are performed by local partners."}
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-red-500 font-bold text-xl flex-shrink-0 mt-[-2px]">–</span>
+                      <p data-dict-key="about.sincerity.dont.item3" className="text-lg text-[#7A7366] leading-relaxed">
+                        {dict["about.sincerity.dont.item3"] || "We are not a municipal utility or direct cemetery caretakers."}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
       {/* 5. FINAL CTA */}
-      <section className="pb-32 pt-10 relative overflow-hidden z-10">
-         <AnimatedSection delay={0.4}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 relative overflow-hidden shadow-2xl text-center group border border-[#E9C36B]/20 bg-[#FDFBF7]">
-                  {/* Cinematic Background Image & Luxury Overlays */}
+      <section className="pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
+         <AnimatedSection delay={0.3}>
+            <div className="max-w-7xl mx-auto">
+               <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
+                  
+                  {/* Emotional Background Image */}
                   <div className="absolute inset-0 z-0">
                     <img 
-                      src={(dict as any)["images.aboutSeeHowBg"] || pageImagesData.aboutSeeHowBg || "/about_see_how_bg.webp"} 
-                      alt="Care for grave" 
-                      className="w-full h-full object-cover" 
-                      data-dict-key="images.aboutSeeHowBg"
+                      src={(dict as any)["images.registerHero"] || pageImagesData.registerHero || "/Hero_Register.webp"} 
+                      alt="Oaza Mira Care" 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                      data-dict-key="images.registerHero"
                     />
-                    {/* Contrast-enhancing Overlays for the light text layout */}
-                    <div className="absolute inset-0 bg-[#333]/40"></div>
-                    <div className="absolute inset-0 bg-[#50641B]/20 mix-blend-multiply"></div>
-                    {/* Premium noise texture */}
-                    <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+                    {/* Deep Green / Black Overlay for readability */}
+                    <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#222]/80 via-[#222]/40 to-transparent"></div>
                   </div>
 
-                  <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#E09D00]/25 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-1000"></div>
-                  <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#50641B]/20 rounded-full blur-3xl"></div>
+                  {/* Decorative mesh overlay */}
+                  <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-                  <h1 data-dict-key="about.re1vey" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-2xl">
-                     {dict["about.re1vey"] || "See how it works"}
-                  </h1>
-                  <p data-dict-key="about.5i94sz" className="mt-8 text-xl text-white/90 max-w-2xl mx-auto relative z-10 font-bold drop-shadow-lg">
-                     {dict["about.5i94sz"] || "Understand the process from registration to photo proof."}
-                  </p>
-
-                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row justify-center gap-6">
-                     <Link href={`/${lang}/how-it-works`} className="px-12 py-6 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-[#1a2308] hover:!text-white font-black text-xl hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg border border-white/20">
-                        {dict["nav.howItWorks"] || "See how it works"} <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
-                     </Link>
+                  <h2 data-dict-key="home.cta.title" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-12">
+                     {dict["home.cta.title"] || "Join hundreds of families who trust Oaza Mira."}
+                  </h2>
+                  
+                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                     <MagneticPull strength={15}>
+                        <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
+                           <ArrowRight size={20} />
+                        </Link>
+                     </MagneticPull>
+                     <MagneticPull strength={15}>
+                        <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
+                           <span data-dict-key="btn.contact">{dict["btn.contact"] || "Contact us"}</span>
+                        </Link>
+                     </MagneticPull>
                   </div>
+
                </div>
             </div>
          </AnimatedSection>

@@ -2,10 +2,11 @@ import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n-config";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
-import { Landmark, ShieldCheck, MapPin, Handshake, Mail, ArrowRight, FolderKanban } from "lucide-react";
+import { Landmark, ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import pageImagesData from "@/content/images.json";
+import MagneticPull from "@/components/ui/MagneticPull";
 
 export default async function InstitutionsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -47,7 +48,7 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
           <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/20 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md">
               <Landmark size={16} className="text-[#E9C36B]" strokeWidth={2.5} />
-              <span data-dict-key="nav.institutions">{dict["nav.institutions"] || "Institutions & Municipalities"}</span>
+              <span data-dict-key="institutions.hero.badge">{dict["institutions.hero.badge"] || "Institucije"}</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
@@ -59,80 +60,96 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
               {dict["institutions.hero.desc"]}
             </p>
             
-            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
-              <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                <span data-dict-key="institutions.hero.cta">{dict["institutions.hero.cta"]}</span> <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      {/* 2. How it Works for Institutions */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 md:pt-24 mb-32 z-10 relative">
-        <AnimatedSection delay={0.2}>
-          <div className="text-center mb-16">
-            <h2 data-dict-key="institutions.steps.title" className="text-4xl md:text-5xl font-bold text-[#333] mb-6">{dict["institutions.steps.title"]}</h2>
-            <div className="h-1.5 w-24 bg-[#E09D00] mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="bg-[#FDFBF7] p-10 rounded-[2.5rem] shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-500 group">
-              <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm">
-                <Handshake size={32} />
-              </div>
-              <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 01</div>
-              <h3 data-dict-key="institutions.step1.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step1.title"]}</h3>
-              <p data-dict-key="institutions.step1.desc" className="text-[#8E8675] leading-relaxed">
-                {dict["institutions.step1.desc"]}
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-[#FDFBF7] p-10 rounded-[2.5rem] shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-500 group">
-              <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm">
-                <FolderKanban size={32} />
-              </div>
-              <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 02</div>
-              <h3 data-dict-key="institutions.step2.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step2.title"]}</h3>
-              <p data-dict-key="institutions.step2.desc" className="text-[#8E8675] leading-relaxed">
-                {dict["institutions.step2.desc"]}
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-[#FDFBF7] p-10 rounded-[2.5rem] shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-500 group">
-              <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-8 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm">
-                <ShieldCheck size={32} />
-              </div>
-              <div className="text-[#E09D00] font-bold text-sm mb-4 uppercase tracking-widest">Step 03</div>
-              <h3 data-dict-key="institutions.step3.title" className="text-2xl font-bold text-[#333] mb-4">{dict["institutions.step3.title"]}</h3>
-              <p data-dict-key="institutions.step3.desc" className="text-[#8E8675] leading-relaxed">
-                {dict["institutions.step3.desc"]}
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      {/* 3. Register Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-16 relative z-10">
-        <AnimatedSection delay={0.3}>
-          <div className="bg-[#50641B] rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-[#50641B]/20 group">
-            <div className="absolute inset-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay"></div>
-            <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl transform group-hover:scale-110 transition-transform duration-1000"></div>
-            
-            <div className="relative z-10">
-              <div className="bg-white/10 w-20 h-20 rounded-[2rem] flex items-center justify-center text-white mx-auto mb-8 backdrop-blur-md border border-white/20">
-                <Landmark size={40} />
-              </div>
-              <h2 data-dict-key="institutions.register.cta" className="text-3xl md:text-5xl font-bold mb-10">{dict["institutions.register.cta"]}</h2>
-              <div className="flex justify-center">
-                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-bold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
-                  <span data-dict-key="btn.register">{dict["btn.register"] || "Register"}</span> <ArrowRight className="ml-2 w-6 h-6" />
+            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
+              <MagneticPull strength={15}>
+                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <span data-dict-key="institutions.hero.cta">{dict["institutions.hero.cta"]}</span>
+                  <ArrowRight size={20} />
                 </Link>
+              </MagneticPull>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* 2. Partnerships that build trust - Section 2 (Split Row 1: Image Left, Content Right) */}
+      <section className="py-24 bg-[#FCFAF2] border-y border-[#E9C36B]/15 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection delay={0.2}>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              {/* Image Left */}
+              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-[1.2] order-last lg:order-first relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
+                <Image
+                  src={(dict as any)["images.institutionsSec1"] || pageImagesData.institutionsSec1 || "/business_sec2.avif"}
+                  alt="Trust Partnerships"
+                  fill
+                  className="object-cover"
+                  data-dict-key="images.institutionsSec1"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
               </div>
+
+              {/* Content Right */}
+              <div className="w-full lg:w-[55%] flex flex-col justify-center">
+                <span data-dict-key="institutions.hero.badge" className="text-[#50641B] font-bold tracking-widest uppercase text-sm mb-4">
+                  {dict["institutions.hero.badge"] || "Institucije"}
+                </span>
+                <h2 data-dict-key="institutions.db2gj4" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight leading-[1.1] mb-6">
+                  {dict["institutions.db2gj4"]}
+                </h2>
+                <p data-dict-key="institutions.qapkqs" className="text-lg text-[#7A7366] leading-relaxed font-medium">
+                  {dict["institutions.qapkqs"]}
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 3. Final CTA Section (Current Website Layout, Text: HTML1v4) */}
+      <section className="pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9] pt-24">
+        <AnimatedSection delay={0.3}>
+          <div className="max-w-7xl mx-auto">
+            <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
+              
+              {/* Emotional Background Image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={(dict as any)["images.registerHero"] || pageImagesData.registerHero || "/Hero_Register.webp"} 
+                  alt="Oaza Mira B2G Help" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                  data-dict-key="images.registerHero"
+                />
+                {/* Deep Green / Black Overlay for readability */}
+                <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#222]/80 via-[#222]/40 to-transparent"></div>
+              </div>
+
+              {/* Decorative mesh overlay */}
+              <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+
+              <h2 data-dict-key="institutions.r1j4o5" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-4">
+                {dict["institutions.r1j4o5"] || "Započnite suradnju danas."}
+              </h2>
+              
+              <p data-dict-key="institutions.cta.desc" className="text-xl text-white/90 max-w-2xl mx-auto mb-12 relative z-10 drop-shadow-md leading-relaxed font-medium">
+                {dict["institutions.cta.desc"] || "Pridružite se modernom svijetu gospodarenja grobnim mjestima uz Oazu Mira."}
+              </p>
+              
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                <MagneticPull strength={15}>
+                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                    <span data-dict-key="institutions.hero.cta">{dict["institutions.hero.cta"] || "Kontaktirajte nas"}</span>
+                    <Mail size={20} />
+                  </Link>
+                </MagneticPull>
+                <MagneticPull strength={15}>
+                  <Link href={`/${lang}/how-it-works`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
+                    <span data-dict-key="nav.howItWorks">{dict["nav.howItWorks"] || "See how it works"}</span>
+                  </Link>
+                </MagneticPull>
+              </div>
+
             </div>
           </div>
         </AnimatedSection>
