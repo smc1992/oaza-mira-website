@@ -42,7 +42,7 @@ export default async function HomePage({
     <div className="page-wrapper relative overflow-hidden z-0">
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
+      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center px-6 sm:px-8 lg:px-12 min-h-[90vh] -mb-px">
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -51,63 +51,82 @@ export default async function HomePage({
             className="w-full h-full object-cover"
             data-dict-key="images.homeHero"
           />
-          {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
-          <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-[#333]/25"></div>
+          {/* Linear Gradient Overlay as per HTML1v2 design specification */}
+          <div 
+            className="absolute inset-0 pointer-events-none" 
+            style={{
+              zIndex: 1,
+              background: "linear-gradient(100deg, rgba(20, 18, 12, .82) 0%, rgba(20, 18, 12, .55) 42%, rgba(20, 18, 12, .12) 75%, rgba(20, 18, 12, .05) 100%)"
+            }}
+          ></div>
           {/* Bottom fade into the next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#FDFCF9] to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#FDFCF9] to-transparent pointer-events-none" style={{ zIndex: 2 }}></div>
         </div>
 
         {/* Ambient SVG Glow (Screen overlay to give it a magical touch) */}
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none" style={{ zIndex: 2 }}>
           <HeroBackgroundSVG />
         </div>
         
-        <AnimatedSection delay={0.1}>
-          <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
-            
-            {/* The Classic Dove Logo */}
-            <div className="mb-8">
-              <img 
-                src="/logo.png" 
-                alt="Oaza Mira Logo" 
-                className="h-48 md:h-64 lg:h-72 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
-              />
+        <AnimatedSection delay={0.1} className="w-full relative z-[3]">
+          <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left">
+            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-start">
+              
+              {/* The Classic Dove Logo (Smaller and left-aligned) */}
+              <div className="mb-8 self-start">
+                <img 
+                  src="/logo.png" 
+                  alt="Oaza Mira Logo" 
+                  className="h-16 sm:h-20 lg:h-24 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]"
+                />
+              </div>
+              
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/25 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-8 shadow-lg backdrop-blur-md transform-gpu translate-z-0 self-start">
+                <Leaf size={16} strokeWidth={2.5} /> Oaza Mira App
+              </div>
+              
+              <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white drop-shadow-2xl text-left">
+                {(() => {
+                  const titleText = dict["hero.title"] || "Grave care, |at any distance.";
+                  const parts = titleText.split("|");
+                  return (
+                    <>
+                      {parts[0]}
+                      {parts[1] && <span className="text-[#E9C36B]">{parts[1]}</span>}
+                    </>
+                  );
+                })()}
+              </h1>
+              
+              <p data-dict-key="hero.subtitle" className="mt-6 text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-lg font-medium text-left">
+                {(() => {
+                  const subtitleText = dict["hero.subtitle"] || "Stay connected to what matters — we care for your loved ones’ resting place with dignity and consistency";
+                  const parts = subtitleText.split(/\*\*(.*?)\*\*/g);
+                  return parts.map((part, i) => i % 2 === 1 ? <strong key={i} className="font-extrabold text-white">{part}</strong> : part);
+                })()}
+              </p>
+              
+              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 sm:gap-6 w-full">
+                <MagneticPull strength={15}>
+                  <Link 
+                    href="#portal" 
+                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-[#E09D00] text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-[3px] hover:shadow-[0_14px_38px_rgba(224,157,0,0.42)] transition-all duration-300 shadow-[0_8px_26px_rgba(224,157,0,0.30)] border border-white/10 group font-bold text-lg"
+                  >
+                    <span data-dict-key="hero.cta.primary">{dict["hero.cta.primary"] || "Start for free"}</span>
+                    <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </MagneticPull>
+                <MagneticPull strength={15}>
+                  <Link 
+                    href={`/${lang}/how-it-works`} 
+                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-transparent text-white border-[1.5px] border-white/40 hover:bg-white/12 hover:scale-105 hover:-translate-y-[3px] hover:border-white transition-all duration-300 font-bold text-lg"
+                  >
+                    <span data-dict-key="hero.cta.secondary">{dict["hero.cta.secondary"] || "How it works"}</span>
+                  </Link>
+                </MagneticPull>
+              </div>
+              
             </div>
-            
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/25 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-10 shadow-lg backdrop-blur-md transform-gpu translate-z-0">
-              <Leaf size={16} strokeWidth={2.5} /> Oaza Mira App
-            </div>
-            
-            <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["hero.title"] || "Grave care across any distance."}
-            </h1>
-            
-            <p data-dict-key="hero.subtitle" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-              {dict["hero.subtitle"] || "Stay connected to what matters — we care for your loved ones’ resting place with dignity and consistency"}
-            </p>
-            
-            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
-              <MagneticPull strength={15}>
-                <Link 
-                  href="#portal" 
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] font-bold text-lg hover:!text-white hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20"
-                >
-                  <span data-dict-key="hero.cta.primary">{dict["hero.cta.primary"] || "Download App & Register"}</span>
-                </Link>
-              </MagneticPull>
-              <MagneticPull strength={15}>
-                <Link 
-                  href={`/${lang}/how-it-works`} 
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0"
-                >
-                  <span data-dict-key="hero.cta.secondary">{dict["hero.cta.secondary"] || "See How it Works"}</span>
-                </Link>
-              </MagneticPull>
-            </div>
-            
-
-            
           </div>
         </AnimatedSection>
       </section>

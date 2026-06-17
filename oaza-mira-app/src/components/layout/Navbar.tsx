@@ -278,25 +278,14 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
           </ul>
 
           <div className="flex flex-col lg:flex-row items-center gap-3 lg:ml-3 xl:ml-6 mt-6 lg:mt-0 pt-6 lg:pt-0 border-t lg:border-t-0 border-slate-100 w-full lg:w-auto flex-shrink-0">
-            {/* Log In Button: Gold background, Darkest Green text */}
+            {/* Log In Button: Gold background, White text, styled matching HTML1v2 */}
             <MagneticPull strength={10} className="w-full lg:w-auto flex justify-center">
               <Link
                 href="#login"
-                className="inline-flex items-center justify-center px-6 py-2.5 font-black w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0 rounded-full bg-[#E09D00] !text-[#1a2308] hover:bg-[#E9C36B] transition-all shadow-sm hover:shadow-md"
+                className="inline-flex items-center justify-center px-6 py-2.5 font-black w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0 rounded-full bg-[#E09D00] !text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-sm border border-white/10"
                 onClick={closeMenus}
               >
                 {dict["btn.login"] || "Log In"}
-              </Link>
-            </MagneticPull>
-            
-            {/* Sign Up Button: Green background, White text */}
-            <MagneticPull strength={10} className="w-full lg:w-auto flex justify-center">
-              <Link
-                href="#signup"
-                className="inline-flex items-center justify-center px-6 py-2.5 font-black w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0 rounded-full bg-[#50641B] !text-white hover:bg-[#3d4d14] transition-all shadow-sm hover:shadow-md border border-white/10"
-                onClick={closeMenus}
-              >
-                {dict["btn.signup"] || "Sign Up"}
               </Link>
             </MagneticPull>
           </div>
