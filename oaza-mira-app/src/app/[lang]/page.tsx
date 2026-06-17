@@ -69,8 +69,8 @@ export default async function HomePage({
         </div>
         
         <AnimatedSection delay={0.1} className="w-full relative z-[3]">
-          <div className="w-full max-w-7xl mx-auto flex flex-col items-start text-left">
-            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-start">
+          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-start text-left">
               
               {/* The Classic Dove Logo (Smaller and left-aligned) */}
               <div className="mb-8 self-start">
@@ -110,7 +110,7 @@ export default async function HomePage({
                 <MagneticPull strength={15}>
                   <Link 
                     href="#portal" 
-                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-[#E09D00] text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-[3px] hover:shadow-[0_14px_38px_rgba(224,157,0,0.42)] transition-all duration-300 shadow-[0_8px_26px_rgba(224,157,0,0.30)] border border-white/10 group font-bold text-lg"
+                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-[#E09D00] !text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-[3px] hover:shadow-[0_14px_38px_rgba(224,157,0,0.42)] transition-all duration-300 shadow-[0_8px_26px_rgba(224,157,0,0.30)] border border-white/10 group font-bold text-lg"
                   >
                     <span data-dict-key="hero.cta.primary">{dict["hero.cta.primary"] || "Start for free"}</span>
                     <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -119,7 +119,7 @@ export default async function HomePage({
                 <MagneticPull strength={15}>
                   <Link 
                     href={`/${lang}/how-it-works`} 
-                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-transparent text-white border-[1.5px] border-white/40 hover:bg-white/12 hover:scale-105 hover:-translate-y-[3px] hover:border-white transition-all duration-300 font-bold text-lg"
+                    className="inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-transparent !text-white border-[1.5px] border-white/40 hover:bg-white/12 hover:scale-105 hover:-translate-y-[3px] hover:border-white transition-all duration-300 font-bold text-lg"
                   >
                     <span data-dict-key="hero.cta.secondary">{dict["hero.cta.secondary"] || "How it works"}</span>
                   </Link>
