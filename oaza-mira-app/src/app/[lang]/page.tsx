@@ -217,28 +217,30 @@ export default async function HomePage({
       </section>
 
       {/* 3.5 MEDIATOR SECTION (Mi smo posrednik, ne izvođač) */}
-      <section className="relative w-full overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center py-20 lg:py-32">
-        {/* Full-width Background Image & cinematic overlays */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/about_what_we_do.webp"
-            alt="Oaza Mira Mediator Background"
-            className="w-full h-full object-cover"
-          />
-          {/* Olive Multiply & gradient overlay */}
-          <div className="absolute inset-0 bg-[#50641B]/40 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/40 via-black/25 to-black/60"></div>
-        </div>
+      <section className="py-24 lg:py-32 bg-[#F3EEE2] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+            
+            {/* Left side: Mediator Image */}
+            <AnimatedSection delay={0.1} className="relative aspect-[5/4] rounded-[22px] overflow-hidden shadow-lg bg-[#F3EEE2] group w-full">
+              <img 
+                src="/njegovatelj_na_groblju.jpeg" 
+                alt="Brižni njegovatelj na groblju" 
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none z-10"></div>
+              <span className="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider bg-black/40 px-4 py-2 rounded-full backdrop-blur-md z-20">
+                {dict["home.mediator.imageLabel"] || "Provjereni lokalni partneri"}
+              </span>
+            </AnimatedSection>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-center lg:justify-end">
-          <AnimatedSection delay={0.2} className="w-full max-w-2xl">
-            <div className="bg-[#FDFCF9]/95 backdrop-blur-xl border border-white/40 shadow-[0_30px_60px_rgba(0,0,0,0.25)] rounded-[2rem] p-8 md:p-12 lg:p-14">
-              
+            {/* Right side: Mediator Description & Features */}
+            <AnimatedSection delay={0.2} className="flex flex-col items-start text-left w-full">
               <span className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
                 {dict["home.mediator.eyebrow"] || "WHAT IS OAZA MIRA"}
               </span>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-[#333] tracking-tight mb-6 leading-tight">
                 {dict["home.mediator.title.part1"] || "We are an "}
                 <span className="font-serif italic font-normal text-[#E09D00]">
                   {dict["home.mediator.title.part2"] || "intermediary"}
@@ -250,7 +252,7 @@ export default async function HomePage({
                 {dict["home.mediator.desc"] || "Oaza Mira does not maintain graves directly. We connect you with verified local florists and caretakers — those who already know your cemetery — and ensure that every step is clear, agreed upon, and documented."}
               </p>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-6 mb-10 w-full">
                 {/* Feature 1 */}
                 <div className="flex gap-4 items-start">
                   <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-[#50641B]/10 flex items-center justify-center text-[#50641B]">
@@ -306,9 +308,9 @@ export default async function HomePage({
                   <ArrowRight size={18} />
                 </Link>
               </div>
+            </AnimatedSection>
 
-            </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
