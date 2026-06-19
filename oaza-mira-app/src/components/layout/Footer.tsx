@@ -86,9 +86,9 @@ export default function Footer({ lang, dict }: { lang: string; dict: any }) {
             <ul className="space-y-4">
               {[
                 { href: `/${lang}/families`, label: dict["nav.families"] || "Families" },
+                { href: `/${lang}/providers`, label: dict["nav.caretakers"] || "Care Takers" },
                 { href: `/${lang}/business`, label: dict["nav.companies"] || "Companies" },
                 { href: `/${lang}/institutions`, label: dict["nav.institutions"] || "Institutions" },
-                { href: `/${lang}/providers`, label: dict["nav.caretakers"] || "Care Takers" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-white/60 hover:text-[#E9C36B] text-sm transition-all hover:translate-x-1 inline-block">
