@@ -51,9 +51,11 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
               <span data-dict-key="families.hero.badge">{dict["families.hero.badge"] || "Obitelji"}</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               <span data-dict-key="families.hero.title1">{dict["families.hero.title1"]}</span> <br/>
-              <span data-dict-key="families.hero.title2" className="text-white">{dict["families.hero.title2"]}</span>
+              <span data-dict-key="families.hero.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
+                {dict["families.hero.title2"]}
+              </span>
             </h1>
             
             <p data-dict-key="families.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
@@ -65,11 +67,6 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
                   <ArrowRight size={20} />
-                </Link>
-              </MagneticPull>
-              <MagneticPull strength={15}>
-                <Link href={`/${lang}/how-it-works`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
-                  <span data-dict-key="nav.howItWorks">{dict["nav.howItWorks"] || "How it works"}</span>
                 </Link>
               </MagneticPull>
             </div>
