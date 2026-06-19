@@ -13,3 +13,14 @@ firebase-debug.log
 
 # Local Netlify folder
 .netlify
+
+# Secrets and private keys
+*.pem
+
+# Local dumps and references
+webflow.css
+website changes/
+
+# Test assets
+oaza-mira-app/public/detected_slider.png
+oaza-mira-app/public/test_*.png

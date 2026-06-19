@@ -91,7 +91,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
               { icon: Camera, title: dict["families.how.3.title"], desc: dict["families.how.3.desc"] },
               { icon: Heart, title: dict["families.how.4.title"], desc: dict["families.how.4.desc"] }
             ].map((step, index) => (
-              <div key={index} className="bg-[#FDFBF7] p-8 rounded-3xl shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start text-left h-full min-h-[260px]">
+              <div key={index} className={`bg-[#FDFBF7] p-8 rounded-3xl shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start h-full min-h-[260px] ${index === 3 ? "text-center items-center" : "text-left"}`}>
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity transform group-hover:scale-110 group-hover:rotate-12 duration-500 text-[#E09D00]">
                   <step.icon size={120} />
                 </div>
@@ -121,11 +121,6 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                   className="object-cover"
                   data-dict-key="images.familiesInvite"
                 />
-                {/* Ambient dark bottom gradient for text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
-                <span data-dict-key="families.invite.badge" className="absolute bottom-6 left-8 text-white font-extrabold text-lg uppercase tracking-wider z-20 drop-shadow-md">
-                  {dict["families.invite.badge"] || "Zajednička briga"}
-                </span>
               </div>
               
               {/* Content Right */}
@@ -154,45 +149,43 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
       </section>
 
       {/* 4. Pozovite cvjećara */}
-      <section className="py-24 bg-[#FDFCF9] relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-[110px] bg-[#FDFCF9] relative z-10">
+        <div className="max-w-[1200px] mx-auto px-[30px]">
           <AnimatedSection delay={0.2}>
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-[60px] items-center">
               {/* Content Left */}
-              <div className="w-full lg:w-[55%] flex flex-col justify-center order-2 lg:order-1">
-                <span data-dict-key="families.know.eyebrow" className="text-[#50641B] font-bold tracking-widest uppercase text-sm mb-4">
+              <div className="w-full flex flex-col justify-center order-2 lg:order-1">
+                <span data-dict-key="families.know.eyebrow" className="text-[#E09D00] text-[12px] font-bold tracking-[0.2em] uppercase mb-[14px] inline-block">
                   {dict["families.know.eyebrow"] || "Već imate cvjećara?"}
                 </span>
-                <h2 data-dict-key="families.know.title" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight leading-[1.1] mb-6">
-                  {dict["families.know.title"]}
+                <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-[#2b2a25] tracking-tight leading-[1.12] mb-[18px]">
+                  <span data-dict-key="families.know.title.part1">{dict["families.know.title.part1"] || "Pozovite ga na "}</span>
+                  <span data-dict-key="families.know.title.part2" className="font-serif italic font-normal text-[#E09D00]">
+                    {dict["families.know.title.part2"] || "Oazu Mira."}
+                  </span>
                 </h2>
-                <p data-dict-key="families.know.desc" className="text-lg text-[#7A7366] leading-relaxed mb-10 font-medium">
+                <p data-dict-key="families.know.desc" className="text-[19px] text-[#5c594f] font-normal leading-[1.7] mt-0 mb-0">
                   {dict["families.know.desc"]}
                 </p>
-                <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 w-full">
+                <div className="mt-[28px] flex flex-col sm:flex-row items-center gap-6 w-full">
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
-                      <span data-dict-key="families.know.cta">{dict["families.know.cta"] || "Invite Your Caretaker"}</span>
-                      <ArrowRight size={20} />
+                    <Link href={`/${lang}#portal`} className="inline-flex items-center gap-[9px] px-[30px] py-[15px] rounded-full text-[15px] font-semibold tracking-[0.01em] border-[1.5px] border-[#2b2a25]/12 text-[#2b2a25] bg-white/50 hover:border-[#E09D00] hover:text-[#c48a00] hover:-translate-y-[3px] hover:bg-white transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] shadow-sm group">
+                      <span data-dict-key="families.know.cta">{dict["families.know.cta"] || "Pozovite svog partnera"}</span>
+                      <span className="transition-transform duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:translate-x-1">→</span>
                     </Link>
                   </MagneticPull>
                 </div>
               </div>
 
               {/* Media Right */}
-              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-[1.2] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25 order-1 lg:order-2">
+              <div className="w-full aspect-[5/4] relative rounded-[22px] overflow-hidden shadow-[0_18px_50px_rgba(80,100,27,0.1)] bg-[#F3EEE2] order-1 lg:order-2 group">
                 <Image
                   src={(dict as any)["images.familiesCaretaker"] || pageImagesData.familiesCaretaker || "/families_caretaker_bg.jpg"}
                   alt="Caretaker"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-[1000ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-105"
                   data-dict-key="images.familiesCaretaker"
                 />
-                {/* Ambient dark bottom gradient for text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
-                <span data-dict-key="families.know.badge" className="absolute bottom-6 left-8 text-white font-extrabold text-lg uppercase tracking-wider z-20 drop-shadow-md">
-                  {dict["families.know.badge"] || "Vaš cvjećar, naša platforma"}
-                </span>
               </div>
             </div>
           </AnimatedSection>

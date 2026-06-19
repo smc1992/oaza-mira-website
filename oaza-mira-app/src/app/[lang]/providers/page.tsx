@@ -60,7 +60,9 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               <span data-dict-key="providers.hero.title1">{dict["providers.hero.title1"]}</span> <br/>
-              <span data-dict-key="providers.hero.title2" className="text-white">{dict["providers.hero.title2"]}</span>
+              <span data-dict-key="providers.hero.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
+                {dict["providers.hero.title2"]}
+              </span>
             </h1>
             
             <p data-dict-key="providers.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
@@ -83,25 +85,30 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 md:pt-24 mb-32 relative z-10">
         <AnimatedSection delay={0.2}>
           <div className="text-center mb-16">
-            <h2 data-dict-key="providers.adv.title" className="text-4xl md:text-5xl font-extrabold text-[#333] tracking-tight drop-shadow-sm">
-              {dict["providers.adv.title"] || "Zašto raditi s nama"}
+            <span data-dict-key="providers.adv.eyebrow" className="text-[#E09D00] text-[12px] font-bold tracking-[0.2em] uppercase mb-[14px] inline-block">
+              {dict["providers.adv.eyebrow"] || "Vaše prednosti"}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#333] tracking-tight drop-shadow-sm mb-[18px]">
+              <span data-dict-key="providers.adv.title.part1">{dict["providers.adv.title.part1"] || "Zašto raditi "}</span>
+              <span data-dict-key="providers.adv.title.part2" className="font-serif italic font-normal text-[#E09D00]">
+                {dict["providers.adv.title.part2"] || "s nama"}
+              </span>
             </h2>
             {dict["providers.adv.subtitle"] && (
               <p data-dict-key="providers.adv.subtitle" className="mt-4 text-lg text-[#7A7366] max-w-2xl mx-auto font-medium leading-relaxed">
                 {dict["providers.adv.subtitle"]}
               </p>
             )}
-            <div className="h-1.5 w-24 bg-[#E09D00] mx-auto mt-6 rounded-full shadow-sm"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, index) => (
-              <div key={index} className="bg-[#FDFBF7] p-8 rounded-3xl shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start text-left h-full min-h-[250px]">
-                <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-6 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm relative z-10">
-                  <adv.icon size={28} />
+              <div key={index} className="bg-white px-[26px] py-[30px] border border-[#2b2a25]/8 rounded-[18px] shadow-[0_10px_30px_rgba(43,42,37,0.07)] hover:shadow-[0_18px_50px_rgba(80,100,27,0.1)] hover:-translate-y-[6px] transition-all duration-450 ease-[cubic-bezier(0.22,0.61,0.36,1)] flex flex-col justify-start text-left h-full min-h-[220px]">
+                <div className="w-[48px] h-[48px] rounded-[13px] bg-[#F3EEE2] flex items-center justify-center text-[#50641B] mb-[16px]">
+                  <adv.icon size={20} />
                 </div>
-                <h3 data-dict-key={`providers.adv.${index + 1}.title`} className="text-xl font-extrabold text-[#333] mb-3 relative z-10 leading-tight">{adv.title}</h3>
-                <p data-dict-key={`providers.adv.${index + 1}.desc`} className="text-[#7A7366] text-sm md:text-base leading-relaxed relative z-10 font-medium">{adv.desc}</p>
+                <h3 data-dict-key={`providers.adv.${index + 1}.title`} className="text-[18px] font-bold text-[#2b2a25] mb-[6px] leading-tight">{adv.title}</h3>
+                <p data-dict-key={`providers.adv.${index + 1}.desc`} className="text-[13.5px] text-[#5c594f] leading-relaxed font-normal">{adv.desc}</p>
               </div>
             ))}
           </div>
@@ -207,13 +214,8 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
                   <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
-                    <span data-dict-key="providers.partner.cta">{dict["providers.partner.cta"] || "Registrirajte se"}</span>
+                    <span data-dict-key="providers.cta.btn">{dict["providers.cta.btn"] || "Kontaktiraj B2B tim"}</span>
                     <ArrowRight size={20} />
-                  </Link>
-                </MagneticPull>
-                <MagneticPull strength={15}>
-                  <Link href={`/${lang}/how-it-works`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
-                    <span data-dict-key="nav.howItWorks">{dict["nav.howItWorks"] || "How it works"}</span>
                   </Link>
                 </MagneticPull>
               </div>

@@ -209,6 +209,24 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                     </Link>
 
                     <Link
+                      href={`/${lang}/providers`}
+                      onClick={closeMenus}
+                      className="flex items-start gap-4 p-3 lg:p-4 rounded-2xl hover:bg-[#E9C36B]/20 transition-all duration-300 group/item"
+                    >
+                      <div className="bg-[#E9C36B]/30 p-3 rounded-xl text-[#E09D00] group-hover/item:scale-110 group-hover/item:bg-[#E09D00] group-hover/item:text-[#50641B] transition-all shadow-sm">
+                        <HeartHandshake size={20} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#333] group-hover/item:text-[#50641B]">
+                          {dict["nav.caretakers"] || "Caretakers"}
+                        </h4>
+                        <p className="!hidden lg:!block text-xs text-[#B8AE9F] mt-1 line-clamp-2 leading-relaxed font-medium">
+                          {subDesc.caretakers[safeLang]}
+                        </p>
+                      </div>
+                    </Link>
+
+                    <Link
                       href={`/${lang}/business`}
                       onClick={closeMenus}
                       className="flex items-start gap-4 p-3 lg:p-4 rounded-2xl hover:bg-[#E9C36B]/20 transition-all duration-300 group/item"
@@ -240,24 +258,6 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                         </h4>
                         <p className="!hidden lg:!block text-xs text-[#B8AE9F] mt-1 line-clamp-2 leading-relaxed font-medium">
                           {subDesc.institutions[safeLang]}
-                        </p>
-                      </div>
-                    </Link>
-
-                    <Link
-                      href={`/${lang}/providers`}
-                      onClick={closeMenus}
-                      className="flex items-start gap-4 p-3 lg:p-4 rounded-2xl hover:bg-[#E9C36B]/20 transition-all duration-300 group/item"
-                    >
-                      <div className="bg-[#E9C36B]/30 p-3 rounded-xl text-[#E09D00] group-hover/item:scale-110 group-hover/item:bg-[#E09D00] group-hover/item:text-[#50641B] transition-all shadow-sm">
-                        <HeartHandshake size={20} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-[#333] group-hover/item:text-[#50641B]">
-                          {dict["nav.caretakers"] || "Caretakers"}
-                        </h4>
-                        <p className="!hidden lg:!block text-xs text-[#B8AE9F] mt-1 line-clamp-2 leading-relaxed font-medium">
-                          {subDesc.caretakers[safeLang]}
                         </p>
                       </div>
                     </Link>
