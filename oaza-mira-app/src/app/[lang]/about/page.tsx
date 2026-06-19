@@ -55,8 +55,11 @@ export default async function AboutPage({
               <ShieldCheck size={16} strokeWidth={2.5} /> <span data-dict-key="about.label">{dict["about.label"] || "About Oaza Mira"}</span>
             </div>
 
-            <h1 data-dict-key="about.lltg2z" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
-              {dict["about.lltg2z"] || "Trusted care. Verified caretakers. Clear proof."}
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
+               <span data-dict-key="about.title.part1">{dict["about.title.part1"] || "Trusted care. Verified caretakers. "}</span>
+               <span data-dict-key="about.title.part2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
+                  {dict["about.title.part2"] || "Clear proof."}
+               </span>
             </h1>
 
             <p data-dict-key="about.5i94sz" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
@@ -77,56 +80,47 @@ export default async function AboutPage({
 
       {/* 2. PLATFORM EXPLANATION */}
       <section className="py-24 relative z-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col gap-24 lg:gap-32">
-          
-          {/* Sub-section 2.1: Image-Left, Text-Right */}
-          <AnimatedSection delay={0.2}>
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-square relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
-                 <Image
-                   src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
-                   alt="Care Hands"
-                   fill
-                   className="object-cover"
-                   data-dict-key="images.aboutCareHands"
-                 />
-              </div>
-              <div className="w-full lg:w-[55%] flex flex-col justify-center">
-                 <span data-dict-key="about.label" className="text-[#E09D00] font-bold tracking-widest uppercase text-sm mb-4">
-                    {dict["about.label"] || "About Oaza Mira"}
-                 </span>
-                 <p data-dict-key="about.qje0vl" className="text-xl md:text-2xl text-[#7A7366] leading-relaxed font-medium">
-                    {dict["about.qje0vl"] || "Register a grave, choose your services, and receive verified photo proof once the work is complete."}
-                 </p>
-              </div>
-            </div>
-          </AnimatedSection>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Left side: Platform Description */}
+            <AnimatedSection delay={0.2} className="flex flex-col items-start text-left w-full">
+              <span data-dict-key="about.platform.eyebrow" className="text-[#E09D00] text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 block">
+                {dict["about.platform.eyebrow"] || "Oaza Mira"}
+              </span>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight mb-6 leading-tight">
+                {dict["about.platform.title.part1"] || "Platforma, "}
+                <span className="font-serif italic font-normal text-[#E09D00]">
+                  {dict["about.platform.title.part2"] || "ne izvođač usluge."}
+                </span>
+              </h2>
+              
+              <p data-dict-key="about.platform.lead" className="text-[#7A7366] text-lg md:text-xl mb-4 leading-relaxed font-medium">
+                {dict["about.platform.lead"] || "Povezujemo vas s provjerenim lokalnim cvjećarima i njegovateljima koji svaku uslugu obavljaju s pažnjom i poštovanjem. Oaza Mira osigurava da je svaki korak provjeren i jasno dokumentiran."}
+              </p>
 
-          {/* Sub-section 2.2: Text-Left, Image-Right */}
-          <AnimatedSection delay={0.3}>
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="w-full lg:w-[55%] flex flex-col justify-center order-2 lg:order-1">
-                 <span data-dict-key="about.impact" className="text-[#50641B] font-bold tracking-widest uppercase text-sm mb-4">
-                    {dict["about.impact"] || "Our Role"}
-                 </span>
-                 <h3 data-dict-key="about.bmciuz" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#333] tracking-tight leading-[1.1] mb-6">
-                    {dict["about.bmciuz"] || "A platform, not a service provider"}
-                 </h3>
-                 <p data-dict-key="about.fyalyk" className="text-xl text-[#7A7366] leading-relaxed">
-                    {dict["about.fyalyk"] || "We connect families with verified local providers who perform the actual grave care services."}
-                 </p>
-              </div>
-              <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-square relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25 order-1 lg:order-2">
-                 <Image
-                   src="/about_hero_floral.png"
-                   alt="Floral Arrangement"
-                   fill
-                   className="object-cover"
-                 />
-              </div>
-            </div>
-          </AnimatedSection>
+              <p data-dict-key="about.platform.subtext" className="text-[#7A7366]/80 text-base md:text-lg leading-relaxed font-medium">
+                {dict["about.platform.subtext"] || "Prijavite grob, odaberite brigu i primite jasan fotodokaz nakon svakog posjeta. Jednostavno, transparentno i s dostojanstvom."}
+              </p>
+            </AnimatedSection>
 
+            {/* Right side: Care Hands Image with overlay badge */}
+            <AnimatedSection delay={0.3} className="relative aspect-[4/3] lg:aspect-[1.1] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25 group w-full">
+              <Image
+                src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
+                alt={dict["about.platform.badge"] || "Briga s poštovanjem"}
+                fill
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                data-dict-key="images.aboutCareHands"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none z-10"></div>
+              <span data-dict-key="about.platform.badge" className="absolute bottom-6 left-6 text-white text-xs md:text-sm font-semibold tracking-wider bg-black/40 px-5 py-2.5 rounded-full backdrop-blur-md z-20">
+                {dict["about.platform.badge"] || "Briga s poštovanjem"}
+              </span>
+            </AnimatedSection>
+
+          </div>
         </div>
       </section>
 
@@ -311,7 +305,7 @@ export default async function AboutPage({
       </section>
 
       {/* 5. FINAL CTA */}
-      <section className="pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
+      <section className="pt-32 lg:pt-40 pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
          <AnimatedSection delay={0.3}>
             <div className="max-w-7xl mx-auto">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
@@ -330,16 +324,37 @@ export default async function AboutPage({
                   </div>
 
                   {/* Decorative mesh overlay */}
-                  <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+                  <div className="absolute inset-0 z-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-                  <h2 data-dict-key="home.cta.title" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-12">
-                     {dict["home.cta.title"] || "Join hundreds of families who trust Oaza Mira."}
+                  {/* Styled Logo Element from HTML1v2 */}
+                  <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-6 relative z-10 border border-white/10 shadow-lg">
+                     <Image 
+                        src="/logo.png" 
+                        alt="Oaza Mira Logo" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain opacity-95 select-none pointer-events-none"
+                     />
+                  </div>
+
+                  {/* Redesigned Title from HTML1v2 */}
+                  <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
+                     {dict["home.cta.title.part1"] || "Spremni za "}
+                     <span className="font-serif italic font-normal text-[#E9C36B]">
+                        {dict["home.cta.title.part2"] || "početak?"}
+                     </span>
                   </h2>
                   
-                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                  {/* Localized Description from HTML1v2 */}
+                  <p data-dict-key="home.cta.desc" className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto relative z-10 font-medium drop-shadow-sm">
+                     {dict["home.cta.desc"]}
+                  </p>
+                  
+                  {/* CTA Buttons */}
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
                         <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
-                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
+                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>
                      </MagneticPull>

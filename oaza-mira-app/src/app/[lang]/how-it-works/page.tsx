@@ -17,10 +17,8 @@ import {
   MessageCircle,
   Flower2,
   Bell,
-  Users,
   ArrowRight,
-  Play,
-  Star
+  Play
 } from "lucide-react";
 import pageImagesData from "@/content/images.json";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
@@ -35,28 +33,28 @@ export default async function HowItWorksPage({
 
   const steps = [
     {
-      icon: Smartphone,
+      icon: MapPin,
       number: "01",
-      title: dict["howitworks.step1.title"] || "Get Started",
-      description: dict["howitworks.step1.desc"] || "Download and create your account.",
+      title: dict["howitworks.step1.title"] || "Register the grave",
+      description: dict["howitworks.step1.desc"] || "Add the grave of your loved one to the Oaza Mira system.",
     },
     {
-      icon: Calendar,
+      icon: Flower2,
       number: "02",
-      title: dict["howitworks.step2.title"] || "Register & Choose",
-      description: dict["howitworks.step2.desc"] || "Register your grave and select a care plan.",
+      title: dict["howitworks.step2.title"] || "Choose a service",
+      description: dict["howitworks.step2.desc"] || "Flowers, cleaning, candles or special care — you choose.",
     },
     {
       icon: CheckCircle2,
       number: "03",
-      title: dict["howitworks.step3.title"] || "Care Delivery",
-      description: dict["howitworks.step3.desc"] || "A trusted local caretaker takes over.",
+      title: dict["howitworks.step3.title"] || "Confirm order",
+      description: dict["howitworks.step3.desc"] || "Review and confirm your service request.",
     },
     {
       icon: Camera,
       number: "04",
-      title: dict["howitworks.step4.title"] || "Stay Updated",
-      description: dict["howitworks.step4.desc"] || "Receive before-and-after photos after each visit.",
+      title: dict["howitworks.step4.title"] || "Receive photo proof",
+      description: dict["howitworks.step4.desc"] || "Photos arrive as soon as the order is completed.",
     },
   ];
 
@@ -105,26 +103,6 @@ export default async function HowItWorksPage({
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Maria K.",
-      location: "Vienna, Austria",
-      text: dict["howitworks.testimonial1"] || "Living in Vienna while my mother's grave is in Croatia used to worry me constantly. Now I receive photos every month and have peace of mind.",
-      rating: 5,
-    },
-    {
-      name: "Thomas B.",
-      location: "Munich, Germany",
-      text: dict["howitworks.testimonial2"] || "The photo proof feature is incredible. I finally know that my father's grave is being well-maintained, even from 800km away.",
-      rating: 5,
-    },
-    {
-      name: "Ana M.",
-      location: "Zagreb, Croatia",
-      text: dict["howitworks.testimonial3"] || "We use Oaza Mira as a family. My siblings in Canada and I share the cost and the care. It's brought us closer together.",
-      rating: 5,
-    },
-  ];
 
   return (
     <div className="page-wrapper relative overflow-hidden bg-gradient-to-b from-[#FDFCF9] via-[#FCFAF2] to-[#FDFCF9] min-h-screen z-0">
@@ -180,10 +158,10 @@ export default async function HowItWorksPage({
               <MagneticPull strength={15}>
                 <Link 
                   href="#portal" 
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20"
+                  className="group inline-flex items-center justify-center gap-[9px] py-[15px] px-[30px] rounded-full text-[15px] font-semibold tracking-[0.01em] bg-[#E09D00] text-white hover:bg-[#c48a00] hover:-translate-y-[3px] shadow-[0_8px_26px_rgba(224,157,0,0.3)] hover:shadow-[0_14px_38px_rgba(224,157,0,0.42)] transition-all duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] border-none"
                 >
                   <span data-dict-key="howitworks.hero.cta">{dict["howitworks.hero.cta"] || "Start for free"}</span>
-                  <ArrowRight size={20} />
+                  <span className="inline-block transition-transform duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:translate-x-[4px]">→</span>
                 </Link>
               </MagneticPull>
             </div>
@@ -227,9 +205,9 @@ export default async function HowItWorksPage({
                   </div>
                 </div>
                 {index < 3 && (
-                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-6 z-20 text-2xl text-[#E09D00]/40 font-bold select-none">
+                  <span className="hidden lg:block absolute top-[56px] -right-[16px] -translate-y-1/2 translate-x-1/2 text-[18px] text-[#E09D00] opacity-30 font-bold select-none z-20 pointer-events-none">
                     →
-                  </div>
+                  </span>
                 )}
               </AnimatedSection>
             ))}
@@ -317,8 +295,11 @@ export default async function HowItWorksPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <AnimatedSection delay={0.2}>
             <div className="text-center mb-20">
-              <h2 data-dict-key="howitworks.features.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
-                {dict["howitworks.features.title"] || "What Makes Oaza Mira Special"}
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
+                <span data-dict-key="howitworks.features.title.part1">{dict["howitworks.features.title.part1"] || "What Makes Us "}</span>
+                <span data-dict-key="howitworks.features.title.part2" className="font-serif italic font-normal text-[#E9C36B]">
+                  {dict["howitworks.features.title.part2"] || "Special"}
+                </span>
               </h2>
               <p data-dict-key="howitworks.features.subtitle" className="mt-6 text-xl text-white/80 max-w-2xl mx-auto drop-shadow-md">
                 {dict["howitworks.features.subtitle"] || "We've built a platform that prioritizes trust, transparency, and compassion."}
@@ -357,59 +338,9 @@ export default async function HowItWorksPage({
         </div>
       </section>
 
-      {/* 5. TESTIMONIALS SECTION */}
-      <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-[#FDFBF7] via-[#F3EFE4] to-[#E9DFCA]">
-        {/* Warm abstract glowing orbs instead of an image */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 right-0 w-[800px] h-[800px] bg-[#E9C36B]/20 rounded-full blur-[120px] pointer-events-none opacity-70 mix-blend-multiply"></div>
-          <div className="absolute bottom-0 left-[-200px] w-[600px] h-[600px] bg-[#50641B]/15 rounded-full blur-[100px] pointer-events-none mix-blend-multiply"></div>
-          {/* Subtle noise texture to keep it from looking flat */}
-          <div className="absolute inset-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <AnimatedSection delay={0.2}>
-            <div className="text-center mb-20">
-              <h2 data-dict-key="howitworks.testimonials.title" className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2a360e]">
-                {dict["howitworks.testimonials.title"] || "Families Trust Oaza Mira"}
-              </h2>
-              <p data-dict-key="howitworks.testimonials.subtitle" className="mt-6 text-xl text-[#50641B]/80 max-w-2xl mx-auto">
-                {dict["howitworks.testimonials.subtitle"] || "See what families around Europe have to say about their experience."}
-              </p>
-              <div className="w-24 h-1 bg-[#E9C36B] mx-auto mt-8 rounded-full"></div>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={index} delay={0.1 * (index + 1)}>
-                <div className="bg-[#FDFBF7]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#E9C36B]/20 hover:border-[#E9C36B]/60 transition-all duration-500 h-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(233,195,107,0.15)] flex flex-col justify-between group">
-                  <div>
-                    <div className="flex gap-1 mb-6">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="text-[#E09D00] fill-[#E09D00]" size={18} />
-                      ))}
-                    </div>
-                    <p data-dict-key={`howitworks.testimonial${index + 1}`} className="text-[#4A4A4A] leading-relaxed mb-8 italic text-lg">{testimonial.text}</p>
-                  </div>
-                  <div className="flex items-center gap-4 mt-auto">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#E9C36B]/20 to-transparent rounded-full flex items-center justify-center border border-[#E9C36B]/30 group-hover:scale-110 transition-transform duration-500">
-                      <Users className="text-[#E09D00]" strokeWidth={1.5} size={20} />
-                    </div>
-                    <div>
-                      <p className="font-bold text-[#2a360e] tracking-wide">{testimonial.name}</p>
-                      <p className="text-sm text-[#50641B]/70">{testimonial.location}</p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 5. CTA SECTION */}
-      <section className="pb-32 relative overflow-hidden px-4">
+      <section className="pt-32 lg:pt-40 pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
          <AnimatedSection delay={0.3}>
             <div className="max-w-7xl mx-auto">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
@@ -419,7 +350,7 @@ export default async function HowItWorksPage({
                     <img 
                       src={(dict as any)["images.readyToBeginHero"] || pageImagesData.readyToBeginHero || "/How_it_Works_Ready_to_Begin.webp"} 
                       alt="Oaza Mira Care" 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s] select-none pointer-events-none" 
                       data-dict-key="images.readyToBeginHero"
                     />
                     {/* Deep Green / Black Overlay for readability */}
@@ -428,19 +359,37 @@ export default async function HowItWorksPage({
                   </div>
 
                   {/* Decorative mesh overlay */}
-                  <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+                  <div className="absolute inset-0 z-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-                  <h2 data-dict-key="howitworks.cta.title" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
-                     {dict["howitworks.cta.title"] || "Ready to Begin?"}
+                  {/* Styled Logo Element from HTML1v2 */}
+                  <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-6 relative z-10 border border-white/10 shadow-lg">
+                     <Image 
+                        src="/logo.png" 
+                        alt="Oaza Mira Logo" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain opacity-95 select-none pointer-events-none"
+                     />
+                  </div>
+
+                  {/* Redesigned Title from HTML1v2 */}
+                  <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
+                     {dict["home.cta.title.part1"] || "Spremni za "}
+                     <span className="font-serif italic font-normal text-[#E9C36B]">
+                        {dict["home.cta.title.part2"] || "početak?"}
+                     </span>
                   </h2>
-                  <p data-dict-key="howitworks.cta.subtitle" className="text-xl md:text-2xl text-white/80 relative z-10 mb-12 max-w-2xl mx-auto drop-shadow-md font-medium">
-                     {dict["howitworks.cta.subtitle"] || "Join hundreds of families who trust Oaza Mira to care for their loved ones."}
+                  
+                  {/* Localized Description from HTML1v2 */}
+                  <p data-dict-key="home.cta.desc" className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto relative z-10 font-medium drop-shadow-sm">
+                     {dict["home.cta.desc"]}
                   </p>
                   
-                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                  {/* CTA Buttons */}
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
                         <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
-                           <span data-dict-key="howitworks.cta.primary">{dict["howitworks.cta.primary"] || "Download App & Register"}</span>
+                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>
                      </MagneticPull>

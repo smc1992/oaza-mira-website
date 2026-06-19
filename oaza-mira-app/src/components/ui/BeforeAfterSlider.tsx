@@ -28,27 +28,8 @@ export default function BeforeAfterSlider({
 
   return (
     <div className="relative w-full aspect-[4/3] sm:aspect-[1.38/1] rounded-[22px] overflow-hidden shadow-2xl select-none group border border-[#E9C36B]/20 bg-[#FDFBF7]">
-      {/* Before Image (Bottom Layer) */}
+      {/* After Image (Bottom Layer - Right Side) */}
       <div className="absolute inset-0 w-full h-full">
-        <Image
-          src={beforeImage}
-          alt={beforeAlt}
-          fill
-          className="object-cover"
-          sizes="(max-w-7xl) 100vw, 50vw"
-          priority
-        />
-        {/* Before Badge */}
-        <span className="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-md bg-black/50 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none transition-opacity duration-300 group-hover:bg-black/70">
-          {beforeLabel}
-        </span>
-      </div>
-
-      {/* After Image (Top Layer, Clipped from the right) */}
-      <div 
-        className="absolute inset-0 w-full h-full overflow-hidden"
-        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-      >
         <Image
           src={afterImage}
           alt={afterAlt}
@@ -57,11 +38,32 @@ export default function BeforeAfterSlider({
           sizes="(max-w-7xl) 100vw, 50vw"
           priority
         />
-        {/* After Badge */}
-        <span className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-md bg-[#50641B]/80 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none transition-opacity duration-300 group-hover:bg-[#50641B]">
-          {afterLabel}
-        </span>
       </div>
+
+      {/* Before Image (Top Layer - Left Side, Clipped from the right) */}
+      <div 
+        className="absolute inset-0 w-full h-full overflow-hidden"
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+      >
+        <Image
+          src={beforeImage}
+          alt={beforeAlt}
+          fill
+          className="object-cover"
+          sizes="(max-w-7xl) 100vw, 50vw"
+          priority
+        />
+      </div>
+
+      {/* Before Badge (Fixed Bottom-Left) */}
+      <span className="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-md bg-black/50 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none transition-opacity duration-300 group-hover:bg-black/70">
+        {beforeLabel}
+      </span>
+
+      {/* After Badge (Fixed Bottom-Right) */}
+      <span className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-md bg-[#50641B]/80 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-sm pointer-events-none transition-opacity duration-300 group-hover:bg-[#50641B]">
+        {afterLabel}
+      </span>
 
       {/* Vertical divider line */}
       <div 

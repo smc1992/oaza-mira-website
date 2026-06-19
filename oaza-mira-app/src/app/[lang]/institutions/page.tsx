@@ -107,7 +107,7 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
       </section>
 
       {/* 3. Final CTA Section (Current Website Layout, Text: HTML1v4) */}
-      <section className="pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9] pt-24">
+      <section className="pt-32 lg:pt-40 pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
         <AnimatedSection delay={0.3}>
           <div className="max-w-7xl mx-auto">
             <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">

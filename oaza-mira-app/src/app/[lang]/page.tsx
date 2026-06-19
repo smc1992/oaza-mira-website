@@ -1,6 +1,7 @@
 import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n-config";
 import Link from "next/link";
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
 import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
@@ -344,7 +345,7 @@ export default async function HomePage({
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Card 1: Obitelji */}
             <AnimatedSection delay={0.2}>
               <Link href={`/${lang}/families`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
@@ -512,7 +513,7 @@ export default async function HomePage({
       </section>
 
       {/* 8. HIGH-IMPACT EMOTIONAL CTA */}
-      <section className="pb-32 relative overflow-hidden px-4">
+      <section className="pt-32 lg:pt-40 pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
          <AnimatedSection delay={0.3}>
             <div className="max-w-7xl mx-auto">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
@@ -522,7 +523,7 @@ export default async function HomePage({
                     <img 
                       src={(dict as any)["images.registerHero"] || pageImagesData.registerHero || "/Hero_Register.webp"} 
                       alt="Oaza Mira Care" 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s]" 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s] select-none pointer-events-none" 
                       data-dict-key="images.registerHero"
                     />
                     {/* Deep Green / Black Overlay for readability */}
@@ -531,16 +532,37 @@ export default async function HomePage({
                   </div>
 
                   {/* Decorative mesh overlay */}
-                  <div className="absolute inset-0 z-0 bg-[url('https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/68fbba15f917df9a07152003_Noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+                  <div className="absolute inset-0 z-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
 
-                  <h2 data-dict-key="home.cta.title" className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-12">
-                     {dict["home.cta.title"] || "Join hundreds of families who trust Oaza Mira."}
+                  {/* Styled Logo Element from HTML1v2 */}
+                  <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-6 relative z-10 border border-white/10 shadow-lg">
+                     <Image 
+                        src="/logo.png" 
+                        alt="Oaza Mira Logo" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain opacity-95 select-none pointer-events-none"
+                     />
+                  </div>
+
+                  {/* Redesigned Title from HTML1v2 */}
+                  <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
+                     {dict["home.cta.title.part1"] || "Spremni za "}
+                     <span className="font-serif italic font-normal text-[#E9C36B]">
+                        {dict["home.cta.title.part2"] || "početak?"}
+                     </span>
                   </h2>
                   
-                  <div className="mt-14 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                  {/* Localized Description from HTML1v2 */}
+                  <p data-dict-key="home.cta.desc" className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto relative z-10 font-medium drop-shadow-sm">
+                     {dict["home.cta.desc"]}
+                  </p>
+                  
+                  {/* CTA Buttons */}
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
                         <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
-                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
+                           <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>
                      </MagneticPull>
