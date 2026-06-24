@@ -93,7 +93,7 @@ export default async function HomePage({
                   return (
                     <>
                       {parts[0]}
-                      {parts[1] && <span className="text-[#E9C36B]">{parts[1]}</span>}
+                      {parts[1] && <span className="font-sans font-extrabold not-italic text-[#E9C36B]">{parts[1]}</span>}
                     </>
                   );
                 })()}

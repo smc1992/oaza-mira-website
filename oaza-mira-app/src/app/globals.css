@@ -2,6 +2,7 @@
 
 @theme {
   --font-serif: var(--font-cormorant-garamond), serif;
+  --font-sans: var(--font-maven-pro), sans-serif;
 }
 
 :root {
