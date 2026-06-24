@@ -36,9 +36,14 @@ export default async function AboutPage({
             className="w-full h-full object-cover"
             data-dict-key="images.aboutHero"
           />
-          {/* Deep Green / Gold Luxury Overlay (Standardized 50/25 ratio) */}
-          <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-[#333]/25"></div>
+          {/* Warm Cinematic Gold-Brown Overlay */}
+          <div className="absolute inset-0 bg-[#14120c]/40 mix-blend-multiply"></div>
+          <div 
+            className="absolute inset-0 pointer-events-none" 
+            style={{
+              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.4) 0%, rgba(20, 18, 12, 0.25) 50%, rgba(20, 18, 12, 0.5) 100%)"
+            }}
+          ></div>
           {/* Transition Hero to body background smoothly */}
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#FDFCF9] to-transparent"></div>
         </div>

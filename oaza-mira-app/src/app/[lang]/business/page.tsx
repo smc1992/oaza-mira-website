@@ -32,9 +32,14 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
             className="w-full h-full object-cover"
             data-dict-key="images.businessHero"
           />
-          {/* Deep Green / Gold Luxury Overlay for crisp white text readability */}
-          <div className="absolute inset-0 bg-[#50641B]/60 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-[#333]/30"></div>
+          {/* Warm Cinematic Gold-Brown Overlay */}
+          <div className="absolute inset-0 bg-[#14120c]/45 mix-blend-multiply"></div>
+          <div 
+            className="absolute inset-0 pointer-events-none" 
+            style={{
+              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.45) 0%, rgba(20, 18, 12, 0.3) 50%, rgba(20, 18, 12, 0.55) 100%)"
+            }}
+          ></div>
           {/* Transition Hero to body background smoothly */}
           <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#FDFCF9] to-transparent pointer-events-none"></div>
         </div>
