@@ -2,7 +2,7 @@ import { getDictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n-config";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
-import { Building2, ArrowRight, Mail } from "lucide-react";
+import { Building2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import pageImagesData from "@/content/images.json";
@@ -200,42 +200,60 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      {/* 5. Final CTA Section (Current Website Layout, Text: HTML1v4) */}
-      <section className="py-20 bg-[#FCFAF2] border-t border-[#E9C36B]/15 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection delay={0.3}>
-            <div className="flex flex-col items-center">
-              {/* Horizontal Help Box container styling aligns with Current Website's logout-wrap layout */}
-              <div className="w-full max-w-4xl bg-white border border-[#E9C36B]/20 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                  {/* Left: Branding Icon Box */}
-                  <div className="w-16 h-16 rounded-2xl bg-[#50641B]/10 flex items-center justify-center text-[#50641B] shrink-0">
-                    <Building2 size={32} strokeWidth={1.5} />
-                  </div>
-                  {/* Middle: Title & Description */}
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-[#333] tracking-tight">
-                      <span data-dict-key="business.cta.title1">{dict["business.cta.title1"]}</span>
-                      <span data-dict-key="business.cta.title2" className="font-serif italic font-normal text-[#E09D00]">{dict["business.cta.title2"]}</span>
-                    </h3>
-                    <p data-dict-key="business.cta.desc" className="text-base text-[#7A7366] max-w-xl font-medium leading-relaxed">
-                      {dict["business.cta.desc"]}
-                    </p>
-                  </div>
-                </div>
-                {/* Right: Button Trigger */}
-                <div className="shrink-0">
-                  <MagneticPull strength={15}>
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-md border border-white/20">
-                      <span data-dict-key="business.cta.btn">{dict["business.cta.btn"]}</span>
-                      <ArrowRight size={18} />
-                    </Link>
-                  </MagneticPull>
-                </div>
+      {/* 5. Final CTA Section (Redesigned to match standard layout) */}
+      <section className="pt-32 lg:pt-40 pb-32 relative overflow-hidden px-4 z-10 bg-[#FDFCF9]">
+        <AnimatedSection delay={0.3}>
+          <div className="max-w-7xl mx-auto">
+            <div className="relative rounded-[3rem] lg:rounded-[4rem] p-12 lg:p-24 overflow-hidden shadow-2xl shadow-[#50641B]/30 text-center group flex flex-col justify-center items-center min-h-[450px]">
+              
+              {/* Background Image & Cinematic Overlays */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={(dict as any)["images.registerHero"] || pageImagesData.registerHero || "/Hero_Register.webp"} 
+                  alt="Oaza Mira Care" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s] select-none pointer-events-none" 
+                  data-dict-key="images.registerHero"
+                />
+                {/* Deep Green / Black Overlay for readability */}
+                <div className="absolute inset-0 bg-[#50641B]/50 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#222]/80 via-[#222]/40 to-transparent"></div>
               </div>
+
+              {/* Decorative mesh overlay */}
+              <div className="absolute inset-0 z-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+
+              {/* Styled Logo Element from HTML1v2 */}
+              <div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-6 relative z-10 border border-white/10 shadow-lg">
+                <Image 
+                  src="/logo.png" 
+                  alt="Oaza Mira Logo" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain opacity-95 select-none pointer-events-none"
+                />
+              </div>
+
+              <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-4">
+                <span data-dict-key="business.cta.title1">{dict["business.cta.title1"]}</span>
+                <span data-dict-key="business.cta.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">{dict["business.cta.title2"]}</span>
+              </h2>
+              
+              <p data-dict-key="business.cta.desc" className="text-xl text-white/90 max-w-2xl mx-auto mb-12 relative z-10 drop-shadow-md leading-relaxed font-medium">
+                {dict["business.cta.desc"]}
+              </p>
+              
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
+                <MagneticPull strength={15}>
+                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                    <span data-dict-key="business.cta.btn">{dict["business.cta.btn"]}</span>
+                    <ArrowRight size={20} />
+                  </Link>
+                </MagneticPull>
+              </div>
+
             </div>
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
       </section>
     </div>
   );
