@@ -73,7 +73,7 @@ export default function BeforeAfterSlider({
 
       {/* Circle Slider Handle */}
       <div 
-        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-[3px] border-white bg-[#E09D00] flex items-center justify-center text-white select-none pointer-events-none z-20 group-hover:scale-110 group-hover:bg-[#E9C36B] transition-all duration-200"
+        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-[3px] border-white bg-[#E09D00] flex items-center justify-center text-white select-none pointer-events-none z-20 group-hover:scale-110 group-hover:bg-[#E9C36B] transition duration-200"
         style={{ left: `${position}%` }}
       >
         <svg 

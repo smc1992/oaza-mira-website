@@ -348,11 +348,11 @@ export default async function HomePage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Card 1: Obitelji */}
             <AnimatedSection delay={0.2}>
-              <Link href={`/${lang}/families`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/families`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
                 <img 
                   src="/hero_families.webp" 
                   alt="Obitelji" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-[0.9s] ease-out group-hover:scale-107"
+                  className="absolute inset-0 w-full h-full object-cover z-0 transform scale-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-107"
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#14120c]/15 via-[#14120c]/55 to-[#14120c]/85 pointer-events-none"></div>
                 
@@ -366,7 +366,7 @@ export default async function HomePage({
                   <p data-dict-key="home.roles.role1.desc" className="text-white/85 text-sm mb-4 leading-relaxed font-medium">
                     {dict["home.roles.role1.desc"] || "Brinite o počivalištu najmilijih s bilo kojeg mjesta na svijetu — uz fotodokaz nakon svakog posjeta."}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm group-hover:translate-x-2 transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]">
                     <span data-dict-key="home.roles.cta">{dict["home.roles.cta"] || "Saznajte više"}</span>
                     <ArrowRight size={14} />
                   </span>
@@ -376,11 +376,11 @@ export default async function HomePage({
 
             {/* Card 2: Partneri */}
             <AnimatedSection delay={0.3}>
-              <Link href={`/${lang}/providers`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/providers`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
                 <img 
                   src="/hero_caretakers.webp" 
                   alt="Partneri" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-[0.9s] ease-out group-hover:scale-107"
+                  className="absolute inset-0 w-full h-full object-cover z-0 transform scale-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-107"
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#14120c]/15 via-[#14120c]/55 to-[#14120c]/85 pointer-events-none"></div>
                 
@@ -394,7 +394,7 @@ export default async function HomePage({
                   <p data-dict-key="home.roles.role2.desc" className="text-white/85 text-sm mb-4 leading-relaxed font-medium">
                     {dict["home.roles.role2.desc"] || "Primajte redovite narudžbe iz svog kraja, bez marketinga — i gradite ugled provjerenim radom."}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm group-hover:translate-x-2 transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]">
                     <span data-dict-key="home.roles.cta">{dict["home.roles.cta"] || "Saznajte više"}</span>
                     <ArrowRight size={14} />
                   </span>
@@ -404,11 +404,11 @@ export default async function HomePage({
 
             {/* Card 3: Tvrtke */}
             <AnimatedSection delay={0.4}>
-              <Link href={`/${lang}/business`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/business`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
                 <img 
                   src="/hero_business.webp" 
                   alt="Tvrtke" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-[0.9s] ease-out group-hover:scale-107"
+                  className="absolute inset-0 w-full h-full object-cover z-0 transform scale-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-107"
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#14120c]/15 via-[#14120c]/55 to-[#14120c]/85 pointer-events-none"></div>
                 
@@ -422,7 +422,7 @@ export default async function HomePage({
                   <p data-dict-key="home.roles.role3.desc" className="text-white/85 text-sm mb-4 leading-relaxed font-medium">
                     {dict["home.roles.role3.desc"] || "Cvjećarnice i komunalni servisi — proširite doseg i upravljajte narudžbama na jednom mjestu."}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm group-hover:translate-x-2 transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]">
                     <span data-dict-key="home.roles.cta">{dict["home.roles.cta"] || "Saznajte više"}</span>
                     <ArrowRight size={14} />
                   </span>
@@ -432,11 +432,11 @@ export default async function HomePage({
 
             {/* Card 4: Ustanove */}
             <AnimatedSection delay={0.5}>
-              <Link href={`/${lang}/institutions`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/institutions`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
                 <img 
                   src="/hero_institutions.webp" 
                   alt="Ustanove" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-[0.9s] ease-out group-hover:scale-107"
+                  className="absolute inset-0 w-full h-full object-cover z-0 transform scale-100 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-107"
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#14120c]/15 via-[#14120c]/55 to-[#14120c]/85 pointer-events-none"></div>
                 
@@ -450,7 +450,7 @@ export default async function HomePage({
                   <p data-dict-key="home.roles.role4.desc" className="text-white/85 text-sm mb-4 leading-relaxed font-medium">
                     {dict["home.roles.role4.desc"] || "Groblja i uprave — digitalizirajte brigu o grobovima i ponudite uslugu obiteljima."}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm group-hover:translate-x-2 transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 text-white font-bold text-sm transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]">
                     <span data-dict-key="home.roles.cta">{dict["home.roles.cta"] || "Saznajte više"}</span>
                     <ArrowRight size={14} />
                   </span>
