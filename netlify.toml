@@ -5,3 +5,23 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/"
+  to = "/de"
+  status = 302
+  conditions = {Language = ["de"]}
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/hr"
+  status = 302
+  conditions = {Language = ["hr"]}
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+  force = true
