@@ -157,6 +157,7 @@ export default function Footer({ lang, dict }: { lang: string; dict: any }) {
                 { href: `/${lang}/cookie-policy`, key: "cookie-policy.ab1cd2", defaultLabel: "Cookie Policy" },
                 { href: `/${lang}/refund-policy`, key: "refund-policy.xyz890", defaultLabel: "Refund Policy" },
                 { href: `/${lang}/terms`, key: "terms.of.service.k92nsi", defaultLabel: "Terms of Service" },
+                { href: `/${lang}/account-deletion-policy`, key: "account-deletion-policy.a7d2e1", defaultLabel: "Account Deletion Policy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
