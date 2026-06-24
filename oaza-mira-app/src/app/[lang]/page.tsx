@@ -566,11 +566,6 @@ export default async function HomePage({
                            <ArrowRight size={20} />
                         </Link>
                      </MagneticPull>
-                     <MagneticPull strength={15}>
-                        <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white/20 backdrop-blur-md !text-white border border-white/20 shadow-lg font-bold text-lg hover:bg-white hover:!text-[#1a2208] transition-all duration-300 transform-gpu translate-z-0">
-                           <span data-dict-key="btn.contact">{dict["btn.contact"] || "Contact us"}</span>
-                        </Link>
-                     </MagneticPull>
                   </div>
 
                </div>
