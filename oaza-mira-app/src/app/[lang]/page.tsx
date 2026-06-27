@@ -71,10 +71,10 @@ export default async function HomePage({
         
         <AnimatedSection delay={0.1} className="w-full relative z-[3]">
           <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-center text-center mx-auto">
+            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-start text-left">
               
-              {/* The Classic Dove Logo (Centered and 50% larger) */}
-              <div className="mb-8 self-center">
+              {/* The Classic Dove Logo (Centered above the left-aligned block) */}
+              <div className="mb-8 w-full flex justify-center">
                 <img 
                   src="/logo.png" 
                   alt="Oaza Mira Logo" 
@@ -82,7 +82,7 @@ export default async function HomePage({
                 />
               </div>
               
-              <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white drop-shadow-2xl text-center">
+              <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white drop-shadow-2xl text-left">
                 {(() => {
                   const titleText = dict["hero.title"] || "Grave care, |at any distance.";
                   const parts = titleText.split("|");
@@ -95,7 +95,7 @@ export default async function HomePage({
                 })()}
               </h1>
               
-              <p data-dict-key="hero.subtitle" className="mt-6 text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-lg font-medium text-center">
+              <p data-dict-key="hero.subtitle" className="mt-6 text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-lg font-medium text-left">
                 {(() => {
                   const subtitleText = dict["hero.subtitle"] || "Stay connected to what matters — we care for your loved ones’ resting place with dignity and consistency";
                   const parts = subtitleText.split(/\*\*(.*?)\*\*/g);
@@ -103,7 +103,7 @@ export default async function HomePage({
                 })()}
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-6 w-full">
+              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 sm:gap-6 w-full">
                 <MagneticPull strength={15}>
                   <Link 
                     href="#portal" 
