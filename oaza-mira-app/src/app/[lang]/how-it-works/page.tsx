@@ -89,7 +89,7 @@ export default async function HowItWorksPage({
     },
     {
       icon: MessageCircle,
-      image: (dict as any)["images.howItWorksFeature5"] || pageImagesData.howItWorksFeature5 || "/manage_everything_easily_fv.avif",
+      image: (dict as any)["images.howItWorksFeature5"] || pageImagesData.howItWorksFeature5 || "/Family_Collaboration.webp",
       imageKey: "images.howItWorksFeature5",
       title: dict["howitworks.feature5.title"] || "Family Collaboration",
       description: dict["howitworks.feature5.desc"] || "Invite family members to view and contribute to the care together.",
