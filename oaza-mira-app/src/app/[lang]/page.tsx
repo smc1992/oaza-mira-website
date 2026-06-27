@@ -348,7 +348,7 @@ export default async function HomePage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Card 1: Obitelji */}
             <AnimatedSection delay={0.2}>
-              <Link href={`/${lang}/families`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/families`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl translate-y-0 hover:-translate-y-2 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full smooth-card-hover">
                 <img 
                   src="/hero_families.webp" 
                   alt="Obitelji" 
@@ -376,7 +376,7 @@ export default async function HomePage({
 
             {/* Card 2: Partneri */}
             <AnimatedSection delay={0.3}>
-              <Link href={`/${lang}/providers`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/providers`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl translate-y-0 hover:-translate-y-2 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full smooth-card-hover">
                 <img 
                   src="/hero_caretakers.webp" 
                   alt="Partneri" 
@@ -404,7 +404,7 @@ export default async function HomePage({
 
             {/* Card 3: Tvrtke */}
             <AnimatedSection delay={0.4}>
-              <Link href={`/${lang}/business`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/business`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl translate-y-0 hover:-translate-y-2 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full smooth-card-hover">
                 <img 
                   src="/hero_business.webp" 
                   alt="Tvrtke" 
@@ -432,7 +432,7 @@ export default async function HomePage({
 
             {/* Card 4: Ustanove */}
             <AnimatedSection delay={0.5}>
-              <Link href={`/${lang}/institutions`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl transform translate-y-0 hover:-translate-y-2 transition-all duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full">
+              <Link href={`/${lang}/institutions`} className="relative overflow-hidden rounded-[22px] min-h-[380px] flex flex-col justify-end p-8 shadow-md hover:shadow-xl translate-y-0 hover:-translate-y-2 group border border-[#E9C36B]/10 hover:border-[#E9C36B]/40 h-full smooth-card-hover">
                 <img 
                   src="/hero_institutions.webp" 
                   alt="Ustanove" 
@@ -561,7 +561,7 @@ export default async function HomePage({
                   {/* CTA Buttons */}
                   <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
-                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                            <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>

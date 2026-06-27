@@ -54,3 +54,41 @@ a.text-emerald-600 {
 .animate-marquee {
   animation: marquee 120s linear infinite;
 }
+
+/* Premium Buttery-Smooth Card Hover Transition */
+.smooth-card-hover {
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+              border-color 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+              translate 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+/* Apply buttery smooth transitions to all buttons and button-like links */
+button,
+a.rounded-full,
+a[class*="rounded-full"],
+.portal-login-btn,
+.btn-wrapp,
+.cta-primary,
+.cta-secondary {
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              background-color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              border-color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              scale 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+              translate 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  will-change: transform, scale, translate, box-shadow;
+}
+
+/* Ensure all yellow/gold buttons have white text site-wide */
+a[class*="from-[#E09D00]"],
+button[class*="from-[#E09D00]"],
+a[class*="bg-[#E09D00]"],
+button[class*="bg-[#E09D00]"],
+.portal-login-btn, .btn-wrapp, .cta-primary {
+  color: #ffffff !important;
+}
+
+

@@ -101,7 +101,7 @@ const AppPortal: React.FC<AppPortalProps> = ({ dict, lang }) => {
                 {/* Tabs */}
                 <div className="px-6 mt-4">
                   <div className="bg-[#F2F8E1] rounded-2xl p-1 flex gap-1">
-                    <button className="flex-1 py-3.5 bg-[#E09D00] text-[#1a2308] font-extrabold text-sm rounded-xl shadow-md">
+                    <button className="flex-1 py-3.5 bg-[#E09D00] !text-white font-extrabold text-sm rounded-xl shadow-md">
                       Moja Počivališta
                     </button>
                     <button className="flex-1 py-3.5 text-[#50641B]/60 font-bold text-sm rounded-xl">
@@ -162,7 +162,7 @@ const AppPortal: React.FC<AppPortalProps> = ({ dict, lang }) => {
                           <button className="py-2.5 bg-[#50641B] text-white font-bold text-[10px] rounded-lg shadow-sm hover:opacity-90 transition-opacity">
                             Pregledaj
                           </button>
-                          <button className="py-2.5 bg-[#E09D00] text-[#1a2308] font-extrabold text-[10px] rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                          <button className="py-2.5 bg-[#E09D00] !text-white font-extrabold text-[10px] rounded-lg shadow-sm hover:opacity-90 transition-opacity">
                             Naruči
                           </button>
                         </div>
@@ -209,7 +209,7 @@ const AppPortal: React.FC<AppPortalProps> = ({ dict, lang }) => {
                               <button className="py-2 bg-[#50641B]/20 text-[#50641B] font-bold text-[9px] rounded-lg">
                                 Pregledaj
                               </button>
-                              <button className="py-2 bg-[#E09D00] text-[#1a2308] font-extrabold text-[9px] rounded-lg">
+                              <button className="py-2 bg-[#E09D00] !text-white font-extrabold text-[9px] rounded-lg">
                                 Naruči
                               </button>
                             </div>
@@ -219,7 +219,7 @@ const AppPortal: React.FC<AppPortalProps> = ({ dict, lang }) => {
                   </div>
                   
                   {/* Action Button */}
-                  <button className="w-full py-4 bg-[#E09D00] text-[#1a2308] font-[900] text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all transform duration-300 mb-4">
+                  <button className="w-full py-4 bg-[#E09D00] !text-white font-[900] text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all transform duration-300 mb-4">
                     Dodaj Počivalište
                   </button>
                   

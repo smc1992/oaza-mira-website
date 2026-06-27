@@ -55,11 +55,11 @@ h1.hero-heading {
 /* Primary CTA Buttons (Gold Gradient) */
 .portal-login-btn, .btn-wrapp, .cta-primary {
   background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light)) !important;
-  color: var(--color-green-primary) !important;
+  color: var(--color-white) !important;
   border: none !important;
   box-shadow: 0 10px 15px -3px rgba(224, 157, 0, 0.3) !important;
   border-radius: 50px !important;
-  transition: all 0.3s ease !important;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
   font-weight: 600 !important;
 }
 
@@ -75,7 +75,7 @@ h1.hero-heading {
   border: none !important;
   box-shadow: 0 10px 15px -3px rgba(80, 100, 27, 0.3) !important;
   border-radius: 50px !important;
-  transition: all 0.3s ease !important;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), color 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
   font-weight: 600 !important;
 }
 

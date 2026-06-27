@@ -27,7 +27,7 @@ export default async function AboutPage({
       </div>
 
       {/* 1. ABOUT HERO */}
-      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh]">
+      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -36,12 +36,11 @@ export default async function AboutPage({
             className="w-full h-full object-cover"
             data-dict-key="images.aboutHero"
           />
-          {/* Warm Cinematic Gold-Brown Overlay */}
-          <div className="absolute inset-0 bg-[#14120c]/40 mix-blend-multiply"></div>
+          {/* Linear Gradient Overlay as per HTML1v2 design specification */}
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
-              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.4) 0%, rgba(20, 18, 12, 0.25) 50%, rgba(20, 18, 12, 0.5) 100%)"
+              background: "linear-gradient(100deg, rgba(20, 18, 12, 0.82) 0%, rgba(20, 18, 12, 0.55) 42%, rgba(20, 18, 12, 0.12) 75%, rgba(20, 18, 12, 0.05) 100%)"
             }}
           ></div>
           {/* Transition Hero to body background smoothly */}
@@ -62,7 +61,7 @@ export default async function AboutPage({
 
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
                <span data-dict-key="about.title.part1">{dict["about.title.part1"] || "Trusted care. Verified caretakers. "}</span>
-               <span data-dict-key="about.title.part2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
+               <span data-dict-key="about.title.part2" className="font-sans font-extrabold not-italic text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
                   {dict["about.title.part2"] || "Clear proof."}
                </span>
             </h1>
@@ -73,7 +72,7 @@ export default async function AboutPage({
 
             <div className="mt-12 relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                <MagneticPull strength={15}>
-                  <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                      <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
                      <ArrowRight size={20} />
                   </Link>
@@ -345,7 +344,7 @@ export default async function AboutPage({
                   {/* Redesigned Title from HTML1v2 */}
                   <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
                      {dict["home.cta.title.part1"] || "Spremni za "}
-                     <span className="font-serif italic font-normal text-[#E9C36B]">
+                     <span className="font-sans font-extrabold not-italic text-[#E9C36B]">
                         {dict["home.cta.title.part2"] || "početak?"}
                      </span>
                   </h2>
@@ -358,7 +357,7 @@ export default async function AboutPage({
                   {/* CTA Buttons */}
                   <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
-                        <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                        <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                            <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>

@@ -115,7 +115,7 @@ export default async function HowItWorksPage({
       </div>
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh]">
+      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -124,12 +124,11 @@ export default async function HowItWorksPage({
             className="w-full h-full object-cover"
             data-dict-key="images.howItWorksHero"
           />
-          {/* Warm Cinematic Gold-Brown Overlay */}
-          <div className="absolute inset-0 bg-[#14120c]/40 mix-blend-multiply"></div>
+          {/* Linear Gradient Overlay as per HTML1v2 design specification */}
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
-              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.4) 0%, rgba(20, 18, 12, 0.25) 50%, rgba(20, 18, 12, 0.5) 100%)"
+              background: "linear-gradient(100deg, rgba(20, 18, 12, 0.82) 0%, rgba(20, 18, 12, 0.55) 42%, rgba(20, 18, 12, 0.12) 75%, rgba(20, 18, 12, 0.05) 100%)"
             }}
           ></div>
           {/* Transition Hero to body background smoothly */}
@@ -150,7 +149,7 @@ export default async function HowItWorksPage({
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               <span className="block" data-dict-key="howitworks.title.part1">{dict["howitworks.title.part1"] || "Simple Care. "}</span>
-              <span data-dict-key="howitworks.title.part2" className="block font-serif italic font-normal text-[#E9C36B] mt-2">
+              <span data-dict-key="howitworks.title.part2" className="block font-sans font-extrabold not-italic text-[#E9C36B] mt-2">
                 {dict["howitworks.title.part2"] || "Lasting peace of mind."}
               </span>
             </h1>
@@ -199,7 +198,7 @@ export default async function HowItWorksPage({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <AnimatedSection key={index} delay={0.1 * (index + 1)} className="relative">
-                <div className="bg-[#FDFBF7]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#E9C36B]/20 hover:border-[#E09D00]/40 hover:shadow-2xl hover:shadow-[#E09D00]/15 transition-all duration-500 h-full relative group overflow-hidden flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2">
+                <div className="bg-[#FDFBF7]/80 backdrop-blur-xl rounded-3xl p-8 border border-[#E9C36B]/20 hover:border-[#E09D00]/40 hover:shadow-2xl hover:shadow-[#E09D00]/15 h-full relative group overflow-hidden flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 smooth-card-hover">
                   {/* Subtle hover gradient inside the card */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#E9C36B]/0 to-[#E9C36B]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
                   
@@ -302,7 +301,7 @@ export default async function HowItWorksPage({
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
                 <span data-dict-key="howitworks.features.title.part1">{dict["howitworks.features.title.part1"] || "What Makes Us "}</span>
-                <span data-dict-key="howitworks.features.title.part2" className="font-serif italic font-normal text-[#E9C36B]">
+                <span data-dict-key="howitworks.features.title.part2" className="font-sans font-extrabold not-italic text-[#E9C36B]">
                   {dict["howitworks.features.title.part2"] || "Special"}
                 </span>
               </h2>
@@ -380,7 +379,7 @@ export default async function HowItWorksPage({
                   {/* Redesigned Title from HTML1v2 */}
                   <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-6">
                      {dict["home.cta.title.part1"] || "Spremni za "}
-                     <span className="font-serif italic font-normal text-[#E9C36B]">
+                     <span className="font-sans font-extrabold not-italic text-[#E9C36B]">
                         {dict["home.cta.title.part2"] || "početak?"}
                      </span>
                   </h2>
@@ -393,7 +392,7 @@ export default async function HowItWorksPage({
                   {/* CTA Buttons */}
                   <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
-                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                            <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>

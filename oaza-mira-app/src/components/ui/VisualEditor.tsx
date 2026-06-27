@@ -381,7 +381,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
             <button
               type="submit"
               disabled={submittingAuth}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#E09D00] to-[#E9C36B] hover:opacity-90 active:scale-[0.98] text-[#1a2308] font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-[#E09D00]/10 transition-all duration-300 disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#E09D00] to-[#E9C36B] hover:opacity-90 active:scale-[0.98] !text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-[#E09D00]/10 transition-all duration-300 disabled:opacity-50"
             >
               {submittingAuth ? (
                 <Loader2 className="animate-spin h-5 w-5" />
@@ -481,7 +481,7 @@ export default function VisualEditor({ lang }: { lang: string }) {
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-lg ${
                   saveStatus === "success"
                     ? "bg-emerald-600 text-white"
-                    : "bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:opacity-90 active:scale-95 shadow-[#E09D00]/10"
+                    : "bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white hover:opacity-90 active:scale-95 shadow-[#E09D00]/10"
                 }`}
               >
                 {saving ? (

@@ -23,7 +23,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
       </div>
 
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
+      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -32,12 +32,11 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
             className="w-full h-full object-cover"
             data-dict-key="images.businessHero"
           />
-          {/* Warm Cinematic Gold-Brown Overlay */}
-          <div className="absolute inset-0 bg-[#14120c]/45 mix-blend-multiply"></div>
+          {/* Linear Gradient Overlay as per HTML1v2 design specification */}
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
-              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.45) 0%, rgba(20, 18, 12, 0.3) 50%, rgba(20, 18, 12, 0.55) 100%)"
+              background: "linear-gradient(100deg, rgba(20, 18, 12, 0.82) 0%, rgba(20, 18, 12, 0.55) 42%, rgba(20, 18, 12, 0.12) 75%, rgba(20, 18, 12, 0.05) 100%)"
             }}
           ></div>
           {/* Transition Hero to body background smoothly */}
@@ -58,7 +57,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               <span data-dict-key="business.hero.title1">{dict["business.hero.title1"]}</span> <br/>
-              <span data-dict-key="business.hero.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">{dict["business.hero.title2"]}</span>
+              <span data-dict-key="business.hero.title2" className="font-sans font-extrabold not-italic text-[#E9C36B] block sm:inline mt-2 sm:mt-0">{dict["business.hero.title2"]}</span>
             </h1>
             
             <p data-dict-key="business.hero.desc" className="mt-8 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
@@ -67,7 +66,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
               <MagneticPull strength={15}>
-                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="business.hero.cta1">{dict["business.hero.cta1"]}</span>
                   <ArrowRight size={20} />
                 </Link>
@@ -98,7 +97,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mt-16">
               {[1, 2, 3, 4].map((stepNum) => (
-                <div key={stepNum} className="flex flex-col p-8 rounded-3xl bg-white border border-[#E9C36B]/15 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                <div key={stepNum} className="flex flex-col p-8 rounded-3xl bg-white border border-[#E9C36B]/15 shadow-md hover:shadow-xl hover:-translate-y-1 relative overflow-hidden group smooth-card-hover">
                   <div className="text-5xl font-black text-[#50641B]/10 group-hover:text-[#50641B]/20 transition-colors duration-300 mb-4">
                     0{stepNum}
                   </div>
@@ -148,7 +147,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
                 </p>
                 <div>
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
+                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
                       <span data-dict-key="business.split1.cta">{dict["business.split1.cta"]}</span>
                       <ArrowRight size={18} />
                     </Link>
@@ -179,7 +178,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
                 </p>
                 <div>
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
+                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
                       <span data-dict-key="business.split2.cta">{dict["business.split2.cta"]}</span>
                       <ArrowRight size={18} />
                     </Link>
@@ -240,7 +239,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
 
               <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] font-extrabold text-white tracking-tight relative z-10 max-w-4xl mx-auto drop-shadow-xl mb-4">
                 <span data-dict-key="business.cta.title1">{dict["business.cta.title1"]}</span>
-                <span data-dict-key="business.cta.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">{dict["business.cta.title2"]}</span>
+                <span data-dict-key="business.cta.title2" className="font-sans font-extrabold not-italic text-[#E9C36B] block sm:inline mt-2 sm:mt-0">{dict["business.cta.title2"]}</span>
               </h2>
               
               <p data-dict-key="business.cta.desc" className="text-xl text-white/90 max-w-2xl mx-auto mb-12 relative z-10 drop-shadow-md leading-relaxed font-medium">
@@ -249,7 +248,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
-                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                     <span data-dict-key="business.cta.btn">{dict["business.cta.btn"]}</span>
                     <ArrowRight size={20} />
                   </Link>

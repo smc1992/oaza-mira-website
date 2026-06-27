@@ -30,7 +30,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
       </div>
 
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
+      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[90vh] -mb-px">
         {/* Background Image & Cinematic Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -39,12 +39,11 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
             className="w-full h-full object-cover"
             data-dict-key="images.providersHero"
           />
-          {/* Warm Cinematic Gold-Brown Overlay */}
-          <div className="absolute inset-0 bg-[#14120c]/40 mix-blend-multiply"></div>
+          {/* Linear Gradient Overlay as per HTML1v2 design specification */}
           <div 
             className="absolute inset-0 pointer-events-none" 
             style={{
-              background: "linear-gradient(180deg, rgba(20, 18, 12, 0.4) 0%, rgba(20, 18, 12, 0.25) 50%, rgba(20, 18, 12, 0.5) 100%)"
+              background: "linear-gradient(100deg, rgba(20, 18, 12, 0.82) 0%, rgba(20, 18, 12, 0.55) 42%, rgba(20, 18, 12, 0.12) 75%, rgba(20, 18, 12, 0.05) 100%)"
             }}
           ></div>
           {/* Transition Hero to body background smoothly */}
@@ -65,7 +64,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
             
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white max-w-5xl mx-auto drop-shadow-2xl">
               <span data-dict-key="providers.hero.title1">{dict["providers.hero.title1"]}</span> <br/>
-              <span data-dict-key="providers.hero.title2" className="font-serif italic font-normal text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
+              <span data-dict-key="providers.hero.title2" className="font-sans font-extrabold not-italic text-[#E9C36B] block sm:inline mt-2 sm:mt-0">
                 {dict["providers.hero.title2"]}
               </span>
             </h1>
@@ -76,7 +75,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
               <MagneticPull strength={15}>
-                <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="providers.hero.cta">{dict["providers.hero.cta"]}</span>
                   <ArrowRight size={20} />
                 </Link>
@@ -108,7 +107,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, index) => (
-              <div key={index} className="bg-white px-[26px] py-[30px] border border-[#2b2a25]/8 rounded-[18px] shadow-[0_10px_30px_rgba(43,42,37,0.07)] hover:shadow-[0_18px_50px_rgba(80,100,27,0.1)] hover:-translate-y-[6px] transition-all duration-450 ease-[cubic-bezier(0.22,0.61,0.36,1)] flex flex-col justify-start text-left h-full min-h-[220px]">
+              <div key={index} className="bg-white px-[26px] py-[30px] border border-[#2b2a25]/8 rounded-[18px] shadow-[0_10px_30px_rgba(43,42,37,0.07)] hover:shadow-[0_18px_50px_rgba(80,100,27,0.1)] hover:-translate-y-[6px] flex flex-col justify-start text-left h-full min-h-[220px] smooth-card-hover">
                 <div className="w-[48px] h-[48px] rounded-[13px] bg-[#F3EEE2] flex items-center justify-center text-[#50641B] mb-[16px]">
                   <adv.icon size={20} />
                 </div>
@@ -174,7 +173,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
 
                 <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 w-full">
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
+                    <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
                       <span data-dict-key="providers.partner.cta">{dict["providers.partner.cta"] || "Registrirajte se"}</span>
                       <ArrowRight size={20} />
                     </Link>
@@ -218,7 +217,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
-                  <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] text-[#1a2308] hover:!text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                     <span data-dict-key="providers.cta.btn">{dict["providers.cta.btn"] || "Započnite registraciju"}</span>
                     <ArrowRight size={20} />
                   </Link>
