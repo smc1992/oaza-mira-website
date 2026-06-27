@@ -7,7 +7,7 @@ import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
 import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 import AppTeaser from "@/components/ui/AppTeaser";
 import MagneticPull from "@/components/ui/MagneticPull";
-import { Leaf, ShieldCheck, ArrowRight, Apple, Play, CheckCircle2, Star, Users } from "lucide-react";
+import { ShieldCheck, ArrowRight, Apple, Play, CheckCircle2, Star, Users } from "lucide-react";
 import pageImagesData from "@/content/images.json";
 
 export default async function HomePage({
@@ -71,22 +71,18 @@ export default async function HomePage({
         
         <AnimatedSection delay={0.1} className="w-full relative z-[3]">
           <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-start text-left">
+            <div className="max-w-2xl lg:max-w-3xl flex flex-col items-center text-center mx-auto">
               
-              {/* The Classic Dove Logo (Smaller and left-aligned) */}
-              <div className="mb-8 self-start">
+              {/* The Classic Dove Logo (Centered and 50% larger) */}
+              <div className="mb-8 self-center">
                 <img 
                   src="/logo.png" 
                   alt="Oaza Mira Logo" 
-                  className="h-16 sm:h-20 lg:h-24 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]"
+                  className="h-24 sm:h-30 lg:h-36 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]"
                 />
               </div>
               
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E9C36B]/40 bg-[#E09D00]/25 text-[#E9C36B] text-sm font-bold tracking-widest uppercase mb-8 shadow-lg backdrop-blur-md transform-gpu translate-z-0 self-start">
-                <Leaf size={16} strokeWidth={2.5} /> Oaza Mira App
-              </div>
-              
-              <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white drop-shadow-2xl text-left">
+              <h1 data-dict-key="hero.title" className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] font-extrabold tracking-tighter text-white drop-shadow-2xl text-center">
                 {(() => {
                   const titleText = dict["hero.title"] || "Grave care, |at any distance.";
                   const parts = titleText.split("|");
@@ -99,7 +95,7 @@ export default async function HomePage({
                 })()}
               </h1>
               
-              <p data-dict-key="hero.subtitle" className="mt-6 text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-lg font-medium text-left">
+              <p data-dict-key="hero.subtitle" className="mt-6 text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed drop-shadow-lg font-medium text-center">
                 {(() => {
                   const subtitleText = dict["hero.subtitle"] || "Stay connected to what matters — we care for your loved ones’ resting place with dignity and consistency";
                   const parts = subtitleText.split(/\*\*(.*?)\*\*/g);
@@ -107,7 +103,7 @@ export default async function HomePage({
                 })()}
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 sm:gap-6 w-full">
+              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-6 w-full">
                 <MagneticPull strength={15}>
                   <Link 
                     href="#portal" 
