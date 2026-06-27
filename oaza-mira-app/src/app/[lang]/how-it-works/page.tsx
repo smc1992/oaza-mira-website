@@ -61,7 +61,7 @@ export default async function HowItWorksPage({
   const features = [
     {
       icon: ShieldCheck,
-      image: (dict as any)["images.howItWorksFeature1"] || pageImagesData.howItWorksFeature1 || "/hero_caretakers.webp",
+      image: (dict as any)["images.howItWorksFeature1"] || pageImagesData.howItWorksFeature1 || "/invite_caretaker_fv.avif",
       imageKey: "images.howItWorksFeature1",
       title: dict["howitworks.feature1.title"] || "Verified Providers",
       description: dict["howitworks.feature1.desc"] || "Every caretaker in our network is verified, ensuring trust and reliability.",
@@ -89,7 +89,7 @@ export default async function HowItWorksPage({
     },
     {
       icon: MessageCircle,
-      image: (dict as any)["images.howItWorksFeature5"] || pageImagesData.howItWorksFeature5 || "/families_invite_bg.jpg",
+      image: (dict as any)["images.howItWorksFeature5"] || pageImagesData.howItWorksFeature5 || "/manage_everything_easily_fv.avif",
       imageKey: "images.howItWorksFeature5",
       title: dict["howitworks.feature5.title"] || "Family Collaboration",
       description: dict["howitworks.feature5.desc"] || "Invite family members to view and contribute to the care together.",
