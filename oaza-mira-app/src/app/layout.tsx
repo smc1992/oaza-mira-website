@@ -18,6 +18,15 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Oaza Mira - For those who care",
   description: "Preserving memories through digital grave care",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Oaza Mira - For those who care",
     description: "Preserving memories through digital grave care",
