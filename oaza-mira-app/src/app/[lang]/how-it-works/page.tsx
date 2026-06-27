@@ -161,7 +161,7 @@ export default async function HowItWorksPage({
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
               <MagneticPull strength={15}>
                 <Link 
-                  href="#portal" 
+                  href="https://app.oaza-mira.app" 
                   className="group inline-flex items-center justify-center gap-[9px] py-[15px] px-[30px] rounded-full text-[15px] font-semibold tracking-[0.01em] bg-[#E09D00] text-white hover:bg-[#c48a00] hover:-translate-y-[3px] shadow-[0_8px_26px_rgba(224,157,0,0.3)] hover:shadow-[0_14px_38px_rgba(224,157,0,0.42)] transition-all duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] border-none"
                 >
                   <span data-dict-key="howitworks.hero.cta">{dict["howitworks.hero.cta"] || "Start for free"}</span>
@@ -392,7 +392,7 @@ export default async function HowItWorksPage({
                   {/* CTA Buttons */}
                   <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                      <MagneticPull strength={15}>
-                        <Link href="#portal" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                        <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                            <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Započnite besplatno"}</span>
                            <ArrowRight size={20} />
                         </Link>
