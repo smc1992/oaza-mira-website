@@ -14,14 +14,14 @@
   "institutionsHero": "/hero_institutions.webp",
   "institutionsSec1": "/business_sec2.avif",
   "aboutCareHands": "/about_care_hands.png",
-  "aboutWhatWeDo": "/about_what_we_do.webp",
-  "aboutWhatWeDontDo": "/about_what_we_dont_do.webp",
+  "aboutWhatWeDo": "/what_we_do_fv.avif",
+  "aboutWhatWeDontDo": "/platform_not_a_provider_fv.avif",
   "aboutSeeHowBg": "/about_see_how_bg.webp",
   "howItWorksCtaBg": "/cta-bg.png",
-  "howItWorksFeature1": "/hero_caretakers.webp",
-  "howItWorksFeature2": "/about_hero_floral.png",
-  "howItWorksFeature3": "/about_what_we_do.webp",
-  "howItWorksFeature4": "/App_Teaser_BG.webp",
-  "howItWorksFeature5": "/families_invite_bg.jpg",
-  "howItWorksFeature6": "/about_care_hands.png"
+  "howItWorksFeature1": "/manage_everything_easily_fv.avif",
+  "howItWorksFeature2": "/fresh_arrangements_fv.avif",
+  "howItWorksFeature3": "/photo_documentation_fv.avif",
+  "howItWorksFeature4": "/real_time_notifications_fv.avif",
+  "howItWorksFeature5": "/invite_caretaker_fv.avif",
+  "howItWorksFeature6": "/compassionate_support_fv.avif"
 }

@@ -233,8 +233,8 @@ export default async function HowItWorksPage({
             <AnimatedSection delay={0.1}>
               <div className="w-full">
                 <BeforeAfterSlider
-                  beforeImage="/grave_before.webp"
-                  afterImage="/grave_after.webp"
+                  beforeImage="/home_slider_2_before.avif"
+                  afterImage="/home_slider_1_after.avif"
                   beforeAlt={dict["howitworks.slider.before"] || "Prije"}
                   afterAlt={dict["howitworks.slider.after"] || "Poslije"}
                   beforeLabel={dict["howitworks.slider.before"] || "Prije"}
