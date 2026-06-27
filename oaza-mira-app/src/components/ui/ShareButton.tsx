@@ -14,8 +14,6 @@ export default function ShareButton({ label, successLabel = "Link copied!" }: Sh
 
   const handleShare = async () => {
     const shareData = {
-      title: "Oaza Mira",
-      text: "Oaza Mira - For those who care",
       url: window.location.href,
     };
 
@@ -24,11 +22,13 @@ export default function ShareButton({ label, successLabel = "Link copied!" }: Sh
         await navigator.share(shareData);
         return;
       } catch (err) {
-        console.log("Error sharing via navigator.share, fallback to clipboard copy", err);
+        console.log("Error sharing via navigator.share", err);
+        // Return without falling through to clipboard copy if the user cancelled/closed the share sheet
+        return;
       }
     }
 
-    // Fallback to Clipboard Copy
+    // Fallback to Clipboard Copy (only if native sharing is unsupported)
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);

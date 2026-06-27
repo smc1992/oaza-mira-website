@@ -18,6 +18,28 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Oaza Mira - For those who care",
   description: "Preserving memories through digital grave care",
+  openGraph: {
+    title: "Oaza Mira - For those who care",
+    description: "Preserving memories through digital grave care",
+    url: "https://oaza-mira.netlify.app",
+    siteName: "Oaza Mira",
+    images: [
+      {
+        url: "https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/6906d3bb08528d671068fa19_6904cb3aded0cc0731c92eb3_Oaza_Mira_Logo_Dove_Claim_ms_fv.png",
+        width: 1200,
+        height: 630,
+        alt: "Oaza Mira Logo",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oaza Mira - For those who care",
+    description: "Preserving memories through digital grave care",
+    images: ["https://cdn.prod.website-files.com/68f6455245cd7f64e0fca6cf/6906d3bb08528d671068fa19_6904cb3aded0cc0731c92eb3_Oaza_Mira_Logo_Dove_Claim_ms_fv.png"],
+  },
 };
 
 export default function RootLayout({
