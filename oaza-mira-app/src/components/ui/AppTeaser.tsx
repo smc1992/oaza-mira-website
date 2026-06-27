@@ -110,8 +110,6 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
                 {/* Web App button */}
                 <a 
                   href="https://app.oaza-mira.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="flex items-center gap-3.5 px-5 py-3 bg-gradient-to-r from-[#E09D00] to-[#E9C36B] border border-[#E9C36B]/30 rounded-[13px] hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 relative group cursor-pointer select-none !text-[#211c08]"
                 >
                   <span className="opacity-95 transition-transform duration-300 group-hover:scale-105">

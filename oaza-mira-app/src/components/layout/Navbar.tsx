@@ -282,8 +282,6 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             <MagneticPull strength={10} className="w-full lg:w-auto flex justify-center">
               <Link
                 href="https://app.oaza-mira.app"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-2.5 font-black w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0 rounded-full bg-[#E09D00] !text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-sm border border-white/10"
                 onClick={closeMenus}
               >
@@ -344,13 +342,13 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
           </div>
 
           {/* WEB APPLICATION NOTICE BUTTON */}
-          <button 
+          <Link 
+            href="https://app.oaza-mira.app"
             className="flex items-center gap-1.5 sm:gap-2 bg-white/40 hover:bg-blue-50/20 backdrop-blur-sm border-2 border-[#0066cc] shadow-sm hover:shadow-md px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all duration-300 cursor-pointer group active:scale-95"
-            onClick={() => setIsWebAppModalOpen(true)}
           >
             <Globe size={16} className="text-[#50641B] group-hover:rotate-12 transition-transform duration-500" />
             <span className="text-xs sm:text-sm font-bold tracking-wide !text-slate-800">{dict["nav.webApp"] || "Web App"}</span>
-          </button>
+          </Link>
 
           {/* MOBILE HAMBURGER ICON */}
           <div
