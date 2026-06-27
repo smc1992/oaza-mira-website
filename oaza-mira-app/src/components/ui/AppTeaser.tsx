@@ -107,6 +107,24 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
             {/* Store Badges */}
             <AnimatedSection delay={0.4}>
               <div className="flex flex-wrap gap-4 mt-8">
+                {/* Web App button */}
+                <a 
+                  href="https://app.oaza-mira.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3.5 px-5 py-3 bg-gradient-to-r from-[#E09D00] to-[#E9C36B] border border-[#E9C36B]/30 rounded-[13px] hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 relative group cursor-pointer select-none !text-[#211c08]"
+                >
+                  <span className="opacity-95 transition-transform duration-300 group-hover:scale-105">
+                    <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </span>
+                  <div className="text-left flex flex-col justify-center">
+                    <div className="text-[10px] text-[#4a3e14] font-semibold uppercase tracking-[0.1em] mb-0.5 leading-none">{dict["teaser.store.webapp.subtext"] || "Otvori u pregledniku"}</div>
+                    <div className="text-base font-extrabold text-[#211c08] leading-none">{dict["teaser.store.webapp.text"] || "Web App"}</div>
+                  </div>
+                </a>
+
                 {/* App Store button */}
                 <button 
                   onClick={() => handleShowToast(dict["teaser.store.toast.apple"] || "Aplikacija uskoro stiže na App Store.")}

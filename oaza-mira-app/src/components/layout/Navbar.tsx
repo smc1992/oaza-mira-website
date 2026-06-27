@@ -281,7 +281,9 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
             {/* Log In Button: Gold background, White text, styled matching HTML1v2 */}
             <MagneticPull strength={10} className="w-full lg:w-auto flex justify-center">
               <Link
-                href="#login"
+                href="https://app.oaza-mira.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-2.5 font-black w-full lg:w-auto text-center whitespace-nowrap flex-shrink-0 rounded-full bg-[#E09D00] !text-white hover:bg-[#c48a00] hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-sm border border-white/10"
                 onClick={closeMenus}
               >

@@ -1,7 +1,9 @@
 # Privacy Policy
 
 ### 1. Controller
-- OAZA MIRA LLC, 3834 Powerline Road, Fort Lauderdale, FL 33309, Florida, United States
+- OAZA MIRA LLC
+- Principal Office: 3834 Powerline Road, Fort Lauderdale, FL 33309, USA
+- Mailing Address: 261 North University Drive, Suite 500, Plantation, FL 33324, USA
 - 📧 E-mail: contact @ oaza-mira.app
 
 ### 2. Data we collect

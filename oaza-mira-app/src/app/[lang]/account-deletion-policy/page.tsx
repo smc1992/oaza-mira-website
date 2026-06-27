@@ -55,9 +55,9 @@ export default async function AccountDeletionPolicyPage({ params }: { params: Pr
       hr: "1. Na koga se primjenjuju ova pravila",
     },
     c1t: {
-      en: "This policy applies to users of the Oaza Mira app and web app. Oaza Mira is operated by OAZA MIRA LLC, c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA.",
-      de: "Diese Richtlinie gilt für Nutzer der Oaza Mira App und Web-App. Oaza Mira wird von OAZA MIRA LLC betrieben, c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA.",
-      hr: "Ova se pravila primjenjuju na korisnike aplikacije i web-aplikacije Oaza Mira. Oazom Mira upravlja tvrtka OAZA MIRA LLC, c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, SAD.",
+      en: "This policy applies to users of the Oaza Mira app and web app. Oaza Mira is operated by OAZA MIRA LLC (Principal Office: 3834 Powerline Road, Fort Lauderdale, FL 33309, USA; Mailing Address: 261 North University Drive, Suite 500, Plantation, FL 33324, USA).",
+      de: "Diese Richtlinie gilt für Nutzer der Oaza Mira App und Web-App. Oaza Mira wird von OAZA MIRA LLC betrieben (Hauptgeschäftssitz: 3834 Powerline Road, Fort Lauderdale, FL 33309, USA; Postadresse: 261 North University Drive, Suite 500, Plantation, FL 33324, USA).",
+      hr: "Ova se pravila primjenjuju na korisnike aplikacije i web-aplikacije Oaza Mira. Oazom Mira upravlja tvrtka OAZA MIRA LLC (Glavni ured: 3834 Powerline Road, Fort Lauderdale, FL 33309, SAD; Poštanska adresa: 261 North University Drive, Suite 500, Plantation, FL 33324, SAD).",
     },
     c2: {
       en: "2. How to delete your account",
@@ -491,13 +491,24 @@ export default async function AccountDeletionPolicyPage({ params }: { params: Pr
             </h2>
             <div className="text-[#4A4A4A] leading-relaxed font-semibold">
               <p>OAZA MIRA LLC</p>
-              <p className="font-normal text-sm text-[#7A7366] leading-relaxed mt-2">
-                c/o 5 Flags Incubation LLC<br/>
-                2880 West Oakland Park Blvd, Suite 118<br/>
-                Fort Lauderdale, FL 33311, USA<br/>
-                Email: contact@oaza-mira.app<br/>
-                Website: www.oaza-mira.app
-              </p>
+              <div className="font-normal text-sm text-[#7A7366] leading-relaxed mt-2 space-y-2">
+                <p>
+                  <strong>Principal Office:</strong><br/>
+                  3834 Powerline Road, Fort Lauderdale, FL 33309, USA
+                </p>
+                <p>
+                  <strong>Mailing Address:</strong><br/>
+                  261 North University Drive, Suite 500, Plantation, FL 33324, USA
+                </p>
+                <p>
+                  <strong>Registered Agent Address:</strong><br/>
+                  c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA
+                </p>
+                <p>
+                  Email: contact@oaza-mira.app<br/>
+                  Website: www.oaza-mira.app
+                </p>
+              </div>
             </div>
 
             {/* Policy Deletion Footer Info */}

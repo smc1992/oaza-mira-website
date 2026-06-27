@@ -34,14 +34,22 @@ export default async function ImprintPage({ params }: { params: Promise<{ lang: 
             <h2 className="text-2xl font-bold text-[#50641B] mt-0 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="imprint.c1_title">
               {dict["imprint.c1_title"] || "1. Plattformbetreiber"}
             </h2>
-            <div className="space-y-2 text-[#4A4A4A]">
+            <div className="space-y-4 text-[#4A4A4A]">
               <p>
                 <strong data-dict-key="imprint.c1_company_label">{dict["imprint.c1_company_label"] || "Unternehmen:"}</strong>{" "}
                 <span data-dict-key="imprint.c1_company_val">{dict["imprint.c1_company_val"] || "OAZA MIRA LLC"}</span>
               </p>
               <p>
-                <strong data-dict-key="imprint.c1_address_label">{dict["imprint.c1_address_label"] || "Adresse:"}</strong>{" "}
-                <span data-dict-key="imprint.c1_address_val">{dict["imprint.c1_address_val"] || "c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA"}</span>
+                <strong data-dict-key="imprint.c1_principal_office_label">{dict["imprint.c1_principal_office_label"] || "Hauptgeschäftssitz (Principal Office):"}</strong>{" "}
+                <span data-dict-key="imprint.c1_principal_office_val">{dict["imprint.c1_principal_office_val"] || "3834 Powerline Road, Fort Lauderdale, FL 33309, USA"}</span>
+              </p>
+              <p>
+                <strong data-dict-key="imprint.c1_mailing_address_label">{dict["imprint.c1_mailing_address_label"] || "Postadresse (Mailing Address):"}</strong>{" "}
+                <span data-dict-key="imprint.c1_mailing_address_val">{dict["imprint.c1_mailing_address_val"] || "261 North University Drive, Suite 500, Plantation, FL 33324, USA"}</span>
+              </p>
+              <p>
+                <strong data-dict-key="imprint.c1_registered_agent_label">{dict["imprint.c1_registered_agent_label"] || "Zustellungsbevollmächtigter (Registered Agent):"}</strong>{" "}
+                <span data-dict-key="imprint.c1_registered_agent_val">{dict["imprint.c1_registered_agent_val"] || "c/o 5 Flags Incubation LLC, 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA"}</span>
               </p>
               <p>
                 <strong data-dict-key="imprint.c1_email_label">{dict["imprint.c1_email_label"] || "E-Mail:"}</strong>{" "}
@@ -128,7 +136,7 @@ export default async function ImprintPage({ params }: { params: Promise<{ lang: 
             </p>
 
             <div className="mt-12 pt-8 border-t border-[#B8AE9F]/30 text-sm text-[#B8AE9F] text-center leading-loose">
-              <span data-dict-key="imprint.footer">{dict["imprint.footer"] || "OAZA MIRA LLC · c/o 5 Flags Incubation LLC · 2880 West Oakland Park Blvd, Suite 118, Fort Lauderdale, FL 33311, USA"}</span>
+              <span data-dict-key="imprint.footer">{dict["imprint.footer"] || "OAZA MIRA LLC · 3834 Powerline Road, Fort Lauderdale, FL 33309, USA"}</span>
               <br />
               <a href={`mailto:${dict["imprint.c1_email_val"] || "contact@oaza-mira.app"}`} className="hover:text-[#E09D00] transition-colors" data-dict-key="imprint.c1_email_val">
                 {dict["imprint.c1_email_val"] || "contact@oaza-mira.app"}

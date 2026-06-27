@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import pageImagesData from "@/content/images.json";
 import MagneticPull from "@/components/ui/MagneticPull";
+import ShareButton from "@/components/ui/ShareButton";
 
 export default async function FamiliesPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -95,14 +96,14 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
               { icon: Camera, title: dict["families.how.3.title"], desc: dict["families.how.3.desc"] },
               { icon: Heart, title: dict["families.how.4.title"], desc: dict["families.how.4.desc"] }
             ].map((step, index) => (
-              <div key={index} className={`bg-[#FDFBF7] p-8 rounded-3xl shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start h-full min-h-[260px] ${index === 3 ? "text-center items-center" : "text-left"}`}>
+              <div key={index} className="bg-[#FDFBF7] p-8 rounded-3xl shadow-sm border border-[#E9C36B]/20 hover:shadow-xl hover:border-[#E09D00]/30 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start h-full min-h-[260px] text-left">
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity transform group-hover:scale-110 group-hover:rotate-12 duration-500 text-[#E09D00]">
                   <step.icon size={120} />
                 </div>
                 <div className="bg-[#E9C36B]/30 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E09D00] mb-6 group-hover:bg-[#E09D00] group-hover:!text-white transition-colors shadow-sm relative z-10">
                   <step.icon size={28} />
                 </div>
-                <div className="text-xs font-bold text-[#E09D00] tracking-wider mb-2">KORAK 0{index + 1}</div>
+                <div className="text-xs font-bold text-[#E09D00] tracking-wider mb-2">0{index + 1}</div>
                 <h3 data-dict-key={`families.how.${index + 1}.title`} className="text-xl font-extrabold text-[#333] mb-3 relative z-10 leading-tight">{step.title}</h3>
                 <p data-dict-key={`families.how.${index + 1}.desc`} className="text-[#7A7366] text-sm md:text-base leading-relaxed relative z-10 font-medium">{step.desc}</p>
               </div>
@@ -138,14 +139,10 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 <p data-dict-key="families.invite.desc" className="text-lg text-[#7A7366] leading-relaxed mb-10 font-medium">
                   {dict["families.invite.desc"]}
                 </p>
-                <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 w-full">
-                  <MagneticPull strength={15}>
-                    <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
-                      <span data-dict-key="families.invite.cta">{dict["families.invite.cta"] || "Share with family"}</span>
-                      <ArrowRight size={20} />
-                    </Link>
-                  </MagneticPull>
-                </div>
+                <ShareButton 
+                  label={dict["families.invite.cta"] || "Share with family"} 
+                  successLabel={lang === 'de' ? "Link kopiert!" : lang === 'hr' ? "Kopirano!" : "Link copied!"}
+                />
               </div>
             </div>
           </AnimatedSection>
