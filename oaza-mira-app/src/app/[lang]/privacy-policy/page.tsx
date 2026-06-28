@@ -6,7 +6,7 @@ import { ShieldCheck } from "lucide-react";
 
 export default async function PrivacyPolicyPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as Locale);
+  const dict = (await getDictionary(lang as Locale)) as any;
 
   return (
     <div className="page-wrapper relative overflow-hidden min-h-screen pt-32 pb-24 bg-white">
@@ -55,22 +55,32 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c3">
               {dict["privacy.c3"] || "3. Data We Collect"}
             </h2>
-            <div className="space-y-4 text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="privacy.c3t.p1">{dict["privacy.c3t.p1"]}</p>
-              <p data-dict-key="privacy.c3t.p2">{dict["privacy.c3t.p2"]}</p>
-              <p data-dict-key="privacy.c3t.p3">{dict["privacy.c3t.p3"]}</p>
-              <p data-dict-key="privacy.c3t.p4">{dict["privacy.c3t.p4"]}</p>
-              <p data-dict-key="privacy.c3t.p5">{dict["privacy.c3t.p5"]}</p>
+            <div className="space-y-6 text-[#4A4A4A] leading-relaxed">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                <div key={num} className="space-y-1">
+                  <h3 className="text-lg font-bold text-[#333]" data-dict-key={`privacy.c3t.s${num}_title`}>
+                    {dict[`privacy.c3t.s${num}_title`]}
+                  </h3>
+                  <p data-dict-key={`privacy.c3t.s${num}_desc`}>
+                    {dict[`privacy.c3t.s${num}_desc`]}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c4">
               {dict["privacy.c4"] || "4. Purpose and Legal Basis"}
             </h2>
-            <div className="space-y-4 text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="privacy.c4t.p1">{dict["privacy.c4t.p1"]}</p>
-              <p data-dict-key="privacy.c4t.p2">{dict["privacy.c4t.p2"]}</p>
-              <p data-dict-key="privacy.c4t.p3">{dict["privacy.c4t.p3"]}</p>
-              <p data-dict-key="privacy.c4t.p4">{dict["privacy.c4t.p4"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed">
+              <ul className="list-disc pl-5 mb-4 space-y-2">
+                <li data-dict-key="privacy.c4t.li1">{dict["privacy.c4t.li1"]}</li>
+                <li data-dict-key="privacy.c4t.li2">{dict["privacy.c4t.li2"]}</li>
+                <li data-dict-key="privacy.c4t.li3">{dict["privacy.c4t.li3"]}</li>
+                <li data-dict-key="privacy.c4t.li4">{dict["privacy.c4t.li4"]}</li>
+              </ul>
+              {dict["privacy.c4t.p5"] && (
+                <p data-dict-key="privacy.c4t.p5" className="mt-4">{dict["privacy.c4t.p5"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c5">
@@ -83,6 +93,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                 <li data-dict-key="privacy.c5t.li2">{dict["privacy.c5t.li2"]}</li>
                 <li data-dict-key="privacy.c5t.li3">{dict["privacy.c5t.li3"]}</li>
                 <li data-dict-key="privacy.c5t.li4">{dict["privacy.c5t.li4"]}</li>
+                {dict["privacy.c5t.li5"] && <li data-dict-key="privacy.c5t.li5">{dict["privacy.c5t.li5"]}</li>}
+                {dict["privacy.c5t.li6"] && <li data-dict-key="privacy.c5t.li6">{dict["privacy.c5t.li6"]}</li>}
               </ul>
               <p className="mt-4" data-dict-key="privacy.c5t.p2">{dict["privacy.c5t.p2"]}</p>
             </div>
@@ -90,8 +102,11 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c6">
               {dict["privacy.c6"] || "6. International Data Transfers"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="privacy.c6t">{dict["privacy.c6t"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
+              <p data-dict-key="privacy.c6t.p1">{dict["privacy.c6t.p1"] || dict["privacy.c6t"]}</p>
+              {dict["privacy.c6t.p2"] && (
+                <p data-dict-key="privacy.c6t.p2">{dict["privacy.c6t.p2"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c7">
@@ -156,8 +171,14 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="privacy.c14">
               {dict["privacy.c14"] || "14. Contact"}
             </h2>
-            <div className="text-[#4A4A4A] mb-8">
-              <p data-dict-key="privacy.c14t">{dict["privacy.c14t"]}</p>
+            <div className="text-[#4A4A4A] mb-8 space-y-2">
+              <p data-dict-key="privacy.c14t.p1">{dict["privacy.c14t.p1"] || dict["privacy.c14t"]}</p>
+              {dict["privacy.c14t.p2"] && (
+                <p data-dict-key="privacy.c14t.p2" className="font-semibold">{dict["privacy.c14t.p2"]}</p>
+              )}
+              {dict["privacy.c14t.p3"] && (
+                <p data-dict-key="privacy.c14t.p3" className="font-semibold">{dict["privacy.c14t.p3"]}</p>
+              )}
             </div>
 
           </div>

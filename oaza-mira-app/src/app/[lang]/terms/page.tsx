@@ -6,7 +6,7 @@ import { Scale } from "lucide-react";
 
 export default async function TermsPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as Locale);
+  const dict = (await getDictionary(lang as Locale)) as any;
 
   return (
     <div className="page-wrapper relative overflow-hidden min-h-screen pt-32 pb-24 bg-white">
@@ -72,26 +72,38 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c6">
               {dict["terms.c6"] || "6. Pricing and Payment"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
               <p data-dict-key="terms.c6t.p1">{dict["terms.c6t.p1"]}</p>
               <p data-dict-key="terms.c6t.p2">{dict["terms.c6t.p2"]}</p>
               <p data-dict-key="terms.c6t.p3">{dict["terms.c6t.p3"]}</p>
+              {dict["terms.c6t.p4"] && (
+                <p data-dict-key="terms.c6t.p4">{dict["terms.c6t.p4"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c7">
               {dict["terms.c7"] || "7. Refund and Cancellation"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="terms.c7t">{dict["terms.c7t"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
+              <p data-dict-key="terms.c7t.p1">{dict["terms.c7t.p1"] || dict["terms.c7t"]}</p>
+              {dict["terms.c7t.p2"] && (
+                <p data-dict-key="terms.c7t.p2">{dict["terms.c7t.p2"]}</p>
+              )}
+              {dict["terms.c7t.p3"] && (
+                <p data-dict-key="terms.c7t.p3">{dict["terms.c7t.p3"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c8">
               {dict["terms.c8"] || "8. Platform Role and Liability"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
               <p data-dict-key="terms.c8t.p1">{dict["terms.c8t.p1"]}</p>
               <p data-dict-key="terms.c8t.p2">{dict["terms.c8t.p2"]}</p>
               <p data-dict-key="terms.c8t.p3">{dict["terms.c8t.p3"]}</p>
+              {dict["terms.c8t.p4"] && (
+                <p data-dict-key="terms.c8t.p4">{dict["terms.c8t.p4"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c9">
@@ -131,15 +143,24 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c13">
               {dict["terms.c13"] || "13. Applicable Law and Jurisdiction"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="terms.c13t">{dict["terms.c13t"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
+              <p data-dict-key="terms.c13t.p1">{dict["terms.c13t.p1"] || dict["terms.c13t"]}</p>
+              {dict["terms.c13t.p2"] && (
+                <p data-dict-key="terms.c13t.p2">{dict["terms.c13t.p2"]}</p>
+              )}
+              {dict["terms.c13t.p3"] && (
+                <p data-dict-key="terms.c13t.p3">{dict["terms.c13t.p3"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c14">
               {dict["terms.c14"] || "14. Dispute Resolution"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="terms.c14t">{dict["terms.c14t"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed space-y-4">
+              <p data-dict-key="terms.c14t.p1">{dict["terms.c14t.p1"] || dict["terms.c14t"]}</p>
+              {dict["terms.c14t.p2"] && (
+                <p data-dict-key="terms.c14t.p2">{dict["terms.c14t.p2"]}</p>
+              )}
             </div>
 
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c15">
@@ -159,8 +180,11 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
             <h2 className="text-2xl font-bold text-[#50641B] mt-10 mb-4 border-b border-[#B8AE9F]/20 pb-2" data-dict-key="terms.c17">
               {dict["terms.c17"] || "17. Contact"}
             </h2>
-            <div className="text-[#4A4A4A] leading-relaxed">
-              <p data-dict-key="terms.c17t">{dict["terms.c17t"]}</p>
+            <div className="text-[#4A4A4A] leading-relaxed space-y-1">
+              <p data-dict-key="terms.c17t.p1">{dict["terms.c17t.p1"] || dict["terms.c17t"]}</p>
+              {dict["terms.c17t.p2"] && (
+                <p data-dict-key="terms.c17t.p2" className="font-semibold">{dict["terms.c17t.p2"]}</p>
+              )}
             </div>
 
           </div>
