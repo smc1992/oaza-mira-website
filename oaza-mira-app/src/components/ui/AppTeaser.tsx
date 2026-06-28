@@ -122,47 +122,6 @@ export default function AppTeaser({ dict, lang }: { dict: any, lang: string }) {
                     <div className="text-base font-extrabold text-[#211c08] leading-none">{dict["teaser.store.webapp.text"] || "Web App"}</div>
                   </div>
                 </a>
-
-                {/* App Store button */}
-                <button 
-                  onClick={() => handleShowToast(dict["teaser.store.toast.apple"] || "Aplikacija uskoro stiže na App Store.")}
-                  className="flex items-center gap-3.5 px-5 py-3 border border-[#c9a227]/20 rounded-[13px] bg-white/[0.02] hover:border-[#c9a227]/40 hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-0.5 relative group cursor-pointer select-none"
-                >
-                  <span className="text-white opacity-90 transition-transform duration-300 group-hover:scale-105">
-                    <svg className="w-6 h-6 fill-white" viewBox="0 0 384 512">
-                      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-31.4-97.3-132-97.3-132zm-58.4-154.3c31.4-38.9 29.1-80.5 29.1-80.5s-41.4 3-72.8 38.9c-26.9 31-26.9 66.4-26.9 66.4s36.4 7.2 70.6-24.8z"/>
-                    </svg>
-                  </span>
-                  <div className="text-left flex flex-col justify-center">
-                    <div className="text-[10px] text-[#5e5c57] font-semibold uppercase tracking-[0.1em] mb-0.5 leading-none">{dict["teaser.store.soon.text"] || "Uskoro na"}</div>
-                    <div className="text-base font-semibold text-white leading-none">App Store</div>
-                  </div>
-                  <span className="absolute -top-2 right-3 text-[9px] bg-[#c9a227] text-[#211c08] px-2 py-0.5 rounded-full font-bold tracking-wider uppercase">
-                    {dict["teaser.store.soon.badge"] || "USKORO"}
-                  </span>
-                </button>
-
-                {/* Google Play button */}
-                <button 
-                  onClick={() => handleShowToast(dict["teaser.store.toast.google"] || "Aplikacija uskoro stiže na Google Play.")}
-                  className="flex items-center gap-3.5 px-5 py-3 border border-[#c9a227]/20 rounded-[13px] bg-white/[0.02] hover:border-[#c9a227]/40 hover:bg-white/[0.06] transition-all duration-300 hover:-translate-y-0.5 relative group cursor-pointer select-none"
-                >
-                  <span className="text-white opacity-95 flex items-center transition-transform duration-300 group-hover:scale-105">
-                    <svg className="w-5.5 h-5.5" viewBox="0 0 24 24">
-                      <path fill="#4285F4" d="M3.48,3.2C3.2,3.48,3,3.95,3,4.56v14.88c0,0.6,0.2,1.08,0.48,1.36l0.06,0.06L12.53,12L12.53,11.83L3.54,3.14L3.48,3.2z" />
-                      <path fill="#34A853" d="M16.59,16.06l-4.06-4.06v-0.17l4.06-4.06l4.79,2.72c1.37,0.78,1.37,2.05,0,2.83L16.59,16.06z" />
-                      <path fill="#EA4335" d="M12.53,11.83L3.48,3.2c0.47-0.47,1.25-0.53,2.14-0.03l10.97,6.23L12.53,11.83z" />
-                      <path fill="#FBBC05" d="M12.53,12.17l4.06,4.06l-10.97,6.23c-0.89,0.5-1.67,0.44-2.14-0.03L12.53,12.17z" />
-                    </svg>
-                  </span>
-                  <div className="text-left flex flex-col justify-center">
-                    <div className="text-[10px] text-[#5e5c57] font-semibold uppercase tracking-[0.1em] mb-0.5 leading-none">{dict["teaser.store.soon.text"] || "Uskoro na"}</div>
-                    <div className="text-base font-semibold text-white leading-none">Google Play</div>
-                  </div>
-                  <span className="absolute -top-2 right-3 text-[9px] bg-[#c9a227] text-[#211c08] px-2 py-0.5 rounded-full font-bold tracking-wider uppercase">
-                    {dict["teaser.store.soon.badge"] || "USKORO"}
-                  </span>
-                </button>
               </div>
             </AnimatedSection>
           </div>
