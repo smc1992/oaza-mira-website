@@ -112,7 +112,7 @@ export default async function AboutPage({
             {/* Right side: Care Hands Image with overlay badge */}
             <AnimatedSection delay={0.3} className="relative aspect-[4/3] lg:aspect-[1.1] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25 group w-full">
               <Image
-                src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/about_care_hands.png"}
+                src={(dict as any)["images.aboutCareHands"] || pageImagesData.aboutCareHands || "/platform_not_a_provider_main.webp"}
                 alt={dict["about.platform.badge"] || "Briga s poštovanjem"}
                 fill
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"

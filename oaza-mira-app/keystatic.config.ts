@@ -999,7 +999,7 @@ export default config({
           publicPath: '/',
         }),
         aboutCareHands: fields.image({
-          label: 'Über Uns Care Hands Bild (about_care_hands.png)',
+          label: 'Über Uns Care Hands Bild (platform_not_a_provider_main.webp)',
           directory: 'public',
           publicPath: '/',
         }),

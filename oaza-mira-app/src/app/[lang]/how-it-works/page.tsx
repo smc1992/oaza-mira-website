@@ -96,7 +96,7 @@ export default async function HowItWorksPage({
     },
     {
       icon: Heart,
-      image: (dict as any)["images.howItWorksFeature6"] || pageImagesData.howItWorksFeature6 || "/about_care_hands.png",
+      image: (dict as any)["images.howItWorksFeature6"] || pageImagesData.howItWorksFeature6 || "/platform_not_a_provider_main.webp",
       imageKey: "images.howItWorksFeature6",
       title: dict["howitworks.feature6.title"] || "Compassionate Support",
       description: dict["howitworks.feature6.desc"] || "Our team is here to help whenever you need assistance.",
