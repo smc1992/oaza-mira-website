@@ -998,6 +998,11 @@ export default config({
           directory: 'public',
           publicPath: '/',
         }),
+        institutionsSec2: fields.image({
+          label: 'Institutionen Was wir tun (what_we_do_fv.webp)',
+          directory: 'public',
+          publicPath: '/',
+        }),
         aboutCareHands: fields.image({
           label: 'Über Uns Care Hands Bild (platform_not_a_provider_main.webp)',
           directory: 'public',

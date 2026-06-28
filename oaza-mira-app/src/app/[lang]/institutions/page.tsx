@@ -5,6 +5,7 @@ import HeroBackgroundSVG from "@/components/ui/HeroBackgroundSVG";
 import { Landmark, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import pageImagesData from "@/content/images.json";
 import MagneticPull from "@/components/ui/MagneticPull";
 
 export default async function InstitutionsPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -188,10 +189,11 @@ export default async function InstitutionsPage({ params }: { params: Promise<{ l
               {/* Image Right */}
               <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-[1.2] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
                 <Image
-                  src="/extracted/institutions_sec2.jpg"
+                  src={(dict as any)["images.institutionsSec2"] || pageImagesData.institutionsSec2 || "/what_we_do_fv.webp"}
                   alt="One dashboard, all orders"
                   fill
                   className="object-cover"
+                  data-dict-key="images.institutionsSec2"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
                 <span data-dict-key="institutions.split2.media" className="absolute bottom-6 left-6 z-20 px-4 py-2 bg-black/30 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-lg">
