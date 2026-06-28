@@ -69,7 +69,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
               <MagneticPull strength={15}>
-                <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
                   <ArrowRight size={20} />
                 </Link>
@@ -170,7 +170,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
                 </p>
                 <div className="mt-[28px] flex flex-col sm:flex-row items-center gap-6 w-full">
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}#portal`} className="inline-flex items-center gap-[9px] px-[30px] py-[15px] rounded-full text-[15px] font-semibold tracking-[0.01em] border-[1.5px] border-[#2b2a25]/12 text-[#2b2a25] bg-white/50 hover:border-[#E09D00] hover:text-[#c48a00] hover:-translate-y-[3px] hover:bg-white transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] shadow-sm group">
+                    <Link href="https://app.oaza-mira.app" className="inline-flex items-center gap-[9px] px-[30px] py-[15px] rounded-full text-[15px] font-semibold tracking-[0.01em] border-[1.5px] border-[#2b2a25]/12 text-[#2b2a25] bg-white/50 hover:border-[#E09D00] hover:text-[#c48a00] hover:-translate-y-[3px] hover:bg-white transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] shadow-sm group">
                       <span data-dict-key="families.know.cta">{dict["families.know.cta"] || "Pozovite svog partnera"}</span>
                       <span className="transition-transform duration-350 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:translate-x-1">→</span>
                     </Link>
@@ -225,7 +225,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
-                  <Link href={`/${lang}#portal`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                     <span data-dict-key="home.cta.primary">{dict["home.cta.primary"] || "Start for free"}</span>
                     <ArrowRight size={20} />
                   </Link>
