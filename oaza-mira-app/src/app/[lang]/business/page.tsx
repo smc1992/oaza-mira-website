@@ -66,7 +66,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
               <MagneticPull strength={15}>
-                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="business.hero.cta1">{dict["business.hero.cta1"]}</span>
                   <ArrowRight size={20} />
                 </Link>
@@ -148,7 +148,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
                 </p>
                 <div>
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
+                    <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
                       <span data-dict-key="business.split1.cta">{dict["business.split1.cta"]}</span>
                       <ArrowRight size={18} />
                     </Link>
@@ -179,7 +179,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
                 </p>
                 <div>
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
+                    <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-base hover:scale-105 hover:shadow-[0_15px_30px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-lg border border-white/20">
                       <span data-dict-key="business.split2.cta">{dict["business.split2.cta"]}</span>
                       <ArrowRight size={18} />
                     </Link>
@@ -250,7 +250,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
-                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href="https://app.oaza-mira.app" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                     <span data-dict-key="business.cta.btn">{dict["business.cta.btn"]}</span>
                     <ArrowRight size={20} />
                   </Link>
