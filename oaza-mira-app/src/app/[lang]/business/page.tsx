@@ -122,10 +122,11 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               {/* Image Left */}
               <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-[1.2] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
                 <Image
-                  src="/extracted/business_sec1.jpg"
+                  src={(dict as any)["images.businessSec1"] || pageImagesData.businessSec1 || "/extracted/business_sec1.jpg"}
                   alt="Caring for colleagues"
                   fill
                   className="object-cover"
+                  data-dict-key="images.businessSec1"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
                 <span data-dict-key="business.split1.media" className="absolute bottom-6 left-6 z-20 px-4 py-2 bg-black/30 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-lg">
@@ -189,10 +190,11 @@ export default async function BusinessPage({ params }: { params: Promise<{ lang:
               {/* Image Right */}
               <div className="w-full lg:w-[45%] aspect-[4/3] lg:aspect-[1.2] relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#E9C36B]/25">
                 <Image
-                  src="/extracted/business_sec2.jpg"
+                  src={(dict as any)["images.businessSec2"] || pageImagesData.businessSec2 || "/manage_everything_easily_fv.avif"}
                   alt="One dashboard, all orders"
                   fill
                   className="object-cover"
+                  data-dict-key="images.businessSec2"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 z-10 pointer-events-none"></div>
                 <span data-dict-key="business.split2.media" className="absolute bottom-6 left-6 z-20 px-4 py-2 bg-black/30 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-lg">
