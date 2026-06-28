@@ -158,33 +158,33 @@ export default async function AboutPage({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Feature Cards with Premium Glassmorphism (4% opacity, medium blur) */}
-              <div className="bg-white/[0.04] backdrop-blur-md rounded-3xl p-8 border border-white/[0.08] h-full transform transition-all hover:scale-105 hover:bg-white/[0.08] duration-500 shadow-2xl group transform-gpu translate-z-0">
-                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.08] group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              {/* Feature Cards with Premium Glassmorphism (2% opacity, 2px blur) */}
+              <div className="bg-white/[0.02] backdrop-blur-[2px] rounded-3xl p-8 border border-white/[0.06] h-full transform transition-all hover:scale-105 hover:bg-white/[0.06] duration-500 shadow-2xl group transform-gpu translate-z-0">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.06] group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <Link2 size={32} />
                 </div>
                 <h4 data-dict-key="about.19u3im" className="text-2xl font-bold text-white mb-3 tracking-tight">{dict["about.19u3im"] || "Connect"}</h4>
                 <p data-dict-key="about.ffnspn" className="text-white/80 leading-relaxed font-medium">{dict["about.ffnspn"] || "We connect you with trusted local caretakers."}</p>
               </div>
 
-              <div className="bg-white/[0.04] backdrop-blur-md rounded-3xl p-8 border border-white/[0.08] h-full transform transition-all hover:scale-105 hover:bg-white/[0.08] duration-500 shadow-2xl group transform-gpu translate-z-0">
-                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.08] group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <div className="bg-white/[0.02] backdrop-blur-[2px] rounded-3xl p-8 border border-white/[0.06] h-full transform transition-all hover:scale-105 hover:bg-white/[0.06] duration-500 shadow-2xl group transform-gpu translate-z-0">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.06] group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <ShieldCheck size={32} />
                 </div>
                 <h4 data-dict-key="about.g1bwny" className="text-2xl font-bold text-white mb-3 tracking-tight">{dict["about.g1bwny"] || "Verify"}</h4>
                 <p data-dict-key="about.xjr5ai" className="text-white/80 leading-relaxed font-medium">{dict["about.xjr5ai"] || "We verify every caretaker before they join our network."}</p>
               </div>
 
-              <div className="bg-white/[0.04] backdrop-blur-md rounded-3xl p-8 border border-white/[0.08] h-full transform transition-all hover:scale-105 hover:bg-white/[0.08] duration-500 shadow-2xl group transform-gpu translate-z-0">
-                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.08] group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <div className="bg-white/[0.02] backdrop-blur-[2px] rounded-3xl p-8 border border-white/[0.06] h-full transform transition-all hover:scale-105 hover:bg-white/[0.06] duration-500 shadow-2xl group transform-gpu translate-z-0">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.06] group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <Camera size={32} />
                 </div>
                 <h4 data-dict-key="about.k51ypq" className="text-2xl font-bold text-white mb-3 tracking-tight">{dict["about.k51ypq"] || "Document Care"}</h4>
                 <p data-dict-key="about.mk7xo6" className="text-white/80 leading-relaxed font-medium">{dict["about.mk7xo6"] || "Each visit is confirmed with clear photo proof."}</p>
               </div>
 
-              <div className="bg-white/[0.04] backdrop-blur-md rounded-3xl p-8 border border-white/[0.08] h-full transform transition-all hover:scale-105 hover:bg-white/[0.08] duration-500 shadow-2xl group transform-gpu translate-z-0">
-                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.08] group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <div className="bg-white/[0.02] backdrop-blur-[2px] rounded-3xl p-8 border border-white/[0.06] h-full transform transition-all hover:scale-105 hover:bg-white/[0.06] duration-500 shadow-2xl group transform-gpu translate-z-0">
+                <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-[#E9C36B] mb-8 border border-white/[0.06] group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <Heart size={32} />
                 </div>
                 <h4 data-dict-key="about.twhsw8" className="text-2xl font-bold text-white mb-3 tracking-tight">{dict["about.twhsw8"] || "Support"}</h4>
