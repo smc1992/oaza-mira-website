@@ -75,7 +75,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
             
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4 relative z-20">
               <MagneticPull strength={15}>
-                <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                   <span data-dict-key="providers.hero.cta">{dict["providers.hero.cta"]}</span>
                   <ArrowRight size={20} />
                 </Link>
@@ -173,7 +173,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
 
                 <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 w-full">
                   <MagneticPull strength={15}>
-                    <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
+                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.3)] transition-all duration-300 shadow-xl border border-white/20">
                       <span data-dict-key="providers.partner.cta">{dict["providers.partner.cta"] || "Registrirajte se"}</span>
                       <ArrowRight size={20} />
                     </Link>
@@ -217,7 +217,7 @@ export default async function ProvidersPage({ params }: { params: Promise<{ lang
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
                 <MagneticPull strength={15}>
-                  <Link href={`/${lang}/register-information`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
+                  <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#E09D00] to-[#E9C36B] !text-white font-extrabold text-lg hover:scale-105 hover:shadow-[0_20px_40px_rgba(224,157,0,0.4)] transition-all duration-300 shadow-xl border border-white/20">
                     <span data-dict-key="providers.cta.btn">{dict["providers.cta.btn"] || "Započnite registraciju"}</span>
                     <ArrowRight size={20} />
                   </Link>
