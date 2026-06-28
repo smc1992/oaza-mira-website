@@ -979,7 +979,7 @@ export default config({
           publicPath: '/',
         }),
         familiesCaretaker: fields.image({
-          label: 'Familien Grabpfleger Hintergrund (families_caretaker_bg.jpg)',
+          label: 'Familien Grabpfleger Hintergrund (invite_them_to_oaza_mira_main.webp)',
           directory: 'public',
           publicPath: '/',
         }),

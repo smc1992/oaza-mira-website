@@ -181,7 +181,7 @@ export default async function FamiliesPage({ params }: { params: Promise<{ lang:
               {/* Media Right */}
               <div className="w-full aspect-[5/4] relative rounded-[22px] overflow-hidden shadow-[0_18px_50px_rgba(80,100,27,0.1)] bg-[#F3EEE2] order-1 lg:order-2 group">
                 <Image
-                  src={(dict as any)["images.familiesCaretaker"] || pageImagesData.familiesCaretaker || "/families_caretaker_bg.jpg"}
+                  src={(dict as any)["images.familiesCaretaker"] || pageImagesData.familiesCaretaker || "/invite_them_to_oaza_mira_main.webp"}
                   alt="Caretaker"
                   fill
                   className="object-cover transition-transform duration-[1000ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-105"
