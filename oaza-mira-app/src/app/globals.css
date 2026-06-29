@@ -96,6 +96,8 @@ button[class*="bg-[#E09D00]"],
   .page-hero-section {
     height: 100vh !important;
     min-height: 100vh !important;
+    padding-top: 9rem !important; /* Reduced padding-top to prevent content clipping */
+    padding-bottom: 6rem !important; /* Reduced padding-bottom to prevent content clipping */
   }
 }
 @media (max-width: 1023px) {

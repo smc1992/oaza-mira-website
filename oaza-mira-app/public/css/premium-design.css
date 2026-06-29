@@ -125,9 +125,8 @@ h1.hero-heading {
 }
 
 @media screen and (min-width: 992px) {
-  /* Enforce identical height for the background sections */
+  /* Enforce identical height for the background sections and clear the fixed navbar & bottom bounds */
   .nav-hero-section,
-  .nav-wrapper,
   .hero-section,
   .contact_hero-section,
   .hero_section,
@@ -137,6 +136,20 @@ h1.hero-heading {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
+    padding-top: 120px !important; /* Clears fixed floating header menu */
+    padding-bottom: 70px !important; /* Spacing for CTA buttons at the bottom */
+    box-sizing: border-box !important;
+  }
+
+  /* Inner wrapper inside nav-hero-section (Home and About pages) */
+  .nav-wrapper {
+    height: 100% !important;
+    min-height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 
   /* Make sure background wrapper covers and positions the image consistently */
@@ -144,13 +157,15 @@ h1.hero-heading {
   .nav-wrapper.about,
   .hero-section,
   .contact_hero-section,
-  .hero_section {
+  .hero_section,
+  .business-hero {
     background-size: cover !important;
     background-position: 50% 50% !important;
     background-repeat: no-repeat !important;
   }
 
-  /* Make sure the inner contents of the hero wrappers are positioned and sized correctly */
+  /* Make sure the inner contents of the hero wrappers are positioned and sized correctly, with reduced padding to prevent clipping */
+  .hero-wrapper.tt,
   .hero-wrapper.tt.mb,
   .hero-wrapper.about,
   .hero-content-wrap,
@@ -158,6 +173,8 @@ h1.hero-heading {
   .hero-card-insti,
   .container-6.faq_hero_container {
     height: auto !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
