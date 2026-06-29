@@ -306,7 +306,13 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
               className="flex items-center gap-1.5 sm:gap-2 bg-white/40 hover:bg-white/80 backdrop-blur-sm border border-white/60 shadow-sm hover:shadow-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-full transition-all duration-300"
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
             >
-              <span className="text-base sm:text-lg leading-none drop-shadow-sm">{lang === 'de' ? '🇩🇪' : lang === 'hr' ? '🇭🇷' : '🇬🇧'}</span>
+              <span className="flex items-center w-5 h-3.5 overflow-hidden rounded-sm border border-slate-200/60 shadow-sm drop-shadow-sm">
+                <img
+                  src={`/flags/${lang === 'de' ? 'de' : lang === 'hr' ? 'hr' : 'en'}.svg`}
+                  alt={lang.toUpperCase()}
+                  className="w-full h-full object-cover"
+                />
+              </span>
               <span className="text-xs sm:text-sm font-bold tracking-widest uppercase !text-slate-800">{lang === 'en' ? 'EN' : lang === 'de' ? 'DE' : 'HR'}</span>
               <ChevronDown size={14} className={`!text-slate-600 transition-transform duration-300 ${isLangMenuOpen ? "rotate-180" : ""}`} />
             </button>
@@ -321,9 +327,9 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                   className="absolute top-full right-0 mt-2 bg-white/95 backdrop-blur-xl border border-slate-200/60 p-1.5 rounded-2xl shadow-xl z-[120] min-w-[100px] flex flex-col gap-1"
                 >
                   {[
-                    { code: 'hr', flag: '🇭🇷', name: 'HR' },
-                    { code: 'en', flag: '🇬🇧', name: 'EN' },
-                    { code: 'de', flag: '🇩🇪', name: 'DE' },
+                    { code: 'hr', flagPath: '/flags/hr.svg', name: 'HR' },
+                    { code: 'en', flagPath: '/flags/en.svg', name: 'EN' },
+                    { code: 'de', flagPath: '/flags/de.svg', name: 'DE' },
                   ].map((l) => (
                     <Link 
                       key={l.code}
@@ -331,7 +337,13 @@ export default function Navbar({ lang, dict }: { lang: string; dict: any }) {
                       onClick={closeMenus} 
                       className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 ${lang === l.code ? "bg-slate-100 !text-slate-900 font-extrabold shadow-sm border border-slate-200" : "!text-slate-600 hover:bg-slate-50 hover:!text-slate-900 font-semibold border border-transparent"}`}
                     >
-                      <span className="text-lg sm:text-xl leading-none drop-shadow-sm">{l.flag}</span> 
+                      <span className="flex items-center w-5.5 h-4 overflow-hidden rounded-sm border border-slate-200/60 shadow-sm drop-shadow-sm">
+                        <img 
+                          src={l.flagPath} 
+                          alt={l.name} 
+                          className="w-full h-full object-cover" 
+                        />
+                      </span>
                       <span className="text-xs sm:text-sm font-bold tracking-wider uppercase">{l.name}</span>
                       {lang === l.code && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[#E09D00] shadow-[0_0_8px_rgba(224,157,0,0.5)]"></div>}
                     </Link>

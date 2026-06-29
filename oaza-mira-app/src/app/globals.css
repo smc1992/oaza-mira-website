@@ -91,4 +91,17 @@ button[class*="bg-[#E09D00]"],
   color: #ffffff !important;
 }
 
+/* Unify Hero heights on desktop to match the homepage (Image 1 target: full-height / 100vh) */
+@media (min-width: 1024px) {
+  .page-hero-section {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+}
+@media (max-width: 1023px) {
+  .page-hero-section {
+    min-height: 100vh !important;
+  }
+}
+
 

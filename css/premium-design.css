@@ -99,6 +99,46 @@ h1.hero-heading {
   color: white !important;
 }
 
+@media screen and (min-width: 992px) {
+  /* Enforce identical height for the background sections */
+  .nav-hero-section,
+  .nav-wrapper,
+  .hero-section,
+  .contact_hero-section,
+  .hero_section,
+  .business-hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Make sure background wrapper covers and positions the image consistently */
+  .nav-wrapper,
+  .nav-wrapper.about,
+  .hero-section,
+  .contact_hero-section,
+  .hero_section {
+    background-size: cover !important;
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Make sure the inner contents of the hero wrappers are positioned and sized correctly */
+  .hero-wrapper.tt.mb,
+  .hero-wrapper.about,
+  .hero-content-wrap,
+  .contact_hero-content,
+  .hero-card-insti,
+  .container-6.faq_hero_container {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+}
+
 .para-main-hero {
   color: #cbd5e1 !important;
   font-family: var(--font-body) !important;
