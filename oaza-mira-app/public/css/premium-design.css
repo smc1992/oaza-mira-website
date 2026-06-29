@@ -54,6 +54,7 @@ h1.hero-heading {
 
 /* Primary CTA Buttons (Gold Gradient) */
 .portal-login-btn, .btn-wrapp, .cta-primary {
+  padding: 16px 40px !important; /* Increased inner padding for a cleaner, more spacious design */
   background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light)) !important;
   color: var(--color-white) !important;
   border: none !important;
@@ -70,6 +71,7 @@ h1.hero-heading {
 
 /* Secondary CTA Buttons (Green) */
 .cta-secondary {
+  padding: 16px 40px !important; /* Increased inner padding for a cleaner, more spacious design */
   background: linear-gradient(135deg, var(--color-green-primary), var(--color-green-light)) !important;
   color: var(--color-white) !important;
   border: none !important;
@@ -136,8 +138,8 @@ h1.hero-heading {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    padding-top: 120px !important; /* Clears fixed floating header menu */
-    padding-bottom: 70px !important; /* Spacing for CTA buttons at the bottom */
+    padding-top: 150px !important; /* Clears fixed floating header menu and pushes logo down further */
+    padding-bottom: 100px !important; /* Increased space at the bottom so CTA buttons don't clip tightly */
     box-sizing: border-box !important;
   }
 

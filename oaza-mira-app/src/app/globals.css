@@ -96,8 +96,8 @@ button[class*="bg-[#E09D00]"],
   .page-hero-section {
     height: 100vh !important;
     min-height: 100vh !important;
-    padding-top: 190px !important; /* Increased padding-top to prevent logo overlapping with fixed navbar */
-    padding-bottom: 70px !important; /* Added padding-bottom to prevent buttons crowding bottom edge */
+    padding-top: 220px !important; /* Increased padding-top to push logo down further and clear fixed navbar */
+    padding-bottom: 100px !important; /* Increased padding-bottom to prevent buttons crowding bottom edge */
     box-sizing: border-box !important;
   }
 }
@@ -105,6 +105,11 @@ button[class*="bg-[#E09D00]"],
   .page-hero-section {
     min-height: 100vh !important;
   }
+}
+
+/* Ensure button CTAs have appropriate padding */
+.portal-login-btn, .btn-wrapp, .cta-primary, .cta-secondary {
+  padding: 16px 40px !important;
 }
 
 
