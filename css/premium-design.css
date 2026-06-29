@@ -107,13 +107,13 @@ h1.hero-heading {
   .contact_hero-section,
   .hero_section,
   .business-hero {
-    height: 100vh !important;
+    height: auto !important; /* Allow the section to grow to fit content and preserve bottom spacing on shorter viewports */
     min-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     padding-top: 150px !important; /* Clears fixed floating header menu and pushes logo down further */
-    padding-bottom: 100px !important; /* Increased space at the bottom so CTA buttons don't clip tightly */
+    padding-bottom: 120px !important; /* Increased space at the bottom so CTA buttons don't clip tightly */
     box-sizing: border-box !important;
   }
 
